@@ -76,6 +76,19 @@ img{
   margin:auto;
 }
 
+.color-white {
+  color:#ffffff;
+}
+
+/*region Font*/
+.font-16-mq-14,
+.font-16-mq-12,
+.font-16-mq-12-16,
+.font-16-mq-10{
+  font-size:16px;
+}
+/*endregion*/
+
 /*region padding margin */
 .m-8-0{
   margin:8px 0;
@@ -89,6 +102,9 @@ img{
 .m-5-0{
   margin:5px 0;
 }
+.p-0{
+  padding:0px;
+}
 .p-5{
   padding:5px;
 }
@@ -100,6 +116,19 @@ img{
 }
 .p-20{
   paddding:20px;
+}
+.p-b-10{
+  padding-bottom:10px;
+}
+.p-t-15{
+  padding-top:15px;
+}
+.p-t-20{
+  padding-top:20px;
+}
+.p-v-20{
+  padding-top:20px;
+  padding-bottom:20px;
 }
 .p-5-0{
   padding:5px 0;
