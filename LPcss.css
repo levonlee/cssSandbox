@@ -88,9 +88,11 @@ img{
   font-size:16px;
 }
 /*endregion*/
-
-
-
+/*region width*/
+w-80p-mq-100p {
+  width:80%;
+}
+/*endregion*/
 /*region margin */
 .m-8-0{
   margin:8px 0;
@@ -106,6 +108,10 @@ img{
 }
 .m-5-0{
   margin:5px 0;
+}
+.m-lr-auto{
+  margin-left:auto;
+  margin-right:auto;
 }
 /*endregion*/
 /*region padding*/
@@ -158,28 +164,16 @@ img{
   box-sizing:border-box;
 }
 .sp-10{
-  /* <div class="sp-10">&nbsp;</div> */
-  width:0;
-  height:0;
-  margin:0;
+  /* <div class="sp-clear sp-10">&nbsp;</div> */
   padding:5px;
 }
 .sp-20{
-  width:0;
-  height:0;
-  margin:0;
   padding:10px;
 }
 .sp-30{
-  width:0;
-  height:0;
-  margin:0;
   padding:15px;
 }
 .sp-40{
-  width:0;
-  height:0;
-  margin:0;
   padding:20px;
 }
 /*endregion*/
@@ -194,9 +188,35 @@ img{
   flex-flow: row nowrap;
   justify-content:space-between;
 }
+.flex-r-nw-sb-center{
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
+  align-items:center;
+}
+.flex-r-nw-sb-fs {
+  /* row nowrap space-between don't stretch on y for each row */
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+.flex-r-nw-fs-center{
+  display:flex;
+  justify-content:flex-start;
+  flex-flow:row nowrap;
+  align-items:center;
+}
 .flex-r-w-fs{
   display:flex;
   flex-flow:row wrap;
   justify-content:flex-start;
+}
+.flex-r-w-fs-center-mq-r-w-sa-center{
+  /* div.UniqueClass.flex-r-w-fs-center-mq-r-w-sa-center in mq */
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:flex-start;
+  align-items:center;
 }
 /*endregion*/
