@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+  <title>Hello, world!</title>
+</head>
+<body>
+<h1>Hello, world!</h1>
+
+<div class="faq-q">
+  <div class="faq-action" data-target="faq-a-item-1">
+    <img src="img/plus.svg" alt="Read Question #1"><span>Question #1</span>
+  </div>
+  <div class="faq-a d-none" data-id="faq-a-item-1">
+    <ul>
+      <li>Point 1</li>
+      <li>Point 2</li>
+    </ul>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="faq-q lili-ex-2">
+  <div class="faq-action" data-target="faq-a-item-2">
+    <span>Question #2</span><img src="img/plus.svg" alt="Read Question #2">
+  </div>
+  <div class="faq-a d-none" data-id="faq-a-item-2">
+    <ul>
+      <li>Point 1</li>
+      <li>Point 2</li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .d-none {
+    display: block !important;
+  }
+  .d-none {
+    display: none !important;
+  }
+  .faq-q {
+    color:#76881E;
+  }
+  .faq-action{
+    display:flex;
+    flex-flow:row nowrap;
+    align-items:center;
+    cursor:pointer;
+  }
+  .faq-action img{
+    width:1em;
+    margin-right:.8em;
+  }
+  .lili-ex-2 .faq-action img{
+    margin-left:.8em;
+  }
+  .faq-action span{
+    /* small adjustment to ensure icon is vertically centered
+    font-size:2em;
+    margin-top:-10px;
+    */
+  }
+  .faq-a {
+    
+  }
+</style>
+
+<script>
+  function faqAction(event) {
+    var $elem = $(event.target).parent();
+    var id = $elem.data('target');
+    var $target = $('*[data-id="'+id+'"]');
+    $target.toggleClass("d-none d-block");
+    var $img = $elem.find('img');
+    var src = ($img.attr('src') === 'img/plus.svg')
+      ? 'img/minus.svg'
+      : 'img/plus.svg';
+    $img.attr('src', src);
+  }
+  $(function() {
+    $('.faq-action img, .faq-action span').click(faqAction);
+  });
+</script>
+
+</body>
+</html>
