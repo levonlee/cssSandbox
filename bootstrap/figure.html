@@ -32,9 +32,9 @@
 </figure>
 
 <div class="d-flex flex-row justify-content-between">
-  <figure class="figure text-center">
-    <img src="//via.placeholder.com/300x250/?text=300x250" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
-    <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+  <figure class="figure text-center lili-circled-figure">
+    <img src="//via.placeholder.com/300x300/?text=300x300" class="figure-img img-fluid rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
+    <figcaption class="figure-caption text-center">Circled image.</figcaption>
   </figure>
   <figure class="figure text-center">
     <img src="//via.placeholder.com/300x250/?text=300x250" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
@@ -46,17 +46,20 @@
   </figure>
 </div>
 
-<style>
-  .lili-clickable {
-    cursor:pointer;
-  }
-</style>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<style>
+  .lili-circled-figure{
+    background-color:red;
+  }
+  .lili-clickable {
+    cursor:pointer;
+  }
+</style>
 <script>
   function cb(event) {
     window.open('https://twitter.com/intent/tweet?text=Your%20tweet:%20&hashtags=hashtag1,hashtag2', '_blank');
