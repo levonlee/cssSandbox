@@ -30,8 +30,8 @@
   <img src="//via.placeholder.com/300x250/?text=300x250" class="figure-img img-fluid" alt="A generic square placeholder image with rounded corners in a figure.">
   <figcaption class="figure-caption text-center">Long caption for the above image fdjaskl ldjasklj lkasdj klfdsjalfj asdljfasdl.</figcaption>
 </figure>
-
-<div class="d-flex flex-row justify-content-between align-items-stretch align-self-stretch">
+<div class="p-2">Flex, fixed width 100px</div>
+<div class="d-flex flex-row justify-content-around align-items-stretch align-self-stretch lili-ex-flex">
   <figure class="figure text-center lili-circled-figure">
     <img src="//via.placeholder.com/300x300/?text=300x300" class="figure-img img-fluid rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
     <figcaption class="figure-caption text-center">Circled image.</figcaption>
@@ -53,6 +53,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 <style>
+  .lili-ex-flex figure{
+    flex: 0 0 100px;
+  }
   .lili-circled-figure{
     background-color:red;
   }
