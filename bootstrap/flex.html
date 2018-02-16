@@ -48,6 +48,14 @@
   <div class="p-2">Flex item 3</div>
 </div>
 
+<h2 class="p-2">space-between with fixed 1rem gap, 3 columns -> 2 columns</h2>
+<div class="d-flex flex-wrap justify-content-between lili-flex-wrap lili-ex-6">
+  <div class="p-2">Flex item 1</div>
+  <div class="p-2">Flex item 2</div>
+  <div class="p-2">Flex item 3</div>
+</div>
+
+
 <style>
   .lili-flex-wrap {
     background-color:red;
@@ -69,6 +77,22 @@
   .lili-ex-5 > div {
     margin:0 .5rem 5rem .5rem;
     flex:0 0 10rem;
+  }
+  .lili-ex-6 {
+  }
+  .lili-ex-6 > div {
+    flex:0 0 calc(33% - 2rem);
+    margin-bottom:5rem;
+  }
+  @media only screen and (max-width:897px) {
+    .lili-ex-6 > div {
+      flex:0 0 calc(50% - 2rem);
+    }
+  }
+  @media only screen and (max-width:697px) {
+    .lili-ex-6 > div {
+      flex:0 0 100%;
+    }
   }
 </style>
 
