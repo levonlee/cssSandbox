@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grid</title>
+</head>
+<body>
+<h1>CSS Grid</h1>
+<h2>grid-template-areas to change layout. No fallback for IE10 and IE11</h2>
+<div class="lili-ex-1">
+  <div class="grid-wrapper">
+    <div class="lili-grid-item grid-area-list"></div>
+    <div class="lili-grid-item grid-area-single"></div>
+    <div class="lili-grid-item grid-area-find"></div>
+    <div class="lili-grid-item grid-area-form"></div>
+    <div class="lili-grid-item grid-area-footer"></div>
+    <div class="lili-grid-item grid-area-disclaimer"></div>
+  </div>
+</div>
+<p class="clear"></p>
+<button class="change-state clear" data-target="lili-ex-1">Click here to change layout</button>
+
+<h2>grid-template-areas to change layout. With fallback for IE10 and IE11</h2>
+<div class="lili-ex-2">
+  <div class="grid-wrapper">
+    <div class="lili-grid-item grid-area-list"></div>
+    <div class="lili-grid-item grid-area-single"></div>
+    <div class="lili-grid-item grid-area-find"></div>
+    <div class="lili-grid-item grid-area-form"></div>
+    <div class="lili-grid-item grid-area-footer"></div>
+    <div class="lili-grid-item grid-area-disclaimer"></div>
+  </div>
+</div>
+<p class="clear"></p>
+<button class="change-state clear" data-target="lili-ex-2">Click here to change layout</button>
+
+
+<style>
+  .clear{
+    clear:both;
+  }
+  .lili-grid-item {
+    padding:1rem;
+    background-color:#053623;
+  }
+  .grid-wrapper {
+    display:grid;
+    grid-gap:0 2.5rem;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+    grid-template-areas:
+      "grid-area-list grid-area-single"
+      "grid-area-find grid-area-form"
+      "grid-area-footer grid-area-footer"
+      "grid-area-disclaimer grid-area-disclaimer";
+  }
+  .lili-ex-2 .grid-wrapper {
+    display:-ms-grid;
+    display:grid;
+    grid-gap:0 2.5rem;
+    -ms-grid-columns:1fr 2.5rem 1fr; /* no grid-gap in IE, create another column */
+    grid-template-columns:1fr 1fr;
+    -ms-grid-rows:auto auto auto auto; /* no auto-placement in IE, define number of rows*/
+    grid-template-rows:auto;
+    grid-template-areas:
+      "grid-area-list grid-area-single"
+      "grid-area-find grid-area-form"
+      "grid-area-footer grid-area-footer"
+      "grid-area-disclaimer grid-area-disclaimer";
+  }
+  .grid-wrapper.expand-state {
+    grid-template-areas:
+      "grid-area-list grid-area-single"
+      "grid-area-find grid-area-single"
+      "empty grid-area-form"
+      "grid-area-footer grid-area-footer"
+      "grid-area-disclaimer grid-area-disclaimer";
+  }
+  .lili-ex-2 .grid-wrapper.expand-state {
+    -ms-grid-rows:auto auto auto auto auto;
+    grid-template-areas:
+      "grid-area-list grid-area-single"
+      "grid-area-find grid-area-single"
+      "empty grid-area-form"
+      "grid-area-footer grid-area-footer"
+      "grid-area-disclaimer grid-area-disclaimer";
+  }
+
+  .grid-area-list {
+    background-color:#f75bc6;
+    grid-area:grid-area-list;
+  }
+  .lili-ex-2 .grid-wrapper .grid-area-list {
+    -ms-grid-row:1;
+    -ms-grid-column:1;
+    grid-area:grid-area-list;
+  }
+
+  .grid-area-single {
+    background-color:#8e6b83;
+    grid-area:grid-area-single;
+  }
+  .lili-ex-2 .grid-wrapper .grid-area-single {
+    -ms-grid-row:1;
+    -ms-grid-column:3;
+    grid-area:grid-area-single;
+  }
+  .lili-ex-2 .grid-wrapper.expand-state .grid-area-single {
+    -ms-grid-row:1;
+    -ms-grid-row-span:2;
+    -ms-grid-column:3;
+  }
+
+  .grid-area-find {
+    background-color:#fdf2f3;
+    grid-area:grid-area-find;
+  }
+  .lili-ex-2 .grid-wrapper .grid-area-find {
+    -ms-grid-row:2;
+    -ms-grid-column:1;
+    grid-area:grid-area-find;
+  }
+
+  .grid-area-form {
+    background-color:#053623;
+    grid-area:grid-area-form;
+  }
+  .lili-ex-2 .grid-wrapper .grid-area-form {
+    -ms-grid-row:2;
+    -ms-grid-column:3;
+    grid-area:grid-area-form;
+  }
+  .lili-ex-2 .grid-wrapper.expand-state .grid-area-form {
+    -ms-grid-row:3;
+    -ms-grid-column:3;
+  }
+
+  .grid-area-footer {
+    background-color:#252c44;
+    grid-area:grid-area-footer;
+  }
+  .lili-ex-2 .grid-wrapper .grid-area-footer {
+    -ms-grid-row:3;
+    -ms-grid-column:1;
+    -ms-grid-column-span:3;
+    grid-area:grid-area-footer;
+  }
+  .lili-ex-2 .grid-wrapper.expand-state .grid-area-footer {
+    -ms-grid-row:4;
+    -ms-grid-column:1;
+    -ms-grid-column-span:3;
+  }
+
+  .grid-area-disclaimer {
+    background-color:#e77efb;
+    grid-area:grid-area-disclaimer;
+  }
+  .lili-ex-2 .grid-wrapper .grid-area-disclaimer {
+    -ms-grid-row:4;
+    -ms-grid-column:1;
+    -ms-grid-column-span:3;
+    grid-area:grid-area-disclaimer;
+  }
+  .lili-ex-2 .grid-wrapper.expand-state .grid-area-disclaimer {
+    -ms-grid-row:5;
+    -ms-grid-column:1;
+    -ms-grid-column-span:3;
+  }
+
+  .grid-area-list:before {
+    content:"grid-area-list";
+  }
+  .grid-area-single:before {
+    content:"grid-area-single";
+  }
+  .grid-area-find:before {
+    content:"grid-area-find";
+  }
+  .grid-area-form:before {
+    content:"grid-area-form";
+  }
+  .grid-area-footer:before {
+    content:"grid-area-footer";
+  }
+  .grid-area-disclaimer:before {
+    content:"grid-area-disclaimer";
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script>
+  function changeState(event) {
+    var $elem = $(event.target);
+    var parent = $elem.data('target');
+    var $target = $('.'+parent+' .grid-wrapper');
+    $target.toggleClass('expand-state');
+    return false;
+  }
+  $(function() {
+    $('.change-state').click(changeState);
+  });
+</script>
+</body>
+</html>
