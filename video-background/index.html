@@ -10,25 +10,41 @@
 <body>
 
 <h1>Video as Background</h1>
+
+<h2>Sample 1</h2>
+<ul>
+  <li>Video in IE and Edge will not have 100% width for wide screens and not 100% height for small screens.</li>
+  <li>Chrome will have <code>video</code> 'cover' and its top and bottom will be overflow:hidden</li>
+  <li><code>section.lili-sec-video:before</code> sets shadow for the whole section</li>
+  <li><code>div.lili-div-bg-img</code> sets background image that is visible to Edge but not IE11. Chrome has <code>video</code> 'cover'</li>
+</ul>
 <section id="lili-ex-1" class="d-table w-100 lili-sec-video">
-  <video class="" autoplay="" loop="" muted="">
+  <div class="position-absolute w-100 h-100 lili-div-bg-img" style="background-image:url('https://picsum.photos/1600/1000/?random')"></div>
+  <video class="position-absolute w-100 h-100 display-inline-block text-center" autoplay="" loop="" muted="">
     <source src="http://veronicarodriguez.online/video/sample.MP4"
             type="video/mp4">
   </video>
-
-  <div class="jumbotron text-white position-relative d-table-cell align-middle lili-sec-video-content">
-    <h2 class="display-3">Jumbotron</h2>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p>.jumbotron comes with all-around paddings and margin-bottom</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+  <div class="position-relative w-100 d-table-cell align-middle text-center lili-div-content">
+    <div class="container-fluid">
+      <div class="jumbotron text-white">
+        <h2 class="display-3">Jumbotron</h2>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p>.jumbotron comes with all-around paddings and margin-bottom</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+      </div>
+    </div>
   </div>
 
 
 </section>
+
+<div class="clear"></div>
+
+<h2>Some other content</h2>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
