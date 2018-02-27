@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="style-2.css" rel="stylesheet">
+  <title>Video as Background</title>
+</head>
+<body>
+
+<h1>Video as Background</h1>
+
+<h2>Sample 2</h2>
+<ul>
+  <li><code>video</code> shows 100% across all browsers. Width is 100% and height is auto adjusted according to ratio</li>
+  <li>section is position:relative</li>
+  <li>Child items .lili-div-item position:relative and content within in it is position:absolute</li>
+  <li>.lili-div-item all have 0 height because its child is position:absolute</li>
+  <li>.lili-div-item is used to define width:90% of <code>section</code></li>
+  <li>Position elements inside .lili-div-item using its own element.
+    <ul>
+      <li><code>.lili-div-item.lili-div-logo img</code></li>
+      <li><code>.lili-div-item.lili-div-content-div .lili-div-content</code></li>
+    </ul>
+  </li>
+  <li>Items in .lili-div-item have z-index:100</li>
+  <li>Child item .lili-div-video is also position:relative. <code>video</code> inside it is position:static</li>
+</ul>
+<section id="lili-ex-2" class="lili-sec-video-2">
+  <div class="lili-div-item lili-div-logo">
+    <img src="http://via.placeholder.com/125x125/?text=125x125" alt="" class="">
+  </div>
+  <div class="lili-div-item lili-div-content-div">
+    <div class="lili-div-content">
+      <h5>Title</h5>
+      <p>Paragraph 1.</p>
+      <ul>
+        <li>Bullet 1.</li>
+        <li>Bullet 2.</li>
+        <li>Bullet 3.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="lili-div-video">
+    <video autoplay loop muted>
+      <source src="http://veronicarodriguez.online/video/sample.MP4"
+              type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<div class="clear m-5"></div>
+
+<h2>Other Content</h2>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
