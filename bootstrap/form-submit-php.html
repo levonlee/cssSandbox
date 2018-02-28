@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Form Submit</title>
+</head>
+<body>
+<div class="container">
+  <form id="contact-form" role="form">
+    <div id="contact-form-err-frame" class="form-group d-none"></div>
+    <div class="form-group">
+      <label for="contact-form-name" class="sr-only">Full name</label>
+      <input type="text" class="form-control" id="contact-form-name" placeholder="Full Name *" required="required" aria-label="Full name">
+      <div class="help-block with-errors"></div>
+    </div>
+    <div class="form-group">
+      <label for="contact-form-email" class="sr-only">Email address</label>
+      <input type="email" class="form-control" id="contact-form-email" placeholder="Email *" required="required" aria-label="Email address">
+    </div>
+    <div class="form-group">
+      <label for="contact-form-phone" class="sr-only">Phone number</label>
+      <input type="text" class="form-control" id="contact-form-phone" placeholder="Phone Number" aria-label="Phone number">
+      <div class="help-block with-errors"></div>
+    </div>
+    <div class="form-group">
+      <label for="contact-form-message" class="sr-only">Message</label>
+      <textarea class="form-control" id="contact-form-message" placeholder="Message *" rows="6" required="required" aria-label="Message"></textarea>
+      <div class="help-block with-errors"></div>
+    </div>
+
+    <div class="form-check">
+      <small id="contact-form-termsHelpBlock" class="form-text text-muted">
+        Terms and Conditions.
+      </small>
+      <input type="checkbox" class="form-check-input" id="contact-form-terms" aria-describedby="contact-form-termsHelpBlock">
+      <label class="form-check-label" for="contact-form-terms">I agree to the terms above.</label>
+    </div>
+
+    <div class="form-group">
+      <div class="g-recaptcha"
+           data-sitekey="6LeDOzwUAAAAADimWf29XsE4lbU7DKOSlwssIBA3"></div>
+      <div id="captcha-verify"></div>
+    </div>
+
+    <button type="submit" class="btn btn-light">Submit</button>
+  </form>
+
+</div>
+
+<style>
+  .cs-form-field-clean {
+    border:1px #2ac158 solid;
+  }
+  .cs-form-field-error {
+    border:1px #FF0000 solid
+  }
+</style>
+
+<div class="modal fade" id="modalFormContactUs" tabindex="-1" role="dialog" aria-labelledby="modalFormContactUsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalFormContactUsLabel">Thank you!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        We will contact you.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> <!-- #modalFormContactUs .modal -->
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type='text/javascript' src='//www.google.com/recaptcha/api.js'></script>
+<script>
+  var LiliJs = {};
+  LiliJs.contactUsForm = function(event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    var $submit_btn = $target.find('button');
+    $submit_btn.text('Submitting...');
+
+    var $err_message = $('#contact-form-err-frame');
+    var $name = $('#contact-form-name');
+    var $email = $('#contact-form-email');
+    var $phone = $('#contact-form-phone');
+    var $message = $('#contact-form-message');
+    var $terms = $('#contact-form-terms');
+    var google_captcha = LiliJs.validateReCaptcha();
+
+    var validation = LiliJs.validateField($name,'your name')
+      +LiliJs.validateField($email,'your email')
+      +LiliJs.validateField($message,'your message')
+      +LiliJs.validateField($terms,'terms')
+      +LiliJs.validateField(google_captcha,'recaptcha')
+    ;
+
+    if (validation!== '') {
+      $err_message.html('Please correct the following: <ul>'+validation+'</ul>');
+      $err_message.removeClass('d-none');
+      $err_message.addClass('d-block');
+      $submit_btn.text('Submit');
+    }
+    else {
+      $err_message.removeClass('d-block');
+      $err_message.addClass('d-none');
+
+      google_captcha = grecaptcha.getResponse();
+      var params = 'form=contact-us'
+        +'&name='+encodeURIComponent($name.val())
+        +'&email='+encodeURIComponent($email.val())
+        +'&phone='+encodeURIComponent($phone.val())
+        +'&message='+encodeURIComponent($message.val())
+        +'&recaptcha='+google_captcha
+      ;
+      //btoa();
+      var post_url = '/wp-content/themes/phantom-lp/template-parts/form/contact-us-post.php';
+      $.ajax({
+        url : post_url,
+        type: "POST",
+        data : params,
+        success: function(data) {
+          //console.log(data);
+          if(data!='true') {
+            // fail
+            $err_message.html('Please correct the following: <ul>'+data+'</ul>');
+            $err_message.removeClass('d-none');
+            $err_message.addClass('d-block');
+            $submit_btn.text('Submit');
+          }
+          else {
+            // success
+            //console.log('success');
+            $submit_btn.text('Submit');
+            gtag('event', 'click', {
+              'event_category': 'contact-us-form',
+              'event_label': 'successful submission'
+            });
+            $('#modalFormContactUs').modal('show');
+
+          }
+        }
+      });
+
+    }
+  }
+
+  LiliJs.validateField = function($elem,label) {
+    var check = '';
+    switch (label) {
+      case 'your email':
+        if($elem.val() == null || $elem.val() ==''){
+          check += '<li>Please enter your email.</li>';
+          LiliJs.validateFieldCss(0,$elem);
+        }
+        else if(LiliJs.validateEmail($elem.val())=='false'){
+          check += '<li>Please enter a valid email.</li>';
+          LiliJs.validateFieldCss(0,$elem);
+        }
+        else {
+          LiliJs.validateFieldCss(1,$elem);
+        }
+        break;
+      case 'terms':
+        if ($elem !== true) {
+          check += '<li>Please agree to our terms.</li>';
+        }
+        break;
+      case 'recaptcha':
+        if ($elem !== true) {
+          check += '<li>Please verify you are not a robot.</li>';
+        }
+        break;
+      default:
+        if($elem.val() == null || $elem.val() == '' || $elem.val() == 'null') {
+          check += '<li>Please enter '+label+'.</li>';
+          LiliJs.validateFieldCss(0,$elem);
+        }
+        else {
+          LiliJs.validateFieldCss(1,$elem);
+        }
+        break;
+    }
+
+    return check;
+  }
+
+  LiliJs.validateEmail = function (email) {
+    var atpos = email.indexOf("@");
+    var dotpos = email.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=email.length) {
+      return 'false';
+    }
+  }
+
+  LiliJs.validateReCaptcha = function() {
+    var v = grecaptcha.getResponse();
+    if(v.length == 0) { return false; }
+    return true;
+  }
+
+  LiliJs.validateFieldCss = function(type, $elem) {
+    var clean_css = 'cs-form-field-clean';
+    var err_css = 'cs-form-field-error';
+    if (type === 0) {
+      $elem.removeClass(clean_css);
+      $elem.addClass(err_css);
+    }
+    else {
+      $elem.removeClass(err_css);
+      $elem.addClass(clean_css);
+    }
+  }
+
+  $(function() {
+    $('#contact-form').submit(LiliJs.contactUsForm);
+  });
+</script>
+
+</body>
+</html>
