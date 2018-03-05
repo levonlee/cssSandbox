@@ -33,6 +33,11 @@
   -ms-object-fit: contain;
   -o-object-fit: contain;
   object-fit: contain;
+  background: transparent url('https://picsum.photos/1600/1600/?random') no-repeat 0 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 @media all and (max-width: 1200px) {
   .lili-sec-video-2 .lili-div-item.lili-div-logo img {
