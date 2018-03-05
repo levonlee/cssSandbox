@@ -28,6 +28,11 @@
   <li>Items in .lili-div-item have z-index:100</li>
   <li>Child item .lili-div-video is also position:relative. <code>video</code> inside it is position:static</li>
 </ul>
+
+<p>iOS v10+ supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode while Android supports it long time ago</p>
+
+<p>For iOS <10, create a background image.</p>
+
 <section id="lili-ex-2" class="lili-sec-video-2">
   <div class="lili-div-item lili-div-logo">
     <img src="http://via.placeholder.com/125x125/?text=125x125" alt="" class="">
@@ -44,7 +49,7 @@
     </div>
   </div>
   <div class="lili-div-video">
-    <video autoplay loop muted>
+    <video autoplay loop muted playsinline poster="https://via.placeholder.com/400x300/?text=400x300">
       <source src="http://veronicarodriguez.online/video/sample.MP4"
               type="video/mp4">
     </video>
