@@ -30,8 +30,8 @@
 </ul>
 
 <p>iOS v10+ supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode while Android supports it long time ago</p>
-
 <p>For iOS <10, create a background image.</p>
+<p><code>poster</code> is supported since iOS 8 and it means to show an image before the frame of video is loaded.</p>
 
 <section id="lili-ex-2" class="lili-sec-video-2">
   <div class="lili-div-item lili-div-logo">
@@ -52,6 +52,7 @@
     <video autoplay loop muted playsinline poster="https://via.placeholder.com/400x300/?text=400x300">
       <source src="http://veronicarodriguez.online/video/sample.MP4"
               type="video/mp4">
+      <img src="https://via.placeholder.com/401x301/?text=401x301" alt="This is a fallback of the video tag">
     </video>
   </div>
 </section>
@@ -65,6 +66,11 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="../modernizr/modernizr-custom.js"></script>
+
+<script>
+
+</script>
 
 </body>
 </html>
