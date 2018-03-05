@@ -9,29 +9,8 @@
   <title>Video as Background</title>
 </head>
 <body>
-
 <h1>Video as Background</h1>
-
 <h2>Sample 2</h2>
-<ul>
-  <li><code>video</code> shows 100% across all browsers. Width is 100% and height is auto adjusted according to ratio</li>
-  <li>section is position:relative</li>
-  <li>Child items .lili-div-item position:relative and content within in it is position:absolute</li>
-  <li>.lili-div-item all have 0 height because its child is position:absolute</li>
-  <li>.lili-div-item is used to define width:90% of <code>section</code></li>
-  <li>Position elements inside .lili-div-item using its own element.
-    <ul>
-      <li><code>.lili-div-item.lili-div-logo img</code></li>
-      <li><code>.lili-div-item.lili-div-content-div .lili-div-content</code></li>
-    </ul>
-  </li>
-  <li>Items in .lili-div-item have z-index:100</li>
-  <li>Child item .lili-div-video is also position:relative. <code>video</code> inside it is position:static</li>
-</ul>
-
-<p>iOS v10+ supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode while Android supports it long time ago</p>
-<p>For iOS <10, create a background image.</p>
-<p><code>poster</code> is supported since iOS 8 and it means to show an image before the frame of video is loaded.</p>
 
 <section id="lili-ex-2" class="lili-sec-video-2">
   <div class="lili-div-item lili-div-logo">
@@ -59,18 +38,39 @@
 
 <div class="clear m-5"></div>
 
-<h2>Other Content</h2>
+<ul>
+  <li><code>video</code> shows 100% across all browsers. Width is 100% and height is auto adjusted according to ratio</li>
+  <li>section is position:relative</li>
+  <li>Child items .lili-div-item position:relative and content within in it is position:absolute</li>
+  <li>.lili-div-item all have 0 height because its child is position:absolute</li>
+  <li>.lili-div-item is used to define width:90% of <code>section</code></li>
+  <li>Position elements inside .lili-div-item using its own element.
+    <ul>
+      <li><code>.lili-div-item.lili-div-logo img</code></li>
+      <li><code>.lili-div-item.lili-div-content-div .lili-div-content</code></li>
+    </ul>
+  </li>
+  <li>Items in .lili-div-item have z-index:100</li>
+  <li>Child item .lili-div-video is also position:relative. <code>video</code> inside it is position:static</li>
+</ul>
+<ul>
+  <li>iOS v10+ supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode</li>
+  <li>Android 5 and under doesn't support <code>autoplay</code></li>
+  <li>For iOS <10, create a background image.</li>
+  <li><code>poster</code> is supported since iOS 8 and it means to show an image before the frame of video is loaded.
+    <ul>
+      <li><code>poster</code> in iOS 8 can take full width of parent. It's not responsive in iOS 7 and 6.</li>
+      <li><code>poster</code> in Android 4.4 is not responsive but background-image in <code>video</code> can display underneath.</li>
+      <li><code>poster</code> in Android 5 is responsive.</li>
+    </ul>
+  </li>
+</ul>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="../modernizr/modernizr-custom.js"></script>
-
-<script>
-
-</script>
-
+<script src="js/modernizr-custom.js"></script>
 </body>
 </html>
