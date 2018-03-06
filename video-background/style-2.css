@@ -50,6 +50,7 @@
   transform: translateX(-50%);
   left:50%;
   bottom:1.5rem;
+  cursor:pointer;
 }
 
 .lili-sec-video-2 .lili-div-arrow-down i {

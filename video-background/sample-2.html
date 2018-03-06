@@ -30,7 +30,7 @@
       </ul>
     </div>
   </div>
-  <div class="lili-div-arrow-down">
+  <div class="lili-div-arrow-down" data-target="instructions">
     <i class="icon-down"></i>
   </div>
   <div class="lili-div-video">
@@ -43,7 +43,7 @@
   </div>
 </section>
 
-<div class="clear m-5"></div>
+<div id="instructions" class="clear m-5">Instructions</div>
 
 <ul>
   <li><code>video</code> shows 100% across all browsers. Width is 100% and height is auto adjusted according to ratio</li>
@@ -96,8 +96,30 @@
 
   };
 
+  LiliJs.clickToGo = function(event) {
+    var $target = $(event.target);
+    var iter = 0;
+    var itermax = 10;
+    var goto = '';
+    while (iter < itermax ) {
+      if ($target.data('target')) {
+        goto =$target.data('target');
+        break;
+      }
+      else {
+        $target = $target.parent();
+        iter++;
+        console.log('+1');
+      }
+    }
+    if (goto) {
+      $("#"+goto).get(0).scrollIntoView();
+    }
+  }
+
   $(function() {
     LiliJs.cssFixVideoAutoplay();
+    $('.lili-div-arrow-down').click(LiliJs.clickToGo);
   });
 </script>
 
