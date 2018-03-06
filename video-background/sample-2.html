@@ -28,11 +28,12 @@
     </div>
   </div>
   <div class="lili-div-video">
-    <video autoplay loop muted playsinline poster="https://via.placeholder.com/400x300/?text=400x300">
+    <video autoplay loop muted playsinline poster="https://via.placeholder.com/400x300/?text=400x300" data-target="lili-video-fallback-1" >
       <source src="http://veronicarodriguez.online/video/sample.MP4"
               type="video/mp4">
       <img src="https://via.placeholder.com/401x301/?text=401x301" alt="This is a fallback of the video tag">
     </video>
+    <img id="lili-video-fallback-1" class="d-none" src="https://via.placeholder.com/401x301/?text=401x301" alt="This is a fallback of the video tag">
   </div>
 </section>
 
@@ -54,14 +55,16 @@
   <li>Child item .lili-div-video is also position:relative. <code>video</code> inside it is position:static</li>
 </ul>
 <ul>
-  <li>iOS v10+ supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode</li>
-  <li>Android 5 and under doesn't support <code>autoplay</code></li>
-  <li>For iOS <10, create a background image.</li>
+  <li>iOS 10 and up supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode</li>
+  <li>Android 4.4 and up support <code>autoplay</code></li>
+  <li>Windows Phone doesn't support <code>autoplay</code></li>
+  <li>Create a background image for those devices don't support <code>autoplay</code>.</li>
   <li><code>poster</code> is supported since iOS 8 and it means to show an image before the frame of video is loaded.
     <ul>
-      <li><code>poster</code> in iOS 8 can take full width of parent. It's not responsive in iOS 7 and 6.</li>
+      <li><code>poster</code> in iOS 8 and up can take full width of parent. It's not responsive in iOS 7 and below.</li>
+      <li><code>poster</code> in Windows Phone 8.1 can take full width of parent.</li>
+      <li><code>poster</code> in Android 5 and up is responsive.</li>
       <li><code>poster</code> in Android 4.4 is not responsive but background-image in <code>video</code> can display underneath.</li>
-      <li><code>poster</code> in Android 5 is responsive.</li>
     </ul>
   </li>
 </ul>
@@ -72,5 +75,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/modernizr-custom.js"></script>
+
+<script>
+  var LiliJs = {};
+  LiliJs.cssFixVideoAutoplay = function() {
+    console.log(Modernizr.videoautoplay);
+    if (Modernizr.videoautoplay) {
+      console.log('true');
+    }
+    else {
+      console.log('false');
+    }
+
+  };
+
+  $(function() {
+    LiliJs.cssFixVideoAutoplay();
+  });
+</script>
+
 </body>
 </html>
