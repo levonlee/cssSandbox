@@ -7,6 +7,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="style-2.css" rel="stylesheet">
+  <link href="../fonts/icomoon/icomoon.css" rel="stylesheet"  type='text/css'>
+
   <title>Video as Background</title>
 </head>
 <body>
@@ -27,6 +29,9 @@
         <li>Bullet 3.</li>
       </ul>
     </div>
+  </div>
+  <div class="lili-div-arrow-down">
+    <i class="icon-down"></i>
   </div>
   <div class="lili-div-video">
     <video autoplay loop muted playsinline poster="https://via.placeholder.com/400x300/?text=400x300" data-target="lili-video-fallback-1" >
@@ -54,6 +59,7 @@
   </li>
   <li>Items in .lili-div-item have z-index:100</li>
   <li>Child item .lili-div-video is also position:relative. <code>video</code> inside it is position:static</li>
+  <li>Child .lili-div-arrow-down is position:absolute bottom aligned horizontally centered</li>
 </ul>
 <ul>
   <li>iOS 10 and up supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode</li>
