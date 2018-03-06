@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="style-2.css" rel="stylesheet">
@@ -79,12 +80,12 @@
 <script>
   var LiliJs = {};
   LiliJs.cssFixVideoAutoplay = function() {
-    console.log(Modernizr.videoautoplay);
     if (Modernizr.videoautoplay) {
-      console.log('true');
+      // unfortunately Modernizr can't reliably detect video autoplay...
+      //console.log('true');
     }
     else {
-      console.log('false');
+      //console.log('false');
     }
 
   };
