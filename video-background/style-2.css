@@ -39,6 +39,25 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+.lili-sec-video-2 .lili-div-arrow-down{
+  font-size:2.5em;
+  position:absolute;
+  z-index:100;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left:50%;
+  bottom:1.5rem;
+}
+
+.lili-sec-video-2 .lili-div-arrow-down i {
+  font-size:1em;
+  color:#ffffff;
+  opacity:.8;
+}
+
 @media all and (max-width: 1200px) {
   .lili-sec-video-2 .lili-div-item.lili-div-logo img {
     margin-top: 50px;
