@@ -109,11 +109,15 @@
       else {
         $target = $target.parent();
         iter++;
-        console.log('+1');
       }
     }
     if (goto) {
-      $("#"+goto).get(0).scrollIntoView();
+      // Set URL hash and go there
+      var loc = document.location.toString().split('#')[0];
+      document.location = loc + '#' + goto;
+
+      // Or use jQuery to scroll
+      //$("#"+goto).get(0).scrollIntoView();
     }
   }
 
