@@ -1,0 +1,28 @@
+{
+  "name": "csssandbox",
+  "version": "1.0.0",
+  "description": "cssSandbox ==========",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^8.1.0",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^7.0.1"
+  },
+  "devDependencies": {
+    "gulp-rename": "^1.2.2",
+    "postcss-cli": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levonlee/cssSandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levonlee/cssSandbox/issues"
+  },
+  "homepage": "https://github.com/levonlee/cssSandbox#readme"
+}
