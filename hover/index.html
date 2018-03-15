@@ -221,6 +221,10 @@
     width: 100%;
     font-size: .85em;
   }
+  .lili-ex-3 .item-group-thumbnails .item-thumbnail,
+  .lili-ex-3 .item-group-content {
+    cursor:pointer;
+  }
   .lili-ex-3 .item-group.opened .item-group-thumbnails,
   .lili-ex-3 .item-group.opened .item-group-title{
     opacity:0;
@@ -233,8 +237,7 @@
     var ns = this.myApp;
 
     ns.meetTheTeamShow = function(event) {
-      //console.log('meetTheTeamShow');
-      //console.log(event.type);
+      //console.log('meetTheTeamShow',event.type);
       var $target = $(event.target);
       var iter = 0;
       var itermax = 10;
@@ -266,8 +269,7 @@
     }
 
     ns.meetTheTeamHide = function(event) {
-      //console.log('meetTheTeamHide');
-      //console.log(event.type);
+      //console.log('meetTheTeamHide', event.type);
       var $target = $(event.target);
       var iter = 0;
       var itermax = 10;
@@ -288,7 +290,7 @@
         }
       }
       if (goto !=='') {
-        console.log('goto', goto);
+        //console.log('goto', goto);
         var $divContent = $parent.children('.item-group-content').eq(goto);
         var $divThumbnailsContent = $parent.children('.item-group-thumbnails,.item-group-title');
         if ($parent.hasClass('opened')) {
@@ -302,7 +304,7 @@
 
     $(function() {
       $('.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail').on('click touchstart mouseenter mouseleave',ns.meetTheTeamShow);
-      $('.lili-ex-3 .row .item-group .item-group-content').on('click mouseleave touchstart',ns.meetTheTeamHide);
+      $('.lili-ex-3 .row .item-group .item-group-content').on('mouseleave',ns.meetTheTeamHide);
     });
 
   }($));
