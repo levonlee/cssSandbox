@@ -16,6 +16,8 @@
 
 <h2>Example 1</h2>
 
+<p>ul li:position:relative, ul li a div:position:absolute</p>
+
 <ul class="lili-ex lili-ex-1">
   <li>
     <a>
@@ -24,7 +26,7 @@
         <p>Hover Text #1</p>
       </div>
     </a>
-    <!--
+    <!-- Can't have more than 1 div:position:absolute as grand children in parent li:position:relative
     <a>
       <img src="http://via.placeholder.com/300x250/?text=300x250x2" alt="" width="300" height="250">
       <div>
@@ -36,17 +38,20 @@
 </ul>
 
 <h2>Example 2</h2>
+<p>Multiple div:position:absolute as grand children in parent:position:relative</p>
+<p>Instead of toggling Hover Text divs opacity, toggle display.</p>
+
 <ul class="lili-ex lili-ex-2">
   <li>
-    <a class="item-1">
+    <a>
       <img src="http://via.placeholder.com/300x250/?text=300x250x1" alt="" width="300" height="250">
-      <div class="item-1">
+      <div>
         <p>Hover Text #1</p>
       </div>
     </a>
-    <a class="item-2">
+    <a>
       <img src="http://via.placeholder.com/300x250/?text=300x250x2" alt="" width="300" height="250">
-      <div class="item-2">
+      <div>
         <p>Hover Text #2</p>
       </div>
     </a>
@@ -69,11 +74,12 @@
     cursor:pointer;
     position:relative;
   }
-  .lili-ex-1 li a img{
+  .lili-ex-1 li a img,
+  .lili-ex-2 li a img{
     width:100%;
     height:auto;
   }
-  .lili-ex-1 li a div{
+  .lili-ex-1 li a div {
     position:absolute;
     left:0;
     top:0;
@@ -90,6 +96,27 @@
   }
   .lili-ex-1 li a:hover div {
     opacity: 1;
+  }
+  .lili-ex-2 li a div{
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color: red;
+    text-align: center;
+    width: 100%;
+    color: #000;
+    font-size: .85em;
+    padding: 0 .5em;
+    margin: 0;
+    display: none;
+  }
+  .lili-ex-2 li a:nth-child(2) div{
+    background-color: blue;
+  }
+  .lili-ex-2 li a:hover div {
+    display:block;
   }
 </style>
 <script>
