@@ -1,0 +1,75 @@
+/* custom ratio */
+.embed-responsive-ratio-square {
+  padding-bottom: 100%;
+}
+
+.embed-responsive-ratio-meet-the-team {
+  padding-bottom: 80%;
+}
+/* bootstrap responsive utility doesn't work for <img>. Add it*/
+.embed-responsive .embed-responsive-media-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-responsive-media-image.item-1 {
+  background:url('http://via.placeholder.com/300x250/?text=300x250x1') top center/cover no-repeat;
+}
+.embed-responsive-media-image.item-2 {
+  background:url('http://via.placeholder.com/300x250/?text=300x250x2') top center/cover no-repeat;
+}
+.embed-responsive-media-image.item-3 {
+  background:url('http://via.placeholder.com/300x250/?text=300x250x3') top center/cover no-repeat;
+}
+.embed-responsive-media-image.item-4 {
+  background:url('http://via.placeholder.com/300x250/?text=300x250x4') top center/cover no-repeat;
+}
+.lili-ex-3 .item-group {
+  position:relative;
+}
+.lili-ex-3 .item-group-content {
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background-color: red;
+  color: #000;
+  width: 100%;
+  font-size: .85em;
+  margin-left:0;
+  margin-right:0;
+  overflow:auto;
+}
+.lili-ex-3 .item-group-thumbnails .item-thumbnail,
+.lili-ex-3 .item-group-content {
+  cursor:pointer;
+}
+.lili-ex-3 .item-group.opened .item-group-thumbnails,
+.lili-ex-3 .item-group.opened .item-group-title{
+  opacity:0;
+}
+.lili-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem 1rem 0 0;
+  font-size: 1rem;
+}
+.lili-ex-3 .media .embed-responsive {
+  width: 70px;
+}
+.bg-grey{
+  background-color:#ededed;
+}
+.bg-green{
+  background-color:#d1dd26;
+}
+.px-0{
+  padding-left:0;
+  padding-right:0;
+}
