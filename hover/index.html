@@ -17,6 +17,7 @@
 <h2>Example 1</h2>
 
 <p>ul li:position:relative, ul li a div:position:absolute</p>
+<p>CSS parent:hover is active when any child elements of the parent is mouseover and the child element is not display:none</p>
 
 <ul class="lili-ex lili-ex-1">
   <li>
@@ -57,6 +58,68 @@
     </a>
   </li>
 </ul>
+
+<h2>Example 3</h2>
+<p>Content to be shown is not a child of the hover element</p>
+
+<div class="container-fluid lili-ex-3">
+  <div class="row">
+    <!-- first column -->
+    <div class="col-xs-12 col-md-6 item-group">
+      <div class="row item-group-thumbnails">
+        <div class="col-xs-6 px-0 item-thumbnail">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-1"></div>
+          </div>
+        </div>
+        <div class="col-xs-6 px-0 item-thumbnail">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row item-group-title">
+        <div class="col-xs-12 bg-text-green">
+          <p>Group #1 Description</p>
+        </div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">Full Description of Item 1 in Group #1</div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">Full Description of Item 2 in Group #1</div>
+      </div>
+    </div>
+    <!-- first column. -->
+    <!-- second column -->
+    <div class="col-xs-12 col-md-6 item-group">
+      <div class="row item-group-thumbnails">
+        <div class="col-xs-6 px-0 item-thumbnail item-1">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-3"></div>
+          </div>
+        </div>
+        <div class="col-xs-6 px-0 item-thumbnail item-2">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row item-group-title">
+        <div class="col-xs-12 bg-color-grey">
+          <p>Group #2 Description</p>
+        </div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">Full Description of Item 1 in Group #2</div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">Full Description of Item 2 in Group #2</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -118,8 +181,131 @@
   .lili-ex-2 li a:hover div {
     display:block;
   }
+  /* custom ratio */
+  .embed-responsive-ratio-meet-the-team {
+    padding-bottom: 80%;
+  }
+  /* bootstrap responsive utility doesn't work for <img>. Add it*/
+  .embed-responsive .embed-responsive-media-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .embed-responsive-media-image.item-1 {
+    background:url('http://via.placeholder.com/300x250/?text=300x250x1') top center/cover no-repeat;
+  }
+  .embed-responsive-media-image.item-2 {
+    background:url('http://via.placeholder.com/300x250/?text=300x250x2') top center/cover no-repeat;
+  }
+  .embed-responsive-media-image.item-3 {
+    background:url('http://via.placeholder.com/300x250/?text=300x250x3') top center/cover no-repeat;
+  }
+  .embed-responsive-media-image.item-4 {
+    background:url('http://via.placeholder.com/300x250/?text=300x250x4') top center/cover no-repeat;
+  }
+  .lili-ex-3 .item-group {
+    position:relative;
+  }
+  .lili-ex-3 .item-group-content {
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color: red;
+    color: #000;
+    width: 100%;
+    font-size: .85em;
+  }
+  .lili-ex-3 .item-group.opened .item-group-thumbnails,
+  .lili-ex-3 .item-group.opened .item-group-title{
+    opacity:0;
+  }
 </style>
 <script>
+  (function($) {
+    this.myApp = this.myApp || {};
+
+    var ns = this.myApp;
+
+    ns.meetTheTeamShow = function(event) {
+      //console.log('meetTheTeamShow');
+      //console.log(event.type);
+      var $target = $(event.target);
+      var iter = 0;
+      var itermax = 10;
+      var goto = '';
+      var $parent = '';
+
+      while (iter < itermax ) {
+        if ($target.hasClass('item-thumbnail')) {
+          $parent = $target.parents('.item-group');
+          $parent = $parent.eq(0);
+          goto =$target.index($parent.find('.item-group-thumbnails .item-thumbnail'));
+          break;
+        }
+        else {
+          $target = $target.parent();
+          iter++;
+        }
+      }
+      if (goto !=='') {
+        var $divContent = $parent.children('.item-group-content').eq(goto);
+        var $divThumbnailsContent = $parent.children('.item-group-thumbnails,.item-group-title');
+        if (!$parent.hasClass('opened')) {
+          // open only when it's not opened
+          $parent.toggleClass('opened');
+          $divContent.toggleClass('hidden show');
+        }
+      }
+
+    }
+
+    ns.meetTheTeamHide = function(event) {
+      //console.log('meetTheTeamHide');
+      //console.log(event.type);
+      var $target = $(event.target);
+      var iter = 0;
+      var itermax = 10;
+      var goto = '';
+      var $parent = '';
+
+      while (iter < itermax ) {
+        if ($target.hasClass('item-group-content')) {
+          $parent = $target.parents('.item-group');
+          $parent = $parent.eq(0);
+          goto =$target.index($parent.find('.item-group-content'));
+          //console.log($parent);
+          break;
+        }
+        else {
+          $target = $target.parent();
+          iter++;
+        }
+      }
+      if (goto !=='') {
+        console.log('goto', goto);
+        var $divContent = $parent.children('.item-group-content').eq(goto);
+        var $divThumbnailsContent = $parent.children('.item-group-thumbnails,.item-group-title');
+        if ($parent.hasClass('opened')) {
+          // close only when it's opened
+          $parent.toggleClass('opened');
+          $divContent.toggleClass('hidden show');
+        }
+      }
+
+    }
+
+    $(function() {
+      $('.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail').on('click touchstart mouseenter mouseleave',ns.meetTheTeamShow);
+      $('.lili-ex-3 .row .item-group .item-group-content').on('click mouseleave touchstart',ns.meetTheTeamHide);
+    });
+
+  }($));
 </script>
 </body>
 </html>
