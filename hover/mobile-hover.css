@@ -49,6 +49,32 @@
 .lili-ex-3 .item-group-content {
   cursor:pointer;
 }
+.lili-ex-3 .item-group .item-group-thumbnails .item-thumbnail .item-overlay{
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,.5);
+  text-align:center;
+  opacity: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+.lili-ex-3 .item-group .item-group-thumbnails .item-overlay p{
+  width:100%;
+  color:#fff;
+}
+.lili-ex-3 .item-group .item-group-thumbnails .item-thumbnail:hover .item-overlay{
+  opacity: 1;
+}
 .lili-ex-3 .item-group.opened .item-group-thumbnails,
 .lili-ex-3 .item-group.opened .item-group-title{
   opacity:0;
@@ -57,8 +83,9 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin: 1rem 1rem 0 0;
-  font-size: 1rem;
+  margin:0;
+  padding: 1rem;
+  font-size: 2rem;
 }
 .lili-ex-3 .media .embed-responsive {
   width: 70px;
@@ -68,6 +95,9 @@
 }
 .bg-green{
   background-color:#d1dd26;
+}
+.bg-red{
+  background-color:red;
 }
 .px-0{
   padding-left:0;

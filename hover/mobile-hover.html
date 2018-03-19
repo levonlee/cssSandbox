@@ -19,18 +19,26 @@
 <p>Content to be shown is not a child of the hover element</p>
 
 <div class="container-fluid lili-ex-3">
-  <div class="row">
+  <div class="row bg-green">
+    <!-- First column has a shorter description so background-color has to match it -->
     <!-- first column -->
-    <div class="col-xs-12 col-md-6 item-group">
+    <div class="col-xs-12 col-md-6 item-group item-small">
+      <!-- item-small is to indicate this column has shorter description -->
       <div class="row item-group-thumbnails">
         <div class="col-xs-6 px-0 item-thumbnail">
           <div class="embed-responsive embed-responsive-ratio-meet-the-team">
             <div class="embed-responsive-media-image item-1"></div>
           </div>
+          <div class="item-overlay">
+            <p>Name #1</p>
+          </div>
         </div>
         <div class="col-xs-6 px-0 item-thumbnail">
           <div class="embed-responsive embed-responsive-ratio-meet-the-team">
             <div class="embed-responsive-media-image item-2"></div>
+          </div>
+          <div class="item-overlay">
+            <p>Name #2</p>
           </div>
         </div>
       </div>
@@ -71,16 +79,22 @@
           <div class="embed-responsive embed-responsive-ratio-meet-the-team">
             <div class="embed-responsive-media-image item-3"></div>
           </div>
+          <div class="item-overlay">
+            <p>Name #3</p>
+          </div>
         </div>
         <div class="col-xs-6 px-0 item-thumbnail item-2">
           <div class="embed-responsive embed-responsive-ratio-meet-the-team">
             <div class="embed-responsive-media-image item-4"></div>
           </div>
+          <div class="item-overlay">
+            <p>Name #4</p>
+          </div>
         </div>
       </div>
       <div class="row item-group-title">
         <div class="col-xs-12 bg-grey">
-          <p>Group #2 Description</p>
+          <p>Group #2 Description. this is a longer description. blah blah blah blah blah blah blah blah</p>
         </div>
       </div>
       <div class="row item-group-content hidden">
