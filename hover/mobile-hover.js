@@ -45,6 +45,12 @@
       if (!$parent.hasClass('opened')) {
         // open only when it's not opened
         $parent.addClass('opened');
+        // the column group might be smaller so set the background color to match the content div color
+        // only change for column group has shorter text
+        if ($parent.hasClass('item-small')) {
+          var $grandParent = $parent.parent();
+          $grandParent.addClass('bg-red');
+        }
         $divContent.addClass('show');
         $divContent.removeClass('hidden');
       }
@@ -94,6 +100,8 @@
     var $allContent = $('.lili-ex-3 .row .item-group .item-group-content');
     var $allParents = $('.lili-ex-3 .row .item-group');
     $allParents.removeClass('opened');
+    var $grandParents = $allParents.parent();
+    $grandParents.removeClass('bg-red');
     $allContent.removeClass('show');
     $allContent.addClass('hidden');
   }
@@ -101,11 +109,12 @@
   $(function() {
     if (!Modernizr.touchevents) {
       // for non touch screen device, hide the close button
-      $('.lili-ex-3 .row .item-group .item-group-content .lili-close').hide();
+      //$('.lili-ex-3 .row .item-group .item-group-content .lili-close').hide();
     }
     var showEvents = 'click touchstart mouseenter mouseleave';
+    showEvents = 'click touchstart';
     $('.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail').on(showEvents,ns.meetTheTeamShow);
-    $('.lili-ex-3 .row .item-group .item-group-content').on('mouseleave',ns.meetTheTeamHide);
+    //$('.lili-ex-3 .row .item-group .item-group-content').on('mouseleave',ns.meetTheTeamHide);
     $('.lili-ex-3 .row .item-group .item-group-content .lili-close').on('click touchstart',ns.meetTheTeamHideAll);
 
   });
