@@ -44,6 +44,7 @@
       var $divThumbnailsContent = $parent.children('.item-group-thumbnails,.item-group-title');
       if (!$parent.hasClass('opened')) {
         // open only when it's not opened
+        ns.meetTheTeamHideAll();
         $parent.addClass('opened');
         // the column group might be smaller so set the background color to match the content div color
         // only change for column group has shorter text
@@ -94,9 +95,13 @@
 
   }
 
-  ns.meetTheTeamHideAll = function(event) {
-    ns.debug(['meetTheTeamHideAll',event.type]);
+  ns.meetTheTeamEventHideAll = function(event) {
+    ns.debug(['meetTheTeamEventHideAll',event.type]);
     event.stopPropagation();
+    ns.meetTheTeamHideAll();
+  }
+
+  ns.meetTheTeamHideAll = function() {
     var $allContent = $('.lili-ex-3 .row .item-group .item-group-content');
     var $allParents = $('.lili-ex-3 .row .item-group');
     $allParents.removeClass('opened');
@@ -115,7 +120,7 @@
     showEvents = 'click touchstart';
     $('.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail').on(showEvents,ns.meetTheTeamShow);
     //$('.lili-ex-3 .row .item-group .item-group-content').on('mouseleave',ns.meetTheTeamHide);
-    $('.lili-ex-3 .row .item-group .item-group-content .lili-close').on('click touchstart',ns.meetTheTeamHideAll);
+    $('.lili-ex-3 .row .item-group .item-group-content .lili-close').on('click touchstart',ns.meetTheTeamEventHideAll);
 
   });
 
