@@ -112,15 +112,15 @@
   }
 
   $(function() {
+
     if (!Modernizr.touchevents) {
       // for non touch screen device, hide the close button
       //$('.lili-ex-3 .row .item-group .item-group-content .lili-close').hide();
     }
-    var showEvents = 'click touchstart mouseenter mouseleave';
-    showEvents = 'click touchstart';
-    $('.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail').on(showEvents,ns.meetTheTeamShow);
+    //var showEvents = 'click touchstart mouseenter mouseleave';
+    $('.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail').on('click',ns.meetTheTeamShow);
     //$('.lili-ex-3 .row .item-group .item-group-content').on('mouseleave',ns.meetTheTeamHide);
-    $('.lili-ex-3 .row .item-group .item-group-content .lili-close').on('click touchstart',ns.meetTheTeamEventHideAll);
+    $('.lili-ex-3 .row .item-group .item-group-content .lili-close').on('click',ns.meetTheTeamEventHideAll);
 
   });
 

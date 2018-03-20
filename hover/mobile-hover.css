@@ -22,6 +22,15 @@
 .embed-responsive-media-image.item-2 {
   background:url('http://via.placeholder.com/300x250/?text=300x250x2') top center/cover no-repeat;
 }
+.embed-responsive-ratio-square .embed-responsive-media-image.item-2 {
+  background:url('http://via.placeholder.com/70x70/?text=70x70x2') top center/cover no-repeat;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .embed-responsive-ratio-square .embed-responsive-media-image.item-2 {
+    background-image: url('http://via.placeholder.com/140x140/?text=140x140x2');
+  }
+}
+
 .embed-responsive-media-image.item-3 {
   background:url('http://via.placeholder.com/300x250/?text=300x250x3') top center/cover no-repeat;
 }
