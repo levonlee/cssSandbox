@@ -118,7 +118,22 @@
       <div class="row item-group-content hidden">
         <div class="col-xs-12">
           <div class="lili-close">X</div>
-          Full Description of Item 1 in Group #2
+          <div class="media">
+            <div class="media-left media-top">
+              <div class="embed-responsive embed-responsive-ratio-square">
+                <img class="embed-responsive-media-image bicubic-render item-3" src="../assets/img/portrait-504s.jpg" width="70">
+              </div>
+            </div>
+            <div class="media-body">
+              <p class="media-heading">Person 1</p>
+              Subtitle of Person 2
+            </div>
+          </div>
+          <p>Full Description of Item 1 in Group #2.</p>
+          <ul>
+            <li>IE 11 will have the image bicubic scaled down by JavaScript to a fixed size img:width</li>
+            <li>Other browsers will follow CSS and have the image magnifiable</li>
+          </ul>
         </div>
       </div>
       <div class="row item-group-content hidden">
@@ -136,6 +151,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="../modernizr/touchevents.js"></script>
+<script src="../ie-bicubic-interpolation/bicubic-interpolation.js"></script>
 <script src="mobile-hover.js"></script>
 </body>
 </html>
