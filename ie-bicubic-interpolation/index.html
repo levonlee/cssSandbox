@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <img src="../assets/img/portrait-504s.jpg" width="70">
+  <img class="render" src="../assets/img/portrait-504s.jpg" width="70">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="bicubic-interpolation.js"></script>
+  <script>
+    $( document ).ready(function() {
+      if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
+        // target IE 11 only
+        $('img.render').bicubicImgInterpolation({
+          crossOrigin: 'anonymous' //for demo purpose
+        });
+      }
+    });
+  </script>
+</body>
+</html>
