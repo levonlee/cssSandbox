@@ -113,6 +113,13 @@
 
   $(function() {
 
+    if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
+      // target IE 11 only
+      $('img.bicubic-render').bicubicImgInterpolation({
+        crossOrigin: 'anonymous' //for demo purpose
+      });
+    }
+
     if (!Modernizr.touchevents) {
       // for non touch screen device, hide the close button
       //$('.lili-ex-3 .row .item-group .item-group-content .lili-close').hide();
