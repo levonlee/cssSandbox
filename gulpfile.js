@@ -58,14 +58,17 @@ gulp.task('img-responsive', function () {
         width: 70 * 2,
         rename: { suffix: '-70s@2x' },
       }],
+      // a weird bug. If the filter matches nothing, it will return an error
+      // and causes the previous filter's last resizing result nothing
       // Resize all PNG images to be retina ready
+      /*
       '*.png': [{
         width: 250,
       }, {
         width: 250 * 2,
         rename: { suffix: '@2x' },
       }],
-      /*
+
       '*.jpg': [{
         // either one of width or rename can be ignored
       }],
