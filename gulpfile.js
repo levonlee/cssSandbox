@@ -20,6 +20,7 @@ gulp.task('autoprefixer', function () {
 gulp.task('img-resize', function () {
   return gulp.src('src/*.{jpg,png}')
     .pipe(gResponsive({
+      /*
       '*.jpg': {
         // Resize all JPG images to 200 pixels wide
         width: 200,
@@ -28,10 +29,10 @@ gulp.task('img-resize', function () {
         // Resize all PNG images to 50% of original pixels wide
         width: '50%',
       },
+      */
       // Resize all images to 100 pixels wide and add suffix -thumbnail
       '*': {
-        width: 100,
-        rename: { suffix: '-thumbnail' },
+        rename: { suffix: '-square' },
       },
     }, {
       // Global configuration for all images
