@@ -18,11 +18,13 @@
     ns.debug(['meetTheTeamShow',event.type]);
     var $target = $(event.target);
     ns.debug(['meetTheTeamShow:event:target',$target]);
-    var iter = 0;
-    var itermax = 10;
+
     var goto = '';
     var $parent = '';
 
+    /*
+    var iter = 0;
+    var itermax = 10;
     while (iter < itermax ) {
       if ($target.hasClass('item-thumbnail')) {
         $parent = $target.parents('.item-group');
@@ -38,6 +40,15 @@
         iter++;
       }
     }
+    */
+
+    $target = $target.parents('.item-thumbnail').eq(0);
+    $parent = $target.parents('.item-group').eq(0);
+    ns.debug(['meetTheTeamShow:parent',$parent]);
+    ns.debug(['meetTheTeamShow:thumbnail:target',$target]);
+    var $thumbnails = $parent.find('.item-group-thumbnails .item-thumbnail');
+    goto =$target.index($thumbnails);
+
     if (goto !=='') {
       ns.debug(['meetTheTeamShow:goto', goto]);
       var $divContent = $parent.children('.item-group-content').eq(goto);
