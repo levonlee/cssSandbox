@@ -136,9 +136,22 @@
       //$('.lili-ex-3 .row .item-group .item-group-content .lili-close').hide();
     }
     //var showEvents = 'click touchstart mouseenter mouseleave';
-    $('.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail').on('click',ns.meetTheTeamShow);
+
+    var selectorThumbnail = '.lili-ex-3 .row .item-group .item-group-thumbnails .item-thumbnail';
+    var selectorThumbnailClose = '.lili-ex-3 .row .item-group .item-group-content .lili-close';
+    var selectorThumbnailElseWhere = '.lili-ex-3 .row .item-group';
+
+    $(selectorThumbnail).on('click',ns.meetTheTeamShow);
     //$('.lili-ex-3 .row .item-group .item-group-content').on('mouseleave',ns.meetTheTeamHide);
-    $('.lili-ex-3 .row .item-group .item-group-content .lili-close').on('click',ns.meetTheTeamEventHideAll);
+    $(selectorThumbnailClose).on('click',ns.meetTheTeamEventHideAll);
+    $('body').click(function(e) {
+      var target = e.target;
+      if (!$(target).is(selectorThumbnail) && !$(target).parents().is(selectorThumbnail)
+        && !$(target).is(selectorThumbnailElseWhere) && !$(target).parents().is(selectorThumbnailElseWhere)) {
+        // click somewhere else should close all opened windows
+        ns.meetTheTeamHideAll();
+      }
+    });
 
   });
 
