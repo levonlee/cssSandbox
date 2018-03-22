@@ -65,6 +65,7 @@
         }
         $divContent.addClass('show');
         $divContent.removeClass('hidden');
+        $divContent.scrollTop(0);
       }
     }
 

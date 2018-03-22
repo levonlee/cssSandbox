@@ -96,6 +96,11 @@
   padding: 1rem;
   font-size: 2rem;
 }
+.lili-ex-3 .item-group .item-group-title div p {
+  height: 4.5rem;
+  margin-top: .65rem;
+  margin-bottom: .5rem;
+}
 .lili-ex-3 .media .embed-responsive {
   width: 70px;
 }
