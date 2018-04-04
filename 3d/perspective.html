@@ -11,16 +11,62 @@
   <title>Perspective</title>
 </head>
 <body>
-<h2>transform:perspective vs perspective</h2>
 
-<div class="container">
+
+<div class="container-fluid">
+  <h2>transform:perspective vs perspective</h2>
   <div class="row justify-content-md-center">
-    <div class="col-md-12">
+    <div class="col-md-6">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="intro.html" title="transform:perspective vs perspective"></iframe>
       </div>
     </div>
+    <div class="col-md-6">
+      <ul>
+        <li>The perspective property defines how far the object is away from the user. So, a lower value will result in a more intensive 3D effect than a higher value.</li>
+        <li>When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.</li>
+        <li>Using perspective (with a value different from 0 or none) creates a new stacking context.</li>
+        <li>Default <code>perspective</code> is none and it's the same for 0</li>
+        <li><code>perspective</code> set in parent carries to its children. Which is equivalent to set <code>transform:perspective(50em) rotateX(50deg);</code> for all children</li>
+        <li>Default <code>perspective-origin</code> is 50% 50%</li>
+      </ul>
+      <div class="form-group">
+<textarea readonly rows="5" class="form-control">
+.parent.perspective{
+perspective:50em;
+}
+   .parent.perspective .child{
+    transform:rotateX(50deg);
+    background:tomato;
+  }
+
+  .parent.transform .child{
+    transform:perspective(50em) rotateX(50deg);
+    background:deepskyblue;
+  }
+</textarea>
+      </div>
+    </div>
   </div>
+
+  <h2>Cube</h2>
+  <div class="row justify-content-md-center">
+    <div class="col-md-12">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="cube.html" title="Cube" scrolling="no" onload="resizeIframe(this)"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <h2>Card Flipping</h2>
+  <div class="row justify-content-md-center">
+    <div class="col-md-12">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="card-flipping.html" title="Card Flipping" scrolling="no" onload="resizeIframe(this)"></iframe>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- Optional JavaScript -->
