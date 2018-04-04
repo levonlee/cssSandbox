@@ -1,0 +1,17 @@
+.lili-accordion-item-title-icon {
+  font-family: 'Material Icons';
+  color: #007bff;
+  background-color: transparent;
+}
+.lili-accordion-item-title-icon:before {
+  content: "\e15d"; /* Minus */
+  font-size:23px;
+  width:23px;
+  height:23px;
+}
+.lili-accordion-item-title-icon.collapsed:before{
+  content: "\e148"; /* Plus */
+  font-size:23px;
+  width:23px;
+  height:23px;
+}

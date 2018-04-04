@@ -6,6 +6,9 @@
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="collapse.css" rel="stylesheet">
+
   <title>Collapse</title>
 </head>
 <body>
@@ -44,7 +47,9 @@
     <li>Buttons and links use <code>aria-controls=""</code> to refer to the target element id. If multiple, separate them by space</li>
     <li>Use <code>role="button"</code> for <code>a</code></li>
     <li>Use <code>aria-expanded</code> true or false to show the current state of the collapsible element</li>
-    <li>Add <code>data-toggle="collapse"</code> and a <code>data-target</code> to the element to automatically assign control of one or more collapsible elements. The <code>data-target</code> attribute accepts a CSS selector to apply the collapse to. Be sure to add the class <code>collapse</code> to the collapsible element. If you’d like it to default open, add the additional class <code>show</code>.</li>
+    <li>When <code>aria-expanded="true"</code>, make sure collapsible element has <code>show</code> class.</li>
+    <li>Add <code>data-toggle="collapse"</code> and a <code>data-target</code> to the element to automatically assign control of one or more collapsible elements. The <code>data-target</code> attribute accepts a CSS selector to apply the collapse to.</li>
+    <li>Be sure to add the class <code>collapse</code> to the collapsible element. If you’d like it to default open, add the additional class <code>show</code>.</li>
   </ul>
   <p>
     <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
@@ -77,7 +82,7 @@
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
           <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Collapsible Group Item #1
+            Collapsible Group Item #1 (Opened by default)
           </button>
         </h5>
       </div>
@@ -90,9 +95,10 @@
     </div>
     <div class="card">
       <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
+        <h5 class="mb-0 d-flex align-items-center">
+          <div class="lili-accordion-item-title-icon collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></div>
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Collapsible Group Item #2
+            Collapsible Group Item #2 (Collapsed by default)
           </button>
         </h5>
       </div>
@@ -104,13 +110,14 @@
     </div>
     <div class="card">
       <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Collapsible Group Item #3
+        <h5 class="mb-0 d-flex align-items-center">
+          <div class="lili-accordion-item-title-icon" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree"></div>
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Collapsible Group Item #3 (Opened by default)
           </button>
         </h5>
       </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
         <div class="card-body">
           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
         </div>
