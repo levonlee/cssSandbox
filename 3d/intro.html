@@ -14,14 +14,14 @@
     font-size:20px;
   }
 
+  h1{
+    font-size:1em;
+  }
+
   .parent{
     width:50%;
     display:inline-block;
     padding:.5em;
-  }
-
-  .parent.perspective{
-    perspective:50em;
   }
 
   .child{
@@ -31,6 +31,10 @@
     background:tomato;
     display:inline-block;
     border:1px solid rgba(0, 0, 0, .5);
+  }
+
+  .parent.perspective{
+    perspective:50em;
   }
 
   .parent.perspective .child{
@@ -43,9 +47,6 @@
     background:deepskyblue;
   }
 
-  h1{
-    font-size:1em;
-  }
 </style>
 
 <div class="parent perspective">
