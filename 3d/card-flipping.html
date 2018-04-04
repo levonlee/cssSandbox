@@ -6,47 +6,34 @@
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="card-flipping.css">
   <title>Card Flipping</title>
 </head>
 <body>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          Featured
+    <div class="col-md-6">
+      <div class="flip-card-item">
+        <div class="card flip-card-item-front" style="width: 18rem;">
+          <img class="card-img-top" src="http://via.placeholder.com/288x250/?text=288x250" alt="Card image cap">
+          <div class="card-body">
+            <p class="h5 card-title">Front of the Card</p>
+            <p class="h6 card-subtitle mb-2 text-muted">Card subtitle</p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
         </div>
-        <img class="card-img-top" src="http://via.placeholder.com/288x250/?text=288x250" alt="Card image cap">
-        <div class="card-body">
-          <p class="h5 card-title">Card title</p>
-          <p class="h6 card-subtitle mb-2 text-muted">Card subtitle</p>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-        <div class="card-header">
-          Quote
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-          </blockquote>
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
+        <div class="card flip-card-item-back" style="width: 18rem;">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-body">
+            <p class="h5 card-title">Back of the Card</p>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
       </div>
     </div>
@@ -58,6 +45,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="perspective.js"></script>
 
 </body>
 </html>
