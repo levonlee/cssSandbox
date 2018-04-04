@@ -1,0 +1,39 @@
+.flip-card-item {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  margin-top:3rem;
+}
+
+.flip-card-item-front {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  backface-visibility: hidden;
+  transform: perspective(800px) rotateY(0deg);
+}
+
+.flip-card-item.flipped .flip-card-item-front {
+  transform: perspective(800px) rotateY(179.9deg);
+}
+
+.flip-card-item-back {
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: all 0.4s ease-in-out;
+  backface-visibility: hidden;
+  transform: perspective(800px) rotateY(-180deg);
+}
+
+.flip-card-item.flipped .flip-card-item-back {
+  transform: perspective(800px) rotateY(0);
+}
