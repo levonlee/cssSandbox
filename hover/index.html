@@ -23,7 +23,7 @@
 <ul class="lili-ex lili-ex-1">
   <li>
     <a>
-      <img src="http://via.placeholder.com/300x250/?text=300x250x1" alt="" width="300" height="250">
+      <img src="http://via.placeholder.com/300x250/?text=300x250x1" class="item-leading-img" alt="." width="300" height="250">
       <div>
         <p>Hover Text #1</p>
         <p><img src="http://via.placeholder.com/20x20/?text=20x20" alt="" width="20" height="20"></p>
@@ -41,6 +41,15 @@
 </textarea>
     </div>
   </li>
+
+  <li>
+    <a>
+      <img src="http://via.placeholder.com/300x250/?text=300x250x1" class="item-leading-img" alt="." width="300" height="250">
+      <div class="overlay">
+        <div class="overlay-img"></div>
+      </div>
+    </a>
+  </li>
 </ul>
 
 <h2>Example 2</h2>
@@ -50,13 +59,13 @@
 <ul class="lili-ex lili-ex-2">
   <li>
     <a>
-      <img src="http://via.placeholder.com/300x250/?text=300x250x1" alt="" width="300" height="250">
+      <img src="http://via.placeholder.com/300x250/?text=300x250x1" class="item-leading-img" alt="." width="300" height="250">
       <div>
         <p>Hover Text #1</p>
       </div>
     </a>
     <a>
-      <img src="http://via.placeholder.com/300x250/?text=300x250x2" alt="" width="300" height="250">
+      <img src="http://via.placeholder.com/300x250/?text=300x250x2" class="item-leading-img" alt="" width="300" height="250">
       <div>
         <p>Hover Text #2</p>
       </div>
@@ -79,17 +88,13 @@
     cursor:pointer;
     position:relative;
   }
-  .lili-ex-1 li a img,
-  .lili-ex-2 li a img{
+  .item-leading-img{
     width:100%;
     height:auto;
   }
   .lili-ex-1 li a div {
     position:absolute;
-    left:0;
-    top:0;
-    right:0;
-    bottom:0;
+    left:0; top:0; right:0; bottom:0;
     background-color: red;
     text-align: center;
     width: 100%;
@@ -101,6 +106,26 @@
   }
   .lili-ex-1 li a:hover div {
     opacity: 1;
+  }
+  .lili-ex-1 li a div.overlay {
+    opacity: 1;
+    background-color:transparent;
+  }
+  .lili-ex-1 li a div.overlay div.overlay-img{
+    /* Begin vertical and horizontal center */
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    /* End vertical and horizontal center */
+
+    opacity: 1;
+
+    width:60px;
+    height:60px;
+    background:url('http://via.placeholder.com/60x60/000000/ffffff/?text=60x60') no-repeat;
+  }
+  .lili-ex-1 li a:hover div.overlay div.overlay-img{
+    background:url('http://via.placeholder.com/60x60/ffffff/000000/?text=60x60') no-repeat;
   }
   .lili-ex-2 li a div{
     position:absolute;

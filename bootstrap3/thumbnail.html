@@ -95,7 +95,15 @@
 
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
+        <!-- This works
         <img src="http://via.placeholder.com/1280x720/?text=1280x720" alt="..." role="button" data-toggle="modal" data-target="#myModal">
+        -->
+        <div class="lili-ig">
+          <img src="http://via.placeholder.com/1280x720/?text=1280x720" alt="...">
+          <div class="overlay" role="button" data-toggle="modal" data-target="#myModal">
+            <div class="overlay-img"></div>
+          </div>
+        </div>
         <div class="caption">
           <h3>Click on the image to open a modal!</h3>
           <p>...</p>
@@ -143,6 +151,39 @@
     padding-right:0!important;
     box-shadow:none!important;
     background: linear-gradient(to bottom, red 0%,red 50%,transparent 50%,transparent 100%);
+  }
+  .lili-ex-2 .thumbnail .lili-ig{
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+  }
+  .lili-ex-2 .thumbnail .lili-ig img{
+    display:block;
+    max-width:100%;
+    height:auto;
+  }
+  .lili-ex-2 .thumbnail .lili-ig div.overlay{
+    position:absolute;
+    left:0; top:0; right:0; bottom:0;
+    background-color: red;
+    text-align: center;
+    width: 100%;
+    color: #000;
+    font-size: .85em;
+    padding: 0 .5em;
+    margin: 0;
+    opacity: 0.5;
+  }
+  .lili-ex-2 .thumbnail .lili-ig div.overlay div.overlay-img {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width:60px;
+    height:60px;
+    background:url('http://via.placeholder.com/60x60/000000/ffffff/?text=60x60') no-repeat;
+  }
+  .lili-ex-2 .thumbnail .lili-ig div.overlay:hover div.overlay-img {
+    background:url('http://via.placeholder.com/60x60/ffffff/000000/?text=60x60') no-repeat;
   }
   .no-border {
     border:none!important;
