@@ -94,6 +94,33 @@
     </div>
   </div>
 
+  <h3>Center one column</h3>
+  <ul>
+    <li><code>.col-*.col-*-offset-[n]</code> where <code>n = (12 - number of columns) / 2</code></li>
+    <li>Only works even number of columns</li>
+    <li><code>.col-*-offset-n</code> is <code>margin-left: (n/12)*100%</code></li>
+  </ul>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <img src="http://via.placeholder.com/900x950/?text=900x950" class="img-responsive" alt="Responsive image">
+    </div>
+  </div>
+
+  <h3>Center 2 columns</h3>
+  <ul>
+    <li>2 <code>col-md-2</code> has 4 columns, space on left should be (12-4)/2 = 4</li>
+    <li>So <code>.col-md-offset-4</code></li>
+    <li>Set <code>.col-md-offset-4</code> only for the first column</li>
+  </ul>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-4">
+      <img src="http://via.placeholder.com/900x950/?text=900x950" class="img-responsive" alt="Responsive image">
+    </div>
+    <div class="col-md-2">
+      <img src="http://via.placeholder.com/900x950/?text=900x950" class="img-responsive" alt="Responsive image">
+    </div>
+  </div>
+
 </div>
 
 <style>

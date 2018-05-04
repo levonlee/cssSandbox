@@ -15,9 +15,10 @@
 <h1>Hover</h1>
 
 <h2>Example 1</h2>
-
-<p>ul li:position:relative, ul li a div:position:absolute</p>
-<p>CSS parent:hover is active when any child elements of the parent is mouseover and the child element is not display:none</p>
+<ul>
+  <li><code>ul li:position:relative</code>, <code>ul li a div:position:absolute</code></li>
+  <li>CSS parent:hover is active when any child elements of the parent is mouseover and the child element is not display:none</li>
+</ul>
 
 <ul class="lili-ex lili-ex-1">
   <li>
@@ -25,16 +26,20 @@
       <img src="http://via.placeholder.com/300x250/?text=300x250x1" alt="" width="300" height="250">
       <div>
         <p>Hover Text #1</p>
+        <p><img src="http://via.placeholder.com/20x20/?text=20x20" alt="" width="20" height="20"></p>
       </div>
     </a>
-    <!-- Can't have more than 1 div:position:absolute as grand children in parent li:position:relative
-    <a>
-      <img src="http://via.placeholder.com/300x250/?text=300x250x2" alt="" width="300" height="250">
-      <div>
-        <p>Hover Text #2</p>
-      </div>
-    </a>
-    -->
+    <p>Can't have more than 1 <code>div:position:absolute</code> as grand children in parent <code>li:position:relative</code></p>
+    <div class="form-group">
+<textarea readonly rows="5" class="form-control">
+<a>
+  <img src="http://via.placeholder.com/300x250/?text=300x250x2" alt="" width="300" height="250">
+  <div>
+    <p>Hover Text #2</p>
+  </div>
+</a>
+</textarea>
+    </div>
   </li>
 </ul>
 
