@@ -158,13 +158,14 @@
 </div>
 
 <style>
-  /* .modal-backdrop is near body */
-  /*
-  .modal-backdrop.in {
-    filter: alpha(opacity=7);
-    opacity: 0.7;
-  }
+  /* .modal-backdrop is near body.
+     Darken backdrop only for one model that is currently open
   */
+  body.modal-open .modal.lili-ex-1 ~ .modal-backdrop.in {
+    filter: alpha(opacity=8);
+    opacity: 0.8;
+  }
+
   .modal.lili-ex-1 .modal-content {
     background: none;
     border: 0;
