@@ -65,20 +65,35 @@
   <!-- Columns are always 50% wide, on mobile and desktop -->
   <div class="row">
     <div class="col-xs-6">
-      <p>parent.col-xs-6</p>
       <div class="row">
-        <div class="col-xs-6">child.col-xs-6</div>
-        <div class="col-xs-6">child.col-xs-6</div>
+        <div class="col-xs-6">.row .col-xs-6 .row .col-xs-6</div>
+        <div class="col-xs-6">.row .col-xs-6 .row .col-xs-6</div>
       </div>
     </div>
     <div class="col-xs-6">
-      <p>parent.col-xs-6</p>
       <div class="row">
-        <div class="col-xs-6 col-no-padding">child.col-xs-6.col-no-padding</div>
-        <div class="col-xs-6 col-no-padding">child.col-xs-6.col-no-padding</div>
+        <div class="col-xs-6 col-no-padding">.row .col-xs-6 .row .col-xs-6.col-no-padding</div>
+        <div class="col-xs-6 col-no-padding">.row .col-xs-6 .row .col-xs-6.col-no-padding</div>
       </div>
     </div>
   </div>
+
+  <!-- Row no gutter -->
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="row no-gutter">
+        <div class="col-xs-6">.row .col-xs-6 .row.no-gutter .col-xs-6</div>
+        <div class="col-xs-6">.row .col-xs-6 .row.no-gutter .col-xs-6</div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="row no-gutter">
+        <div class="col-xs-6">.row .col-xs-6 .row.no-gutter .col-xs-6</div>
+        <div class="col-xs-6">.row .col-xs-6 .row.no-gutter .col-xs-6</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <style>
@@ -89,6 +104,10 @@
   .col-no-padding{
     padding-left:0!important;
     padding-right:0!important;
+  }
+  .no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
   }
 </style>
 

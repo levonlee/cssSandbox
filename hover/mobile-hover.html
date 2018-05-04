@@ -144,6 +144,132 @@
       </div>
     </div>
   </div>
+
+  <div class="row bg-green">
+    <!-- First column has a shorter description so background-color has to match it -->
+    <!-- first column -->
+    <div class="col-xs-12 col-md-6 item-group item-small">
+      <!-- item-small is to indicate this column has shorter description -->
+      <div class="row item-group-thumbnails">
+        <div class="col-xs-6 px-0 item-thumbnail">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-1"></div>
+          </div>
+          <div class="item-overlay">
+            <p>Name #1</p>
+          </div>
+        </div>
+        <div class="col-xs-6 px-0 item-thumbnail">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-2"></div>
+          </div>
+          <div class="item-overlay">
+            <p>Name #2</p>
+          </div>
+        </div>
+      </div>
+      <div class="row item-group-title">
+        <div class="col-xs-12 bg-green">
+          <p>Group #1 Description</p>
+        </div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">
+          <div class="lili-close">X</div>
+          <div class="media">
+            <div class="media-left media-top">
+              <div class="embed-responsive embed-responsive-ratio-square">
+                <div class="embed-responsive-media-image item-1"></div>
+              </div>
+            </div>
+            <div class="media-body">
+              <p class="media-heading">Person 1</p>
+              Subtitle of Person 1
+            </div>
+          </div>
+          <p>Full Description of Item 1 in Group #1</p>
+        </div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">
+          <div class="lili-close">X</div>
+          <div class="media">
+            <div class="media-left media-top">
+              <div class="embed-responsive embed-responsive-ratio-square">
+                <img class="embed-responsive-media-image item-2" srcset="http://via.placeholder.com/70x70/?text=70x70x2 1x,http://via.placeholder.com/140x140/?text=140x140x2 2x">
+              </div>
+            </div>
+            <div class="media-body">
+              <p class="media-heading">Person 1</p>
+              Subtitle of Person 2
+            </div>
+          </div>
+          <p>Full Description of Item 2 in Group #1.</p>
+          <ul>
+            <li>IE 11 ignores img:srcset, so it will take img:background.</li>
+            <li>All desktop devices with lower resolution 1x take img:srcset 1x and ignore img:background</li>
+            <li>All mobile devices support srcset will take img:srcset and ignore img:background</li>
+            <li>All other devices don't support img:srcset will take img:background</li>
+            <li>In short, img:srcset => img:background</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- first column. -->
+    <!-- second column -->
+    <div class="col-xs-12 col-md-6 item-group">
+      <div class="row item-group-thumbnails">
+        <div class="col-xs-6 px-0 item-thumbnail item-1">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-3"></div>
+          </div>
+          <div class="item-overlay">
+            <p>Name #3</p>
+          </div>
+        </div>
+        <div class="col-xs-6 px-0 item-thumbnail item-2">
+          <div class="embed-responsive embed-responsive-ratio-meet-the-team">
+            <div class="embed-responsive-media-image item-4"></div>
+          </div>
+          <div class="item-overlay">
+            <p>Name #4</p>
+          </div>
+        </div>
+      </div>
+      <div class="row item-group-title">
+        <div class="col-xs-12 bg-grey">
+          <p>Group #2 Description. this is a longer description. blah blah blah blah blah blah blah blah</p>
+        </div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">
+          <div class="lili-close">X</div>
+          <div class="media">
+            <div class="media-left media-top">
+              <div class="embed-responsive embed-responsive-ratio-square">
+                <img class="embed-responsive-media-image bicubic-render item-3" src="../assets/img/portrait-504s.jpg" width="70">
+              </div>
+            </div>
+            <div class="media-body">
+              <p class="media-heading">Person 1</p>
+              Subtitle of Person 2
+            </div>
+          </div>
+          <p>Full Description of Item 1 in Group #2.</p>
+          <ul>
+            <li>IE 11 will have the image bicubic scaled down by JavaScript to a fixed size img:width</li>
+            <li>Other browsers will follow CSS and have the image magnifiable</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row item-group-content hidden">
+        <div class="col-xs-12">
+          <div class="lili-close">X</div>
+          Full Description of Item 2 in Group #2
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Optional JavaScript -->
