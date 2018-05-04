@@ -15,25 +15,52 @@
 <h1>Thumbnail</h1>
 
 <div class="container">
-  <h2>.thumbnail: similar to BSr's <code>.card</code></h2>
+  <h2>.thumbnail: similar to BS4's <code>.card</code></h2>
+  <ul>
+    <li>Remove .fade to turn off animation <code>.modal.fade</code></li>
+  </ul>
   <div class="row">
 
     <div class="col-sm-6 col-md-4">
-      <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Launch default modal
       </button>
+      <p><code>data-toggle="modal" data-target="#myModal"</code></p>
+    </div>
 
+    <div class="col-sm-6 col-md-4">
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalSmall">
-        Launch small modal <code>.modal-dialog .modal-sm</code>
+        Launch small modal
       </button>
+      <p><code>.modal-dialog .modal-sm</code></p>
+    </div>
 
+    <div class="col-sm-6 col-md-4">
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalLarge">
-        Launch large modal <code>.modal-dialog .modal-lg</code>
+        Launch large modal
+      </button>
+      <p><code>.modal-dialog .modal-lg</code></p>
+    </div>
+
+  </div>
+
+  <h2>Varying Content</h2>
+  <ul>
+    <li>Triggered by data attributes <code>data-toggle="modal" data-target="#myModalVideo"</code></li>
+  </ul>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVideo" data-video-id="kJQP7kiw5Fk">
+        Launch modal with YouTube video #1
+      </button>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalVideo" data-video-id="60ItHLz5WEA">
+        Launch modal with YouTube video #2
       </button>
 
     </div>
-
   </div>
 
 </div>
@@ -85,7 +112,19 @@
         <h4 class="modal-title" id="myModalLargeLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        ...
+        <div class="row">
+          <div class="col-sm-9">
+            Level 1: .col-sm-9
+            <div class="row">
+              <div class="col-xs-8 col-sm-6">
+                Level 2: .col-xs-8 .col-sm-6
+              </div>
+              <div class="col-xs-4 col-sm-6">
+                Level 2: .col-xs-4 .col-sm-6
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -95,8 +134,87 @@
   </div>
 </div>
 
+<!-- Modal: Video .lili-ex-1 -->
+<div class="modal fade lili-ex-1" id="myModalVideo" tabindex="-1" role="dialog" aria-label="Video Player">
+  <!-- aria-labelledby="myModalVideoLabel" is not needed because there's no title. Specify the name using aria-label -->
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!--<h4 class="modal-title" id="myModalVideoLabel">Modal title</h4>-->
+      </div>
+      <div class="modal-body">
+        <div class="modal-video">
+          <div class="embed-responsive embed-responsive-16by9">
+            <!--
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kJQP7kiw5Fk" style="border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  /* .modal-backdrop is near body */
+  /*
+  .modal-backdrop.in {
+    filter: alpha(opacity=7);
+    opacity: 0.7;
+  }
+  */
+  .modal.lili-ex-1 .modal-content {
+    background: none;
+    border: 0;
+    -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+  }
+  .modal.lili-ex-1 .modal-body {
+    padding: 1rem; /* to match padding .modal-header */
+  }
+  .modal.lili-ex-1 .modal-header {
+    padding: 1rem;
+  }
+  .modal.lili-ex-1 .modal-header, .modal.lili-ex-1 .modal-footer {
+    border: 0;
+    text-align: right; /* because .modal-header .close is float right by default */
+  }
+  .modal.lili-ex-1 .modal-header .close {
+    float: none; /* default float right */
+    margin: 0;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: none;
+    opacity: 1;
+  }
+</style>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+  $('#myModalVideo').on('show.bs.modal', function (event) {
+    var $button = $(event.relatedTarget); // Button that triggered the modal
+    var video = $button.data('video-id'); // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var $modal = $(this);
+    var $video = $modal.find('.modal-body .modal-video div');
+    $video.contents().remove();
+    $('<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'+video+'" style="border:none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>').appendTo($video);
+    $modal.modal('handleUpdate');
+  })
+
+  $('#myModalVideo').on('hide.bs.modal', function (event) {
+    var $modal = $(this);
+    var $video = $modal.find('.modal-body .modal-video div');
+    $video.contents().remove();
+  })
+</script>
 
 </body>
 </html>
