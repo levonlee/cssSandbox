@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Grid</title>
+</head>
+<body>
+<h1>Grid</h1>
+
+<div class="container-fluid">
+  <h2>.container-fluid</h2>
+  <div class="row">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+  </div>
+
+  <h2><code>.col</code> Auto-layout Columns</h2>
+  <ul>
+    <li>Always equal width</li>
+  </ul>
+  <div class="row">
+    <div class="col">.col</div>
+    <div class="col">.col</div>
+  </div>
+
+  <h2><code>.col-sm</code> Auto-layout Columns</h2>
+  <ul>
+    <li>Equal width for vp >= sm, otherwise 100% width of column</li>
+  </ul>
+  <div class="row">
+    <div class="col-sm">.col-sm</div>
+    <div class="col-sm">.col-sm</div>
+    <div class="col-sm">.col-sm</div>
+  </div>
+
+  <h2><code>.col-md</code> Auto-layout Columns</h2>
+  <ul>
+    <li>Equal width for vp >= md, otherwise 100% width of column</li>
+  </ul>
+  <div class="row">
+    <div class="col-md">.col-md</div>
+    <div class="col-md">.col-md</div>
+    <div class="col-md">.col-md</div>
+  </div>
+
+  <h2><code>.col-lg</code> Auto-layout Columns</h2>
+  <ul>
+    <li>Equal width for vp >= lg, otherwise 100% width of column</li>
+  </ul>
+  <div class="row">
+    <div class="col-lg">.col-lg</div>
+    <div class="col-lg">.col-lg</div>
+    <div class="col-lg">.col-lg</div>
+  </div>
+
+  <h2><code>.w-100</code> Auto-layout Columns: Equal-width multi-row</h2>
+  <ul>
+    <li>Separate equal-columns into rows without using <code>.row</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">.col 1 of 4</div>
+    <div class="col">.col 2 of 4</div>
+    <div class="w-100"></div>
+    <div class="col">.col 3 of 4</div>
+    <div class="col">.col 4 of 4</div>
+  </div>
+
+  <h2>Auto-layout Columns: Set width for some columns and even widths for the rest columns</h2>
+  <ul>
+    <li>Separate equal-columns into rows without using <code>.row</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">.col 1 of 4</div>
+    <div class="col-3">.col-3 2 of 4</div>
+    <div class="col-2">.col-2 3 of 4</div>
+    <div class="col">.col 4 of 4</div>
+  </div>
+
+  <h2>Auto-layout Columns: Variable width for some columns and even widths for the rest columns</h2>
+  <ul>
+    <li><code>.row.justify-content-md-center</code></li>
+  </ul>
+  <div class="row justify-content-md-center">
+    <div class="col">.col 1 of 4</div>
+    <div class="col-md-auto">.col-md-auto Variable width content 2 of 4</div>
+    <div class="col-2">.col-2 3 of 4</div>
+    <div class="col">.col 4 of 4</div>
+  </div>
+
+  <h2>Auto-layout Columns: Variable Width, Fixed Width and Even Width</h2>
+  <ul>
+    <li><code>.row</code></li>
+    <li><code>.col-{breakpoint}-auto</code> <code>.col-md-auto</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">.col 1 of 4</div>
+    <div class="col-md-auto">.col-md-auto Variable width content 2 of 4</div>
+    <div class="col-2">.col-2 3 of 4</div>
+    <div class="col">.col 4 of 4</div>
+  </div>
+
+</div>
+
+
+<div class="container">
+  <h2><code>.container</code></h2>
+
+  <h2><code>.row.align-items-*</code></h2>
+  <ul>
+    <li>When .row has larger high than <code>.col*</code></li>
+    <li><code>.row.cs-item-higher-row</code></li>
+  </ul>
+  <div class="row cs-item-higher-row align-items-start">
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+  </div>
+  <div class="row cs-item-higher-row align-items-center">
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+  </div>
+  <div class="row cs-item-higher-row align-items-end">
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+    <div class="col">
+      One of three columns
+    </div>
+  </div>
+
+  <h2><code>.col*.align-items-*</code></h2>
+  <ul>
+    <li>When .row has larger high than <code>.col*</code></li>
+    <li><code>.row.cs-item-higher-row</code></li>
+  </ul>
+  <div class="row cs-item-higher-row">
+    <div class="col align-self-start">
+      One of three columns
+    </div>
+    <div class="col align-self-center">
+      One of three columns
+    </div>
+    <div class="col align-self-end">
+      One of three columns
+    </div>
+  </div>
+
+  <h2><code>.row.justify-content-*</code> Horizontal Alignment</h2>
+  <ul>
+    <li>When .row has larger high than <code>.col*</code></li>
+    <li><code>.row.cs-item-higher-row</code></li>
+  </ul>
+  <div class="row justify-content-start">
+    <div class="col-4">.col-4</div>
+    <div class="col-4">.col-4</div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4">.col-4</div>
+    <div class="col-4">.col-4</div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-4">.col-4</div>
+    <div class="col-4">.col-4</div>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-4">.col-4</div>
+    <div class="col-4">.col-4</div>
+  </div>
+  <div class="row justify-content-between">
+    <div class="col-4">.col-4</div>
+    <div class="col-4">.col-4</div>
+  </div>
+
+  <h2><code>.row.no-gutters</code></h2>
+  <div class="row no-gutters">
+    <div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  </div>
+
+  <h2><code>.w-100</code> Break columns into new row</h2>
+  <div class="row">
+    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+
+    <!-- Force next columns to break to new line -->
+    <div class="w-100"></div>
+
+    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+  </div>
+
+  <h2><code>.w-100</code> Break columns into new row based on breakpoints</h2>
+  <div class="row">
+    <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+    <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+
+    <!-- Force next columns to break to new line at md breakpoint and up -->
+    <div class="w-100 d-none d-md-block"></div>
+
+    <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+    <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+  </div>
+
+  <h2><code>.order-{order}</code> <code>.order-{breakpoint}-{order}</code></h2>
+  <ul>
+    <li>order is 1 to 12</li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      First, but unordered
+    </div>
+    <div class="col order-12">
+      Second, but last
+    </div>
+    <div class="col order-1">
+      Third, but first
+    </div>
+  </div>
+
+  <h2><code>.order-first</code> <code>.order-last</code></h2>
+  <ul>
+    <li>May mix with <code>.order-{breakpoint}-{order}</code></li>
+  </ul>
+  <div class="row">
+    <div class="col order-last">
+      First, but last
+    </div>
+    <div class="col">
+      Second, but unordered
+    </div>
+    <div class="col order-first">
+      Third, but first
+    </div>
+  </div>
+
+  <h2><code>.offset-{breakpoint}-*</code></h2>
+  <ul>
+    <li>e.g. <code>.offset-md-4</code> moves <code>.col-md-4</code> over four columns</li>
+  </ul>
+  <div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+    <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+  </div>
+
+  <h2>Reset offsets</h2>
+  <ul>
+    <li><code>col-sm-5 offset-sm-2 col-md-6 offset-md-0</code></li>
+    <li><code>col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0</code></li>
+  </ul>
+  <div class="row">
+    <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+    <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+    <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</div>
+  </div>
+
+  <h2>Push column to left or right</h2>
+  <div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
+    <div class="col-md-3 ml-md-auto">.col-md-3 .ml-md-auto</div>
+  </div>
+  <div class="row">
+    <div class="col-auto mr-auto">.col-auto .mr-auto</div>
+    <div class="col-auto">.col-auto</div>
+  </div>
+
+  <h2>Variables</h2>
+  <div class="form-group">
+<textarea readonly rows="5" class="form-control">
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+</textarea>
+
+</div>
+
+<style>
+  .row div {
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+  }
+  .row.cs-item-higher-row {
+    height:100px;
+    background-color:rgba(255,0,0,.1);
+  }
+  .col-no-padding{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+</style>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
