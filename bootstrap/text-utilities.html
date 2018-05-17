@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Text Utilities</title>
+</head>
+<body>
+
+<div class="container">
+  <h1>Text Utilities</h1>
+  <h2>Alignment</h2>
+  <ul>
+    <li><code>.text-{value}</code> for xs</li>
+    <li><code>.text-{breakpoint}-{value}</code> for sm, md, lg, and xl.</li>
+  </ul>
+
+  <h2>Values</h2>
+  <ul>
+    <li>left</li>
+    <li>center</li>
+    <li>right</li>
+  </ul>
+  <p class="text-left">Left aligned text on all viewport sizes.</p>
+  <p class="text-center">Center aligned text on all viewport sizes.</p>
+  <p class="text-right">Right aligned text on all viewport sizes.</p>
+  <p class="text-sm-left">Left aligned text on viewports sized SM (small) or wider.</p>
+  <p class="text-md-left">Left aligned text on viewports sized MD (medium) or wider.</p>
+  <p class="text-lg-left">Left aligned text on viewports sized LG (large) or wider.</p>
+  <p class="text-xl-left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
+
+  <h2>No wrap</h2>
+  <ul>
+    <li><code>.text-nowrap</code></li>
+  </ul>
+  <div class="text-nowrap bg-danger" style="width: 8rem;">
+    This text should overflow the parent.
+  </div>
+
+  <h2>Ellipsis</h2>
+  <ul>
+    <li><code>.text-truncate</code> requires current element is inline-block or block</li>
+  </ul>
+
+  <!-- Block level -->
+  <div class="row">
+    <div class="col-2 text-truncate">
+      Praeterea iter est quasdam res quas ex communi.
+    </div>
+  </div>
+
+  <!-- Inline level -->
+  <span class="d-inline-block text-truncate" style="max-width: 150px;">
+    Praeterea iter est quasdam res quas ex communi.
+  </span>
+
+  <h2>Transform</h2>
+  <ul>
+    <li><code>.text-lowercase</code></li>
+    <li><code>.text-uppercase</code></li>
+    <li><code>.text-capitalize</code></li>
+  </ul>
+  <p class="text-lowercase">Lowercased text.</p>
+  <p class="text-uppercase">Uppercased text.</p>
+  <p class="text-capitalize">CapiTaliZed text.</p>
+
+  <h2>Font Weight and Italics</h2>
+  <ul>
+    <li><code>.font-weight-bold</code></li>
+    <li><code>.font-weight-normal</code></li>
+    <li><code>.font-weight-light</code></li>
+    <li><code>.font-italic</code></li>
+  </ul>
+
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<style>
+  .row div {
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+  }
+  .row.cs-item-higher-row {
+    height:100px;
+    background-color:rgba(255,0,0,.1);
+  }
+  .col-no-padding{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+</style>
+
+<script>
+
+</script>
+</body>
+</html>
