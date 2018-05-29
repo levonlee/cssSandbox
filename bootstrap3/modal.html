@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  <title>Thumbnail</title>
+  <title>Modal</title>
 </head>
 <body>
-<h1>Thumbnail</h1>
+<h1>Modal</h1>
 
 <div class="container">
-  <h2>.thumbnail: similar to BS4's <code>.card</code></h2>
+  <h2>Basics</h2>
   <ul>
     <li>Remove .fade to turn off animation <code>.modal.fade</code></li>
   </ul>
@@ -60,6 +60,18 @@
         Launch modal with YouTube video #2
       </button>
 
+    </div>
+  </div>
+
+  <h2>Optional Header, Footer and Body</h2>
+  <ul>
+    <li><code>.modal-header</code> <code>.modal-footer</code> and even <code>.modal-body</code> is optional under <code>.modal-content</code></li>
+  </ul>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalLargeNoHead">
+        Launch large modal with just <code>.modal-header</code>
+      </button>
     </div>
   </div>
 
@@ -156,6 +168,34 @@
     </div>
   </div>
 </div>
+
+<!-- Modal: Large Optional Header and footer-->
+<div class="modal fade" id="myModalLargeNoHead" tabindex="-1" role="dialog" aria-labelledby="myModalLargeLabelNoHead">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLargeLabelNoHead">Thank you!</h4>
+      </div>
+      <!--
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-9" id="myModalLargeLabelNoHead">
+            Thank you
+          </div>
+        </div>
+      </div>
+      -->
+      <!--
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+
 
 <style>
   /* .modal-backdrop is near body.
