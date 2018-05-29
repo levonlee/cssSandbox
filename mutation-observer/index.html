@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Mutation Observer</title>
+</head>
+<body>
+<h1>window.MutationObserver</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="http://via.placeholder.com/300x250/?text=300x250" alt="image alt" title="image title" />
+    </div>
+  </div>
+</div>
+
+<style>
+
+</style>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+-->
+
+<script>
+  $(function() {
+    $('img[title]').each(function() {
+      $(this).removeAttr('title');
+      //$(this).attr('title', 'abc');
+    });
+  });
+
+  // callback function has 2 arguments
+  // mutations: an array of objects of type MutationRecord
+  // observer: this MutationObserver instance
+  var observer = new MutationObserver(function (mutations, observer) {
+    mutations.forEach(function (mutation) {
+
+      // A MutationRecord has properties
+      // Some of them might be different based on MutationObserver's options
+      // https://developer.mozilla.org/en-US/docs/Web/API/MutationRecord
+
+      // mutation.type == 'attributes'
+      if (mutation.type == 'attributes') {
+        console.log('mutation.attributeName', mutation.attributeName);
+        console.log('mutation.oldValue', mutation.oldValue); // config has to have attributeOldValue: true
+        var newTarget = mutation.target; // mutation.target is the target Node object after it's changed
+        console.log(newTarget);
+        var newAttr = newTarget.getAttribute("title");
+        console.log(newAttr); // attribute value after it's changed
+        if (newAttr === null) {
+          console.log('the attribute title is deleted');
+          // add value back
+          newTarget.setAttribute('title', mutation.oldValue);
+        }
+      }
+
+      // Loop addedNodes
+      // addedNodes return NodeList which doesn't have .forEach
+      // js:Function.call
+      Array.prototype.forEach.call(
+        mutation.addedNodes,
+        function (addedNode) {
+          if (addedNode.id == "bar") {
+            console.log("bar was added!");
+          }
+        });
+
+      Array.prototype.forEach.call(
+        mutation.removedNodes,
+        function (removedNode) {
+          console.log(removedNode);
+        });
+
+    });
+  });
+
+  // Define the parent element
+  var targetNode = document.getElementById('foo');
+  // Or $('#foo').get(0)
+
+  var targetNodes = document.querySelectorAll('img');
+
+  // Which event should be observed
+  // https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
+  var config = {
+    attributes: true,
+    attributeOldValue: true, // set to true if attributes is set to true
+    // attributeFilter: ['attr1', 'attr2'], // filter out an array of attribute local names in observation
+    childList: true, // add/remove child elements including text nodes
+    subtree: true, // any change to the subtree including all descendants
+    characterData: true, // maybe image or multimedia changes?
+    characterDataOldValue: true
+  };
+
+  // Observe single element, usually the parent node
+  // You can use document for the whole HTML document
+  //observer.observe(targetNode, config);
+
+  // Observe multiple elements
+  Array.prototype.forEach.call(
+    targetNodes,
+    function (targetNode) {
+      observer.observe(targetNode, config);
+    }
+  );
+
+  // You may stop observing later
+  //observer.disconnect();
+
+</script>
+
+</body>
+</html>
