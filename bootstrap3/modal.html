@@ -68,9 +68,32 @@
     <li><code>.modal-header</code> <code>.modal-footer</code> and even <code>.modal-body</code> is optional under <code>.modal-content</code></li>
   </ul>
   <div class="row">
+    <div class="col-sm-4 col-md-4">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalLargeNoBodyNoFoot">
+        With just <code>.modal-header</code>
+      </button>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalLargeNoFoot">
+        With <code>.modal-header</code> <code>.modal-body</code>
+      </button>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalLargeNoHead">
+        With <code>.modal-body</code> <code>.modal-footer</code>
+      </button>
+    </div>
+  </div>
+
+  <h2>Vertical Center Modal</h2>
+  <ul>
+    <li><a href="https://codepen.io/dimbslmh/full/mKfCc" title="">Reference</a></li>
+    <li><code>.modal.lili-vert-center</code></li>
+  </ul>
+  <div class="row">
     <div class="col-sm-6 col-md-4">
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalLargeNoHead">
-        Launch large modal with just <code>.modal-header</code>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalLargeVertCenter">
+        With just <code>.modal-header</code>
       </button>
     </div>
   </div>
@@ -169,15 +192,22 @@
   </div>
 </div>
 
-<!-- Modal: Large Optional Header and footer-->
-<div class="modal fade" id="myModalLargeNoHead" tabindex="-1" role="dialog" aria-labelledby="myModalLargeLabelNoHead">
+<!-- Modal: Large No Header No Footer -->
+<div class="modal fade" id="myModalLargeNoBodyNoFoot" tabindex="-1" role="dialog" aria-labelledby="myModalLargeLabelNoBodyNoFoot">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLargeLabelNoHead">Thank you!</h4>
+        <h4 class="modal-title" id="myModalLargeLabelNoBodyNoFoot">Thank you!</h4>
       </div>
-      <!--
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Large No Header -->
+<div class="modal fade" id="myModalLargeNoHead" tabindex="-1" role="dialog" aria-labelledby="myModalLargeLabelNoHead">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
       <div class="modal-body">
         <div class="row">
           <div class="col-sm-9" id="myModalLargeLabelNoHead">
@@ -185,17 +215,44 @@
           </div>
         </div>
       </div>
-      -->
-      <!--
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
-      -->
     </div>
   </div>
 </div>
 
+<!-- Modal: Large No Footer -->
+<div class="modal fade" id="myModalLargeNoFoot" tabindex="-1" role="dialog" aria-labelledby="myModalLargeLabelNoFoot">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLargeLabelNoFoot">Header: Thank you!</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-9">
+            Body: Thank you!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Large Vertical Center -->
+<div class="modal fade lili-vert-center" id="myModalLargeVertCenter" tabindex="-1" role="dialog" aria-labelledby="myModalLargeLabelVertCenter">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLargeLabelVertCenter">Thank you!</h4>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
   /* .modal-backdrop is near body.
@@ -231,6 +288,26 @@
     text-shadow: none;
     opacity: 1;
   }
+
+  .modal.lili-vert-center {
+    text-align: center;
+    padding: 0!important;
+  }
+
+  .modal.lili-vert-center:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+
+  .modal.lili-vert-center .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
 </style>
 
 
