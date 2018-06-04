@@ -13,9 +13,28 @@
 <body>
 <h1>Hello, buttons!</h1>
 
-<a class="btn btn-primary" href="#" role="button">A tag</a>
-<button type="button" class="btn btn-outline-primary">Button tag, outline color</button>
-<button type="button" class="btn btn-primary btn-sm">Small button</button>
+<a class="btn btn-primary" href="#" role="button"><code>a.btn.btn-primary</code></a>
+<button type="button" class="btn btn-outline-primary"><code>button.btn.btn-outline-primary</code></button>
+<button type="button" class="btn btn-primary btn-sm"><code>button.btn.btn-primary.btn-sm</code></button>
+
+<h2><code>.btn-block</code></h2>
+<ul>
+  <li>Take full width</li>
+  <li>Text inside button will extend if the button width is too small</li>
+</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary btn-block" href="#" role="button">A tag</a>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-outline-primary btn-block">Button tag, outline color</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary btn-sm btn-block">Small button</button>
+    </div>
+  </div>
+</div>
 
 <style>
 

@@ -1,0 +1,52 @@
+.no-gutter > [class*='col-']{
+  padding-right:0;
+  padding-left:0;
+}
+.lili-accordion-responsive-nav [class*=col-]:not(:last-child) {
+  padding-right:5px;
+}
+.lili-accordion-responsive-nav button.btn {
+  border:none;
+  border-radius:0;
+  color:#fff;
+  background-color:#939598;
+  background-image:none;
+  text-shadow:none;
+  position:relative;
+}
+.lili-accordion-responsive-nav button.btn:hover,
+.lili-accordion-responsive-nav button.btn:focus,
+.lili-accordion-responsive-nav button.btn:active,
+.lili-accordion-responsive-nav button.btn.active {
+  background-color:rgb(255, 130, 3);
+}
+.lili-accordion-responsive-nav button.btn:hover::after,
+.lili-accordion-responsive-nav button.btn:focus::after,
+.lili-accordion-responsive-nav button.btn:active::after,
+.lili-accordion-responsive-nav button.btn.active::after {
+  top: 100% !important;
+  left: 10% !important;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgb(255, 130, 3);
+  margin-left: -4px;
+}
+@media (max-width:1200px) {
+  .lili-accordion-responsive-nav [class*=col-]:not(:last-child) {
+    padding-right:0;
+  }
+  .lili-accordion-responsive-nav.lili-top [class*=col-].active ~ [class*=col-]{
+    display:none;
+  }
+  .lili-accordion-responsive-nav.lili-bottom [class*=col-] {
+    display:none;
+  }
+  .lili-accordion-responsive-nav.lili-bottom [class*=col-].active ~ [class*=col-]{
+    display:block;
+  }
+}
