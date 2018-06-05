@@ -19,6 +19,7 @@
 .lili-accordion-responsive-nav button.btn:active,
 .lili-accordion-responsive-nav button.btn.active {
   background-color:rgb(255, 130, 3);
+  outline:none;
 }
 .lili-accordion-responsive-nav button.btn:hover::after,
 .lili-accordion-responsive-nav button.btn:focus::after,
