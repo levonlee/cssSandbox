@@ -81,11 +81,14 @@
     <li><code>.row.lili-vert-flex</code></li>
   </ul>
   <div class="row lili-vert-center-flex">
-    <div class="col-xs-2 col-md-4">
+    <div class="col-xs-2 col-md-4 lili-vert-center-flex-child">
       <img src="http://via.placeholder.com/300x250/?text=.col-xs-2.col-md-4" class="img-responsive center-block lili-vert-center-child" alt="Responsive image">
     </div>
-    <div class="col-xs-8 col-md-4">.col-xs-8 .col-md-4</div>
-    <div class="col-xs-2 col-md-4">.col-xs-2 .col-md-4</div>
+    <div class="col-xs-8 col-md-4">
+      <p>.col-xs-8 .col-md-4</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eos iure laboriosam, magni maiores necessitatibus quasi repellat tenetur voluptates. At culpa deleniti dolore esse nobis sapiente. Doloremque, necessitatibus, sint.</p>
+    </div>
+    <div class="col-xs-2 col-md-4 lili-vert-center-flex-child">.col-xs-2 .col-md-4</div>
   </div>
 
   <h2>Column with no padding</h2>
@@ -187,7 +190,7 @@
     -ms-flex-wrap:wrap;
     flex-wrap:wrap;
   }
-  .row.lili-vert-center-flex > [class*="col-"] {
+  .row.lili-vert-center-flex .lili-vert-center-flex-child {
     display: flex;
     align-items: center;
     justify-content: center; /* Optional, to align inner items
