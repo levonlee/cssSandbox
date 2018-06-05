@@ -62,8 +62,9 @@
     <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
   </div>
 
-  <h2>Vertical Center a Row of Columns</h2>
+  <h2>Vertical Center a Row of Columns - Method #1</h2>
   <ul>
+    <li>Responsiveness will be lost.. Widths of columns are auto adjusted..</li>
     <li><code>.row.lili-vert-center</code></li>
     <li><code>.row.lili-vert-center [class*="col-"].lili-vert-center</code></li>
   </ul>
@@ -73,6 +74,19 @@
     </div>
     <div class="col-xs-6 col-md-4 lili-vert-center">.col-xs-6 .col-md-4</div>
     <div class="col-xs-6 col-md-4 lili-vert-center">.col-xs-6 .col-md-4</div>
+  </div>
+  <h2>Vertical Center a Row of Columns: Method #2</h2>
+  <ul>
+    <li>Responsiveness will be lost.. Widths of columns are based on the ratio of <code>.col-*</code>.</li>
+    <li><code>.row.lili-vert-center</code></li>
+    <li><code>.row.lili-vert-center [class*="col-"].lili-vert-center</code></li>
+  </ul>
+  <div class="row lili-vert-center-flex">
+    <div class="col-xs-12 col-md-4">
+      <img src="http://via.placeholder.com/300x250/?text=.col-xs-6.col-md-4" class="img-responsive center-block lili-vert-center-child" alt="Responsive image">
+    </div>
+    <div class="col-xs-12 col-md-4">.col-xs-6 .col-md-4</div>
+    <div class="col-xs-12 col-md-4">.col-xs-6 .col-md-4</div>
   </div>
 
   <h2>Column with no padding</h2>
@@ -165,6 +179,17 @@
     vertical-align:middle;
     float:none;
   }
+  .row.lili-vert-center-flex {
+    display: flex;
+    flex-direction: row;
+  }
+  .row.lili-vert-center-flex > [class*="col-"] {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Optional, to align inner items
+                              horizontally inside the column */
+  }
+
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
