@@ -34,7 +34,7 @@
       });
 
       // show content
-      $('.lili-accordion-responsive-content [class*="col-"]').addClass('hidden');
+      $('.lili-accordion-responsive-content .row > [class*="col-"]').addClass('hidden');
       $('#'+$content_target).removeClass('hidden');
     }
   }
