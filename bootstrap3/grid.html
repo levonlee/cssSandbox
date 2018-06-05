@@ -62,7 +62,24 @@
     <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
   </div>
 
-  <!-- Columns are always 50% wide, on mobile and desktop -->
+  <h2>Vertical Center a Row of Columns</h2>
+  <ul>
+    <li><code>.row.lili-vert-center</code></li>
+    <li><code>.row.lili-vert-center [class*="col-"].lili-vert-center</code></li>
+  </ul>
+  <div class="row lili-vert-center">
+    <div class="col-xs-6 col-md-4 lili-vert-center">
+      <img src="http://via.placeholder.com/300x250/?text=.col-xs-6.col-md-4" class="img-responsive center-block" alt="Responsive image">
+    </div>
+    <div class="col-xs-6 col-md-4 lili-vert-center">.col-xs-6 .col-md-4</div>
+    <div class="col-xs-6 col-md-4 lili-vert-center">.col-xs-6 .col-md-4</div>
+  </div>
+
+  <h2>Column with no padding</h2>
+  <ul>
+    <li>With padding <code>.row .col-xs-6 .row .col-xs-6</code></li>
+    <li>Without padding <code>.row .col-xs-6 .row .col-xs-6.col-no-padding</code></li>
+  </ul>
   <div class="row">
     <div class="col-xs-6">
       <div class="row">
@@ -78,7 +95,11 @@
     </div>
   </div>
 
-  <!-- Row no gutter -->
+  <h2>Row and Columns with no padding</h2>
+  <ul>
+    <li><code>.row.no-gutter</code></li>
+    <li><code>.no-gutter > [class*='col-']</code></li>
+  </ul>
   <div class="row">
     <div class="col-xs-6">
       <div class="row no-gutter">
@@ -135,6 +156,14 @@
   .no-gutter > [class*='col-'] {
     padding-right:0;
     padding-left:0;
+  }
+  .row.lili-vert-center {
+    display:table;
+  }
+  .row.lili-vert-center [class*="col-"].lili-vert-center {
+    display:table-cell;
+    vertical-align:middle;
+    float:none;
   }
 </style>
 
