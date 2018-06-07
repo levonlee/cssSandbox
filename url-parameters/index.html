@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
 <div class="container">
   <div class="row">
     <div class="col">
@@ -29,6 +28,11 @@
 
       <button type="button" class="btn btn-primary" onclick="console.log('nonexisturlparam', myApp.getUrlParameter('nonexisturlparam'))">
         Console return URL parameter nonexisturlparam
+      </button>
+
+      <h2>myApp.setUrlParameter('seturlparam','abc')</h2>
+      <button type="button" class="btn btn-primary" onclick="console.log('seturlparam', myApp.setUrlParameter('seturlparam', 'abc'))">
+        Console return search parameters after set URL parameter seturlparam
       </button>
 
     </div>
@@ -74,6 +78,27 @@
           return sParameterName[1] === undefined ? true : sParameterName[1];
         }
       }
+    };
+
+    ns.setUrlParameter = function (paramName, value, url) {
+      if (value == null) {
+        value = '';
+      }
+      if (url == null) {
+        url = window.location.search;
+      }
+      var encodedValue = encodeURIComponent(value);
+      // strip param with no value and no equal sign ?abc
+      var pattern_empty = new RegExp('\\b('+paramName+')?(&|$)');
+      if (url.search(pattern_empty)>=0) {
+        url = url.replace(pattern_empty,'$2');
+      }
+      var pattern = new RegExp('\\b('+paramName+'=).*?(&|$)');
+      if (url.search(pattern)>=0) {
+        return url.replace(pattern,'$1' + encodedValue + '$2');
+      }
+      url = url.replace(/\?$/,'');
+      return url + (url.indexOf('?')>=0 ? '&' : '?') + paramName + '=' + encodedValue;
     };
 
   }($));
