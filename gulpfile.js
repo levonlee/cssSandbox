@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var gResponsive = require('gulp-responsive');
+// https://github.com/mahnunchik/gulp-responsive
 
 gulp.task('autoprefixer', function () {
   var postcss = require('gulp-postcss');
@@ -82,6 +83,40 @@ gulp.task('img-responsive', function () {
       progressive: true,
       // Strip all metadata
       withMetadata: false,
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
+function padLeft(nr, n, str){
+  return Array(n-String(nr).length+1).join(str||'0')+nr;
+}
+gulp.task('rename-img-add-index', function () {
+  var rename = require('gulp-rename');
+  var index = 0;
+
+  return gulp.src('src/*.{jpg,JPG}')
+    .pipe(rename(function (path) {
+      path.basename = '2018-' + padLeft(++index,3);
+      path.extname = '.JPG';
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('img-resize-square', function () {
+  // case sensitive
+  return gulp.src('src/*.JPG')
+    .pipe(gResponsive({
+      '*': {
+        width: 140,
+        height: 140,
+        format: 'jpeg' // specify output format
+      },
+    }, {
+      quality: 100,
+      progressive: true,
+      withMetadata: false,
+      //errorOnUnusedConfig: false, // don't emit error when a filter is not used
+      //errorOnUnusedImage: false // don't emit error when an image is not used
     }))
     .pipe(gulp.dest('dist'));
 });
