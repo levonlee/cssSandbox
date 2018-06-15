@@ -202,9 +202,7 @@
     height:124px; /* comment out this first and get the largest height at largest viewport */
   }
   #lili-ex-2 .cs-i-logos figure{
-    flex:0 0 100px; /* fixed width for logos */
-    /*margin-left:1rem;
-    margin-right:1rem;*/
+    flex:0 0 100px; /* fixed width for logos, this is usually larger than the biggest item width. Pay attention to the total width and your cut-off point which is 768px */
     margin-left:0;
     margin-right:0;
     margin-bottom:0;
@@ -216,21 +214,32 @@
   #lili-ex-2 .cs-i-logos figure.cs-i-wbtv,
   #lili-ex-2 .cs-i-logos figure.cs-i-archi-digest{
     flex:0 0 60px; /* adjust logos that are too high (e.g. it's a square vs others rectangles) */
+    /* padding-top: 7px; move down certain logos */
   }
   @media (max-width:768px) {
     #lili-ex-2 .cs-i-logos figure{
+      padding-top:0!important; /* This is reset the top padding for any item that has padding-top set on desktop */
       flex:0 0 70px; /* #lili-ex-2 .cs-i-logos figure is used to fixed height flex:0 0 100px as above*/
       /* change it to 70px */
+      /* or set it to auto height */
+      /* flex:0 0 auto; */
+
     }
     #lili-ex-2 .cs-i-logos {
       flex-direction: column;
-      height:350px; /* new fixed height 70 * 5 items = 350px */
+      height:350px; /* Figure out the item with the largest height and times the number of items in any group. new fixed height 70 * 5 items = 350px */
     }
     /* set img to contain inside the figure */
     #lili-ex-2 .cs-i-logos figure .figure-img{
       width:auto;
       max-height:40px; /* figure total height is 70px, set to a smaller value to create space */
     }
+    /* If you want to the same width and height on mobile as on desktop */
+    /*
+    #lili-ex-2 .cs-i-logos figure.cs-i-wbtv .figure-img{
+      max-height:45px;
+    }
+    */
   }
 </style>
 
