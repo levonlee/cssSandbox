@@ -8,23 +8,71 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <title>Hello, world!</title>
+  <title>Navbar</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
+<h1>Navbar</h1>
+<ul>
+  <li><a href="https://rawgit.com/levonlee/cssSandbox/master/bootstrap/nav.html">This Page</a></li>
+  <li><a href="https://getbootstrap.com/docs/4.0/components/navbar/">Bootstrap Doc</a></li>
+  <li><a href="https://www.codeply.com/go/qhaBrcWp3v">Navbar example on Codeply</a></li>
+</ul>
 
-<!--
-Navbar example
-https://www.codeply.com/go/qhaBrcWp3v
--->
+<h2>Example 1</h2>
+<ul>
+  <li><code>nav.navbar.navbar-expand{-sm|-md|-lg|-xl}.navbar-dark</code></li>
+  <li>Always collapse <code>.navbar-expand</code></li>
+  <li>
+    Placement <code>nav.navbar.fixed-top.navbar-expand{-sm|-md|-lg|-xl}.navbar-dark</code>
+    <ul>
+      <li><code>.fixed-top</code></li>
+      <li><code>.fixed-bottom</code></li>
+      <li><code>.sticky-top</code> (position:sticky not supported in IE11)</li>
+    </ul>
+  </li>
+  <li>Align navbar components <code>nav.navbar.justify-content-center</code></li>
+  <li><code>.navbar-light</code> <code>.navbar-dark</code> <code>.navbar-light.bg-*</code></li>
+  <li>Force navbar to be printed <code>nav.navbar.d-print</code></li>
+  <li>If not <code>nav</code>, then <code>div[role="navigation"]</code></li>
 
-<!-- color :: bg-light -->
-<!-- collapse at certain breakpoint :: .navbar-expand{-sm|-md|-lg|-xl} -->
-<!-- to always collapse .navbar-expand -->
-<!-- always not to collapse, don't include any .navbar-expand{-sm|-md|-lg|-xl} -->
+  <li>
+    Use <code>div.container</code> to wrap navbar components e.g. <code>div.container a.navbrand</code>
+  </li>
+
+  <li>
+    <code>a.navbar-brand</code>
+    <ul>
+      <li>Align left <code>a.navbar-brand.mr-auto</code></li>
+    </ul>
+  </li>
+
+  <li>
+    <code>button.navbar-toggler[data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]</code>
+    <ul>
+      <li>If there's no element before <code>.navbar-toggler</code>, then toggler is aligned to left</li>
+      <li>If there's element, then toggler is aligned to right</li>
+    </ul>
+  </li>
+
+  <li>
+    <code>div#navbarSupportedContent.collapse.navbar-collapse</code>
+    <ul>
+      <li>Any content can be put here but usually <code>ul.navbar-nav</code></li>
+      <li>
+        <code>ul.navbar-nav li.nav-item a.nav-link</code>
+        <ul>
+          <li>Align right <code>ul.navbar-nav.ml-auto.justify-content-end</code></li>
+          <li><code>li.nav-item.active</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <nav class="navbar navbar-expand-md navbar-dark justify-content-center lili-bg-blue">
-  <!-- a.navbar-brand.mr-auto :: align left -->
+
   <a class="navbar-brand mr-auto" href="#">Inventory Admin</a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -59,16 +107,51 @@ https://www.codeply.com/go/qhaBrcWp3v
   </div>
 </nav>
 
-<section style="background-color:red;">
-  <div class="">some content</div>
-</section>
+<h2>Example 2</h2>
+<ul>
+  <li><code>div.container-fluid nav.navbar</code></li>
+</ul>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md navbar-dark justify-content-center align-items-start lili-bg-blue">
+
+    <button class="navbar-toggler mr-auto align-self-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">NEWS <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+
+    <a class="navbar-brand" href="#">
+      <img src="http://via.placeholder.com/100x100/?text=100x100" alt=""/>
+    </a>
+
+  </nav>
+</div>
+
+<div class="container-fluid bg-success mt-5 py-5">
+  <div class="row">
+    <div class="col">
+      some content
+    </div>
+  </div>
+</div>
 
 <style>
   .lili-bg-blue {
     background-color: #2760ac;
   }
 </style>
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
