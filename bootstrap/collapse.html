@@ -145,6 +145,23 @@
 
   <div id="accordion2">
     <div class="card">
+      <div class="card-header" id="a2heading1">
+        <h5 class="m-0 p-0 d-flex align-items-center">
+          <button class="btn btn-link collapsed lili-btn-inline" data-toggle="collapse" data-target="#a2collapse1" aria-expanded="false" aria-controls="a2collapse1">
+            Collapsible Group Item #1 (Collapsed by default) <div class="lili-accordion-btn"></div>
+          </button>
+        </h5>
+      </div>
+      <div id="a2collapse1" class="collapse" aria-labelledby="a2heading1" data-parent="#a2heading1">
+        <div class="card-body">
+          <ul>
+            <li><code>button.collapsed[aria-expanded=false]</code></li>
+            <li><code>#a2collapse2.collapse</code></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
       <div class="card-header" id="a2heading2">
         <h5 class="m-0 p-0 d-flex align-items-center">
           <div class="lili-accordion-item-title-icon collapsed" data-toggle="collapse" data-target="#a2collapse2" aria-expanded="false" aria-controls="a2collapse2"></div>
