@@ -15,3 +15,22 @@
   width:23px;
   height:23px;
 }
+button.lili-btn-inline {
+  white-space:normal;
+  text-align:left;
+}
+button.lili-btn-inline:hover{
+  text-decoration:none;
+}
+button.lili-btn-inline .lili-accordion-btn {
+  background:url('../assets/material.io/round_remove_circle_black_18dp.png') no-repeat 0px 6px; /* Add 6px space on top */
+  background-size:13px auto; /* icon original size is 18x18 */
+  width:18px;
+  height:18px;
+  padding-top:2px;
+  display:inline-block;
+}
+button.lili-btn-inline.collapsed .lili-accordion-btn {
+  background:url('../assets/material.io/round_add_circle_black_18dp.png') no-repeat 0px 6px; /* Add 6px space on top */
+  background-size:13px auto; /* icon original size is 18x18 */
+}
