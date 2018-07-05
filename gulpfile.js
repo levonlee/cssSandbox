@@ -120,3 +120,26 @@ gulp.task('img-resize-square', function () {
     }))
     .pipe(gulp.dest('dist'));
 });
+
+gulp.task('img-convert-webp', function () {
+  // case sensitive
+  return gulp.src('src/*.png')
+    .pipe(gResponsive({
+      '*': {
+        //width: 140, height: 140, // convert only
+        // format: 'jpeg' // not needed as it follows rename: {extname}
+        rename: {
+          suffix: '-webp',
+          extname: '.webp'
+        }
+
+      },
+    }, {
+      quality: 100, // default 80 for all formats
+      //progressive: true, // for JPEG and PNG output only. default false
+      // withMetadata: false, // default false
+      //errorOnUnusedConfig: false, // don't emit error when a filter is not used
+      //errorOnUnusedImage: false // don't emit error when an image is not used
+    }))
+    .pipe(gulp.dest('dist'));
+});
