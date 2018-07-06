@@ -197,6 +197,17 @@
   </div>
 </div>
 
+<h2>SVG Sprite using <code>symbol</code> can't be loaded in CSS <code>background</code></h2>
+<ul>
+  <li>Use <code>g</code> instead of <code>symbol</code></li>
+</ul>
+<div class="row">
+  <div class="col">
+    <div class="lili-svg-as-bg">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at atque autem consectetur consequatur deleniti, dolorem ea incidunt iste laboriosam laudantium, maiores, minima neque rem reprehenderit sapiente sunt ullam voluptate.
+    </div>
+  </div>
+</div>
 
 <style>
   .lili-ex{
@@ -240,6 +251,12 @@
   }
   svg.svg--plus-dims path{
     fill:inherit!important; /* IE11 requires this */
+  }
+  .lili-svg-as-bg {
+    background:url('//dev.webonomic.nl/demos/yoga.svg#position_2') left top repeat;
+    width:100%;
+    height:400px;
+    font-size:1rem;
   }
 </style>
 
