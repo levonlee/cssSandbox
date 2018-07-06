@@ -159,6 +159,24 @@ gulp.task('svg-sprite', function() {
    }
    */
   var config = {
+    /*
+    shape: {
+      //transform: ['svgo'], // default. already optimized
+      transform: [{
+        svgo: {
+          plugins: [
+            //{convertStyleToAttrs: true} // enable a plugin
+            {inlineStyles: {onlyMatchedOnce: false}} // Since HTML5 has <style> stripped when svg file is not inline with HTML, we need to move styles to attributes
+          ]
+        }
+      }]
+      dimension: {
+        maxWidth: 2000, // Max. shape width. default
+        maxHeight: 2000, // Max. shape height. default
+        precision: 2, // default
+      }
+     },
+    */
     mode: {
       symbol: { // symbol mode to build the SVG
         // extra css/scss files are not needed because the example html for symbol mode is enough
@@ -183,8 +201,73 @@ gulp.task('svg-sprite', function() {
         // if source file is in a child folder in src e.g. src/a/minus.svg then
         // .svg--a--minus-dims sprite.svg#a--minus
         sprite: 'sprite.svg', //generated sprite name
-        bust:true, // add hash to sprite.svg e.g. sprite-88ac2671.svg
-        example: true // Build a sample page, please! e.g. dist/sprite/sprite.symbol.html
+        //bust:true, // add hash to sprite.svg e.g. sprite-88ac2671.svg
+        example: true // e.g. dist/sprite/sprite.symbol.html
+      }
+    }
+  };
+
+  return gulp.src('**/*.svg', { cwd: 'src'})
+    .pipe(gSvgSprite(config))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('svg-sprite-css-inline', function() {
+  var config = {
+     shape: {
+      transform: [{
+        svgo: {
+          plugins: [
+            //{convertStyleToAttrs: true} // enable a plugin
+            {inlineStyles: {onlyMatchedOnce: false}} // Since HTML5 has <style> stripped when svg file is not inline with HTML, we need to move styles to attributes
+          ]
+        }
+      }],
+     },
+    mode: {
+      symbol: { // symbol mode to build the SVG
+        render: {
+          css: false, // false to not generate CSS output option for icon sizing. {example:true}.
+          scss: false // SCSS output option for icon sizing
+        },
+        dest: 'sprite', // destination folder combined with gulp.dest e.g. dist/sprite
+        prefix: '.svg--%s', // BEM-style prefix if styles rendered. See dimensions
+        sprite: 'sprite-css-inline.svg', //generated sprite name
+        //bust:true, // add hash to sprite.svg e.g. sprite-88ac2671.svg
+        example: { dest: 'sprite-css-inline.html' } // Build a sample page, please! e.g. dist/sprite/sprite.symbol.html
+      }
+    }
+  };
+
+  return gulp.src('**/*.svg', { cwd: 'src'})
+    .pipe(gSvgSprite(config))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('svg-sprite-no-style-tag', function() {
+  var config = {
+    shape: {
+      id: { generator: 'icon-%s' }, // change shape ID's. Default shape ID is individual svg file name
+      transform: [{
+        svgo: {
+          plugins: [
+            {removeXMLProcInst: true}, // it seems xml header is not removed..
+            {removeStyleElement: true}
+          ]
+        }
+      }],
+    },
+    mode: {
+      symbol: { // symbol mode to build the SVG
+        render: {
+          css: false, // false to not generate CSS output option for icon sizing. {example:true}.
+          scss: false // SCSS output option for icon sizing
+        },
+        dest: 'sprite', // destination folder combined with gulp.dest e.g. dist/sprite
+        prefix: '.svg--%s', // BEM-style prefix if styles rendered. See dimensions
+        sprite: 'sprite-no-style-tag.svg', //generated sprite name
+        //bust:true, // add hash to sprite.svg e.g. sprite-88ac2671.svg
+        example: { dest: 'sprite-no-style-tag.html' } // Build a sample page, please! e.g. dist/sprite/sprite.symbol.html
       }
     }
   };
