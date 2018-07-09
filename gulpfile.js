@@ -276,3 +276,36 @@ gulp.task('svg-sprite-no-style-tag', function() {
     .pipe(gSvgSprite(config))
     .pipe(gulp.dest('dist'));
 });
+
+gulp.task('svg-sprite-mode-view', function() {
+  var config = {
+    shape: {
+      id: { generator: 'icon-%s' }, // change shape ID's. Default shape ID is individual svg file name
+      transform: [{
+        svgo: {
+          plugins: [
+            //{removeStyleElement: true}
+          ]
+        }
+      }],
+    },
+    mode: {
+      view: { // symbol mode to build the SVG
+        // mode common properties
+        render: {
+          css: false, // false to not generate CSS output option for icon sizing. {example:true}.
+          scss: false // SCSS output option for icon sizing
+        },
+        dest: 'sprite', // destination folder combined with gulp.dest e.g. dist/sprite
+        prefix: '.svg--%s', // BEM-style prefix if styles rendered. See dimensions
+        sprite: 'sprite-mode-view.svg', //generated sprite name
+        //bust:true, // add hash to sprite.svg e.g. sprite-88ac2671.svg
+        example: { dest: 'sprite-mode-view.html' } // Build a sample page, please! e.g. dist/sprite/sprite.symbol.html
+      }
+    }
+  };
+
+  return gulp.src('**/*.svg', { cwd: 'src'})
+    .pipe(gSvgSprite(config))
+    .pipe(gulp.dest('dist'));
+});
