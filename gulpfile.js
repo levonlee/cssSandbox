@@ -34,18 +34,15 @@ gulp.task('img-resize', function () {
       */
       // Resize all images to 100 pixels wide and add suffix -thumbnail
       '*': {
-        rename: { suffix: '-square' },
+        height: 15
+        //rename: { suffix: '-square' },
       },
     }, {
       // Global configuration for all images
-      // The output quality for JPEG, WebP and TIFF output formats
-      quality: 70,
-      // Use progressive (interlace) scan for JPEG and PNG output
-      progressive: true,
-      // Zlib compression level of PNG output format
-      compressionLevel: 6,
-      // Strip all metadata
-      withMetadata: false,
+      quality: 100, // default 80. The output quality for JPEG, WebP and TIFF output formats
+      progressive: true, // Use progressive (interlace) scan for JPEG and PNG output
+      compressionLevel: 6, // default. Zlib compression level of PNG output format
+      withMetadata: false, // default. Strip all metadata
     }))
     .pipe(gulp.dest('dist'));
 });
