@@ -1,0 +1,165 @@
+.reveal {
+  touch-action:auto;
+}
+.reveal section.scrollable {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: 100%; /* or a fixed height*/
+  box-sizing:border-box;
+}
+.reveal section.scrollable img{
+  max-height:none;
+}
+.reveal section.scrollable-parent {
+  /* for parent of vertical sections*/
+  height:100%;
+}
+.reveal .slides section.cs-slide-1 {
+  padding-top:0;
+  bottom:0;
+}
+div.wkc-cover_info {
+  background-color:#fff;
+  width:80%;
+  margin:0 auto;
+}
+div.wkc-cover_info div.wkc-cover_logo img{
+  box-shadow:none;
+}
+div.wkc-cover_info div.wkc-ci_icons {
+  width:80%;
+  margin:0 auto;
+}
+div.wkc-cover_info div.wkc-ci_icons img{
+  margin:0 0;
+  box-shadow:none;
+}
+@media (min-width:568px) {
+  div.wkc-cover_info {
+    width:50%;
+    margin:0 0 0 auto;
+  }
+
+  .reveal .slides section.cs-slide-1 div.wkc-cover_logo img {
+    margin-bottom:0;
+  }
+}
+.reveal .slides > section.cs-slide-2 {
+  padding:0;
+}
+.reveal section.cs-slide-2 img:first-child {
+  border:none;
+  width:auto;
+  /*max-height:80vh;*/
+  margin:0 auto;
+  box-shadow:none;
+  display:block;
+}
+.reveal section.cs-slide-2 img.wk-btn {
+  width:60%;
+  background: #ed812d;
+  padding: 15px 20px;
+  margin:0 auto 1rem auto;
+  border:none;
+  display:block;
+}
+.reveal section.cs-slide-contact {
+}
+.reveal section.cs-slide-contact a.wk-btn-contact:before{
+  content:"Click on card to print";
+  display:block;
+  font-size:1rem;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  color:#fff;
+}
+.reveal section.cs-slide-contact a,
+.reveal section.cs-slide-contact img {
+  box-shadow:none;
+  background:none;
+  border:none;
+  display:block;
+}
+.reveal section.cs-slide-contact .wk-btns-cards,
+.reveal section.cs-slide-contact .wk-btns-email,
+.reveal section.cs-slide-contact .social-btns {
+  width:80%;
+  margin:0 auto;
+}
+.reveal section.cs-slide-contact .wk-btns-email{
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+.reveal section.cs-slide-contact a.wk-btn-contact img {
+  width:auto;
+  max-height:25vh;
+  margin:0 auto;
+  border:none;
+  display:block;
+  box-shadow:none;
+  background:none;
+}
+.reveal section.cs-slide-contact a.wk-btn-contact:first-child img{
+  padding-bottom:15vh;
+}
+.reveal section.cs-slide-panel-cover{
+  padding:0;
+}
+.reveal section.cs-slide-panel-cover img {
+  border:none;
+  box-shadow:none;
+  margin:0 auto;
+  display:block;
+  width:100%;
+  max-width:none;
+}
+.cs-slide-panel p{
+  color:#029be1;
+  font-size:1.7rem;
+  margin-bottom:0;
+}
+.reveal section.cs-slide-panel img {
+  border:none;
+  box-shadow:none;
+  display:block;
+  margin:0 auto;
+}
+.reveal section .social-links{
+  width:95%;
+  margin:-15% auto 0 auto;
+  z-index:100;
+}
+.reveal section .social-links .sl-block{
+  width:25%;
+  float:left;
+}
+.reveal section .social-links .sl-block.sl-tel{
+  width:29%;
+}
+.reveal section .social-links .sl-block.sl-web{
+  width:23%;
+}
+.reveal section .social-links .sl-block.sl-twitter{
+  width:20%;
+}
+.reveal section .social-links .sl-block.sl-linkedin{
+  width:28%;
+}
+.reveal section.cs-slide-welcome{
+  padding:0;
+}
+.reveal section.cs-s-middle img{
+  border:none;
+  box-shadow:none;
+}
+.slide-menu-toolbar-label{
+  display:none;
+}
+.reveal .slide-menu-button {
+  top:1rem;
+  right:1rem;
+  left:auto!important;
+  bottom:auto!important;
+}
+.reveal .slide-menu-button a{
+  color:#444;
+}
