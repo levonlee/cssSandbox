@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
   gResponsive = require('gulp-responsive'),
   // https://github.com/mahnunchik/gulp-responsive
-  gSvgSprite = require('gulp-svg-sprite');
+  gSvgSprite = require('gulp-svg-sprite'),
+  gImageMin = require('gulp-imagemin');
 
 gulp.task('autoprefixer', function () {
   var postcss = require('gulp-postcss');
@@ -140,6 +141,27 @@ gulp.task('img-convert-webp', function () {
       //errorOnUnusedImage: false // don't emit error when an image is not used
     }))
     .pipe(gulp.dest('dist'));
+});
+
+
+gulp.task('img-min', () => {
+  gulp.src('src/*')
+  .pipe(gImageMin(
+    // [plugins], default is
+    //[imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()]
+
+    // fine tune for lossless optimizers
+    [
+      gImageMin.gifsicle({interlaced: true}),
+      gImageMin.jpegtran({progressive: true}),
+      gImageMin.optipng({optimizationLevel: 5}),
+      gImageMin.svgo()
+    ]
+    ,{
+      verbose:true // default false. Log for every image passed
+    })
+  )
+  .pipe(gulp.dest('dist'));
 });
 
 gulp.task('svg-sprite', function() {
