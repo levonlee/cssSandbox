@@ -8,12 +8,63 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="../assets/bootstrap-4.1.1/css/bootstrap.min.css">
   <title>Lazy Loading Images using Lazysizes</title>
+
 </head>
 <body>
-<h1>Lazysizes</h1>
-<ul>
-  <li><a href="https://github.com/aFarkas/lazysizes">Lazysizes GitHub</a></li>
-</ul>
+
+<div class="container">
+  <h1>Lazysizes</h1>
+  <ul>
+    <li><a href="https://github.com/aFarkas/lazysizes">Lazysizes GitHub</a></li>
+    <li>Install <code>npm i lazysizes --save</code> and get <code>lazysizes.min.js</code></li>
+    <li><code>img.lazyload</code> <code>iframe.lazyload</code></li>
+  </ul>
+
+  <h2>Normal loaded</h2>
+  <div class="row">
+    <div class="col">
+      <img src="http://via.placeholder.com/300x60/?text=300x60" alt=""/>
+    </div>
+    <div class="col">
+      <iframe src="//www.youtube.com/embed/ZfV-aYdU4uE"
+              frameborder="0" allowfullscreen="">
+      </iframe>
+    </div>
+    <div class="col">
+      <img
+        sizes="auto"
+        src="http://via.placeholder.com/300x60/?text=300x60-600w"
+        srcset="http://via.placeholder.com/300x60/?text=300x60-300w 300w,
+    http://via.placeholder.com/300x60/?text=300x60-600w 600w,
+    http://via.placeholder.com/300x60/?text=300x60-900w 900w" />
+    </div>
+
+  </div>
+
+  <h2>Lazy loaded</h2>
+  <div class="row">
+    <div class="col">
+      <img data-src="http://via.placeholder.com/300x60/?text=300x60+lazysizes" class="lazyload" alt=""/>
+    </div>
+    <div class="col">
+      <iframe class="lazyload"
+              data-src="//www.youtube.com/embed/ZfV-aYdU4uE"
+              frameborder="0" allowfullscreen="">
+      </iframe>
+    </div>
+    <div class="col">
+      <img
+        data-sizes="auto"
+        data-src="http://via.placeholder.com/300x60/?text=300x60-600w"
+        data-srcset="http://via.placeholder.com/300x60/?text=300x60-300w 300w,
+    http://via.placeholder.com/300x60/?text=300x60-600w 600w,
+    http://via.placeholder.com/300x60/?text=300x60-900w 900w" class="lazyload" />
+    </div>
+  </div>
+
+</div>
+
+<script src="../assets/js/lazysizes/lazysizes.min.4.0.3.js" async=""></script>
 
 </body>
 </html>
