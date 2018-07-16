@@ -18,6 +18,7 @@
     <li><a href="https://github.com/aFarkas/lazysizes">Lazysizes GitHub</a></li>
     <li>Install <code>npm i lazysizes --save</code> and get <code>lazysizes.min.js</code></li>
     <li><code>img.lazyload</code> <code>iframe.lazyload</code></li>
+    <li><a href="https://github.com/scottjehl/picturefill" target="_blank"><code>picture</code> element polyfill</a></li>
   </ul>
 
   <h2>Normal loaded</h2>
@@ -26,17 +27,9 @@
       <img src="http://via.placeholder.com/300x60/?text=300x60" alt=""/>
     </div>
     <div class="col">
-      <iframe src="//www.youtube.com/embed/ZfV-aYdU4uE"
-              frameborder="0" allowfullscreen="">
-      </iframe>
-    </div>
-    <div class="col">
-      <img
-        sizes="auto"
-        src="http://via.placeholder.com/300x60/?text=300x60-600w"
-        srcset="http://via.placeholder.com/300x60/?text=300x60-300w 300w,
-    http://via.placeholder.com/300x60/?text=300x60-600w 600w,
-    http://via.placeholder.com/300x60/?text=300x60-900w 900w" />
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ZfV-aYdU4uE?rel=0" allowfullscreen></iframe>
+      </div>
     </div>
 
   </div>
@@ -47,22 +40,151 @@
       <img data-src="http://via.placeholder.com/300x60/?text=300x60+lazysizes" class="lazyload" alt=""/>
     </div>
     <div class="col">
-      <iframe class="lazyload"
-              data-src="//www.youtube.com/embed/ZfV-aYdU4uE"
-              frameborder="0" allowfullscreen="">
-      </iframe>
-    </div>
-    <div class="col">
-      <img
-        data-sizes="auto"
-        data-src="http://via.placeholder.com/300x60/?text=300x60-600w"
-        data-srcset="http://via.placeholder.com/300x60/?text=300x60-300w 300w,
-    http://via.placeholder.com/300x60/?text=300x60-600w 600w,
-    http://via.placeholder.com/300x60/?text=300x60-900w 900w" class="lazyload" />
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item lazyload"
+                data-src="//www.youtube.com/embed/ZfV-aYdU4uE"
+                allowfullscreen="" style="border:0;">
+        </iframe>
+      </div>
     </div>
   </div>
 
+  <h2>Auto calculate <code>img[sizes]</code> <code>img[data-sizes=auto]</code></h2>
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li><code>img[data-sizes=auto,class="d-block w-100"]</code></li>
+      </ul>
+      <img
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        data-sizes="auto"
+        data-srcset="http://placehold.it/175x75 175w,
+      http://placehold.it/350x150 350w,
+      http://placehold.it/700x300 700w,
+      http://placehold.it/1400x600 1400w"
+        data-src="http://placehold.it/700x300"
+        class="d-block w-100 lazyload" />
+    </div>
+
+    <div class="col">
+      <ul>
+        <li><code>div.ratio-box img[data-sizes=auto]</code></li>
+        <li>Image ratio is pre-determined and specified in <code>div.ratio-box[style="padding-bottom:42.85%"]</code></li>
+        <li>42.85% = 75 (height) / 175 (width)</li>
+      </ul>
+      <div class="ratio-box" style="padding-bottom: 42.85% /* calc(75 / 175 * 100%)*/;">
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-sizes="auto"
+          data-srcset="http://placehold.it/175x75 175w,
+        http://placehold.it/350x150 350w,
+        http://placehold.it/700x300 700w,
+        http://placehold.it/1400x600 1400w"
+          data-src="http://placehold.it/700x300"
+          class="lazyload" />
+      </div>
+    </div>
+  </div>
+
+  <h2>LQIP (Low Quality Placeholder)</h2>
+  <ul>
+    <li>Optional <code>img.lazyload.blur-up</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li>Simple without <code>srcset</code> and <code>sizes</code></li>
+        <li>Low quality/fallback in <code>src</code> and high quality in <code>data-src</code></li>
+      </ul>
+      <img
+        src="https://picsum.photos/175/75/?image=674"
+        data-src="https://picsum.photos/1400/600/?image=674"
+        class="d-block w-100 lazyload blur-up" />
+    </div>
+    <div class="col">
+      <ul>
+        <li><code>srcset</code> contains a low quality/transparent image</li>
+        <li>First source in <code>data-srcset</code> has to be the same as <code>src</code></li>
+      </ul>
+      <img
+        srcset="https://picsum.photos/175/75/?image=674"
+        src="https://picsum.photos/700/300/?image=674"
+        data-srcset="https://picsum.photos/700/300/?image=674 700w,
+        https://picsum.photos/175/75/?image=674 175w,
+        https://picsum.photos/350/150/?image=674 350w,
+        https://picsum.photos/2800/1200/?image=674 1400w"
+        data-sizes="auto"
+        class="d-block w-100 blur-up lazyload" />
+    </div>
+  </div>
+
+  <h2><code>[data-expand] attribute</code></h2>
+  <ul>
+    <li>Don't quite understand...</li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <div class="lazyload lili-trans-op" data-expand="-200">
+        <img data-src="https://picsum.photos/1400/600/?image=675" class="d-block w-100 lazyload" />
+        <h3>Teaser Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias delectus dolore ex in quasi quo ratione? Ab ad aspernatur cupiditate dicta distinctio inventore iste maxime nostrum, quaerat repellat tempora voluptas?</p>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+
+<style>
+  .ratio-box {
+    position: relative;
+    height: 0;
+    display: block;
+    width: 100%;
+    /* padding-bottom is calculated and rendered in to HTML */
+  }
+
+  .ratio-box img,
+  .ratio-box iframe,
+  .ratio-box video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .blur-up {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    transition: filter 400ms, -webkit-filter 400ms;
+  }
+  .blur-up.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+
+  .lili-trans-op.lazyload,
+  .lili-trans-op.lazyloading {
+    opacity: 0;
+  }
+  .lili-trans-op.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+
+  .lili-trans-op-spin.lazyload,
+  .lili-trans-op-spin.lazyloading {
+    opacity: 0;
+  }
+  .lili-trans-op-spin.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+    background: #f7f7f7 url(loader.gif) no-repeat center;
+  }
+
+</style>
 
 <script src="../assets/js/lazysizes/lazysizes.min.4.0.3.js" async=""></script>
 
