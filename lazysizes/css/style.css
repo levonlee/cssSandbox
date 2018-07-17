@@ -1,0 +1,47 @@
+.ratio-box {
+  position: relative;
+  height: 0;
+  display: block;
+  width: 100%;
+  /* padding-bottom is calculated and rendered in to HTML */
+}
+
+.ratio-box img,
+.ratio-box iframe,
+.ratio-box video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.blur-up {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+}
+.blur-up.lazyloaded {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+.lili-trans-op.lazyload,
+.lili-trans-op.lazyloading {
+  opacity: 0;
+}
+.lili-trans-op.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.lili-trans-op-spin.lazyload {
+  opacity: 0;
+}
+.lili-trans-op-spin.lazyloading {
+  opacity: 1;
+  transition: opacity 300ms;
+  background: #f7f7f7 url(../../assets/img/gif/spinner-1s-200px.gif) no-repeat center;
+}
+
