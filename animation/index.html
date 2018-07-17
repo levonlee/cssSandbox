@@ -3,13 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/bootstrap-4.1.1/css/bootstrap.min.css">
+  <!-- gulp autoprefixer -->
   <link href="style-gulp-build.css" rel="stylesheet">
+
   <title>Animation</title>
 </head>
 <body>
 
-<div class="lili-ex-1">
-  <img width="40" height="40" class="bounce" alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4=" />
+<div class="container">
+  <h1>Animation</h1>
+  <ul>
+    <li><a href="https://github.com/yangshun/awesome-spinners" target="_blank">A collection of spinners and loaders.</a></li>
+    <li>For GIF, use <a href="https://loading.io" target="_blank">https://loading.io</a></li>
+  </ul>
+  <h2>Bounce Down <code>img.lili-bounce-down</code></h2>
+  <div class="row">
+    <div class="col">
+      <img width="40" height="40" class="lili-bounce-down" alt="" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4=" />
+    </div>
+  </div>
+
+  <h2>IE11 works only for <code>svg</code> not elements inside it and CSS animation/transition inside SVG elements are not supported in IE but Edge</h2>
+  <ul>
+    <li><code>svg.lili-spinner-circle-offset</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <svg class="lili-spinner-circle-offset" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </div>
+  </div>
+
+  <h2>IE11 does not support CSS animation/transition inside SVG elements. But Edge supports it.</h2>
+  <ul>
+    <li>CSS animation is in <code>style</code> inside <code>svg</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <svg class="lili-spinner-circle-offset" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          circle {
+            stroke-dasharray: 187;
+            stroke-dashoffset: 0;
+            transform-origin: center;
+            animation: lili-circle-rotate-offset 1.4s ease-in-out infinite, lili-rotate-colors-4 5.6s ease-in-out infinite;
+          }
+          @keyframes lili-rotate-colors-4 {
+            0% {
+              stroke: #4285F4;
+            }
+            25% {
+              stroke: #DE3E35;
+            }
+            50% {
+              stroke: #F7C223;
+            }
+            75% {
+              stroke: #1B9A59;
+            }
+            100% {
+              stroke: #4285F4;
+            }
+          }
+          @keyframes lili-circle-rotate-offset {
+            0% {
+              stroke-dashoffset: 187;
+            }
+            50% {
+              stroke-dashoffset: 46.75;
+              transform: rotate(135deg);
+            }
+            100% {
+              stroke-dashoffset: 187;
+              transform: rotate(450deg);
+            }
+          }
+        </style>
+        <circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </div>
+  </div>
+
+  <h2>Pure CSS</h2>
+  <ul>
+    <li>Taken from <a href="http://tobiasahlin.com/spinkit/" target="_blank">http://tobiasahlin.com/spinkit/</a></li>
+    <li><code>div.lili-fading-circle div.lili-circle{1-12}.lili-circle</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <div class="mx-auto lili-fading-circle">
+        <div class="lili-circle1 lili-circle"></div>
+        <div class="lili-circle2 lili-circle"></div>
+        <div class="lili-circle3 lili-circle"></div>
+        <div class="lili-circle4 lili-circle"></div>
+        <div class="lili-circle5 lili-circle"></div>
+        <div class="lili-circle6 lili-circle"></div>
+        <div class="lili-circle7 lili-circle"></div>
+        <div class="lili-circle8 lili-circle"></div>
+        <div class="lili-circle9 lili-circle"></div>
+        <div class="lili-circle10 lili-circle"></div>
+        <div class="lili-circle11 lili-circle"></div>
+        <div class="lili-circle12 lili-circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Pure CSS: Load Awesome</h2>
+  <ul>
+    <li>Taken from <a href="http://github.danielcardoso.net/load-awesome/animations/ball-spin-fade-rotating.html" target="_blank">Load Awesome</a></li>
+    <li><code>div.la-ball-spin-fade-rotating.la-dark div*8</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li><code>div.la-ball-spin-fade-rotation.la-dark</code></li>
+      </ul>
+      <div class="la-ball-spin-fade-rotating la-dark">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="col">
+      <ul>
+        <li><code>div.la-ball-spin-fade-rotation.la-dark.la-sm</code></li>
+        <li><code>.la-sm .la-2x .la-3x</code></li>
+      </ul>
+      <div class="la-ball-spin-fade-rotating la-dark la-sm">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 </body>
