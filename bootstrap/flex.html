@@ -78,6 +78,77 @@
   <img src="http://via.placeholder.com/30x25/?text=30x25" class="p-3">
 </div>
 
+<div class="container">
+  <h2>Images Same Height with aspect (width/height)</h2>
+  <ul>
+    <li><a href="https://kartikprabhu.com/static/demo/equal-height-images-flexbox-demo.html" target="_blank">Reference</a></li>
+  </ul>
+
+  <h2><code>div.d-flex.lili-flex-imgs-no-extend-h div img</code></h2>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex lili-flex-imgs-no-extend-h">
+        <div class="lili-1">
+          <img src="http://via.placeholder.com/181x320/000000/?text=181x320">
+        </div>
+        <div class="lili-2">
+          <img src="http://via.placeholder.com/640x362/333333/?text=640x362">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2><code>div.d-flex.lili-flex-imgs-extend-h-aspect div img</code></h2>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex lili-flex-imgs-extend-h-aspect">
+        <div class="lili-1">
+          <img src="http://via.placeholder.com/181x320/000000/?text=181x320">
+        </div>
+        <div class="lili-2">
+          <img src="http://via.placeholder.com/640x362/333333/?text=640x362">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <h2><code>div.d-flex.lili-flex-imgs-extend-h-aspect div img</code></h2>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex lili-flex-imgs-extend-h-aspect">
+        <div class="lili-3">
+          <img src="http://via.placeholder.com/100x100/000000/?text=100x100" alt=""/>
+        </div>
+        <div class="lili-4">
+          <img src="http://via.placeholder.com/731x37/333333/?text=731x37" alt=""/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>svg sprite. Has to use <code>svg[viewBox]</code></h2>
+  <ul>
+    <li>For IE11, you may need to add <code>.align-items-center</code> to <code>div.d-flex.lili-flex-imgs-extend-h-aspect</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex lili-flex-imgs-extend-h-aspect">
+        <div class="lili-3">
+          <svg class="icon icon-mail-envelope-closed" viewBox="0 0 32 32">
+            <use xlink:href="#icon-mail-envelope-closed"></use>
+          </svg>
+        </div>
+        <div class="lili-4">
+          <img src="http://via.placeholder.com/731x37/333333/?text=731x37" alt=""/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
 <h2 class="p-2"><code>align-content-start</code> <code>align-content-end</code> <code>align-content-center</code> <code>align-content-around</code> <code>align-content-stretch</code></h2>
 <ul>
   <li><code>align-content{-sm|-md|-lg|-xl}-*</code></li>
@@ -93,6 +164,13 @@
   <li>e.g. <code>.item.order-0</code></li>
   <li><code>.order{-sm|-md|-lg|-xl}-{0-12}</code></li>
 </ul>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="icon-mail-envelope-closed" viewBox="0 0 32 32">
+    <title>mail-envelope-closed</title>
+    <path d="M5.315 9.274l7.735 6.726-7.737 6.728c-0.194-0.184-0.313-0.445-0.313-0.735v-11.986c0-0.289 0.121-0.549 0.315-0.733zM27.687 9.272c0.194 0.184 0.313 0.445 0.313 0.735v11.986c0 0.289-0.121 0.549-0.315 0.733l-7.735-6.726 7.737-6.728zM19.202 16.651l7.298 6.349h-20l7.298-6.349 2.702 2.349 2.702-2.349zM6.004 8c-1.107 0-2.004 0.895-2.004 1.994v12.012c0 1.101 0.89 1.994 2.004 1.994h20.993c1.107 0 2.004-0.895 2.004-1.994v-12.012c0-1.101-0.89-1.994-2.004-1.994h-20.993zM16.5 17.7l-10-8.7h20l-10 8.7z"></path>
+  </symbol>
+</svg>
 
 <style>
   .lili-flex-wrap {
@@ -132,6 +210,39 @@
       flex:0 0 100%;
     }
   }
+
+  .lili-flex-imgs-no-extend-h div img,
+  .lili-flex-imgs-no-extend-h div svg{
+    width: 100%;
+    height: auto;
+  }
+  .lili-flex-imgs-extend-h-aspect .lili-1{
+    flex: 0.5656; /* apsect =.5656 = width/height; flex-grow flex-shrink flex-basis: 0.5656 1 0%; */
+  }
+  .lili-flex-imgs-extend-h-aspect .lili-2{
+    flex: 1.7679;
+  }
+  .lili-flex-imgs-extend-h-aspect .lili-3{
+    flex: 1;
+  }
+  .lili-flex-imgs-extend-h-aspect .lili-4{
+    flex: 19.75675676;
+  }
+  .lili-flex-imgs-extend-h-aspect div img,
+  .lili-flex-imgs-extend-h-aspect div svg{
+    width: 100%;
+    height: auto;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
 </style>
 
 
