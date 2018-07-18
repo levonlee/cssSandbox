@@ -120,6 +120,22 @@ gulp.task('img-resize-square', function () {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('img-resize-max-width', function () {
+  // case sensitive
+  return gulp.src('src/*.{jpg,png}')
+    .pipe(gResponsive({
+      '*': {
+        width: 1440, /* Smartphone max physical pixels https://www.mydevice.io/ */
+        height: 99999,
+        max:true, //
+        progressive: true
+      },
+    }, {
+      errorOnEnlargement:false // skip error when final image is enlarged or shrunk
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('img-convert-webp', function () {
   // case sensitive
   return gulp.src('src/*.png')
@@ -142,7 +158,6 @@ gulp.task('img-convert-webp', function () {
     }))
     .pipe(gulp.dest('dist'));
 });
-
 
 gulp.task('img-min', () => {
   gulp.src('src/*')
