@@ -17,7 +17,7 @@
     <li><a href="https://css-tricks.com/fitting-text-to-a-container/" target="_blank">CSS Tricks: Scale Text SVG</a></li>
   </ul>
 
-  <div class="row">
+  <div class="row pb-3">
     <div class="col">
 
       <div class="lili-background-layer">
@@ -25,7 +25,7 @@
         <!-- change svg viewBox to 45 in order to fit the text box -->
         <div class="lili-text-container lili-text-container-transform">
           <svg viewBox="0 0 45 19">
-            <text fill="#FFF" x="0" y="15">Fit Me</text>
+            <text fill="#FFF" fill-opacity="0.7" x="0" y="15">Fit Me</text>
           </svg>
         </div>
       </div>
@@ -33,7 +33,7 @@
     </div>
   </div>
 
-  <div class="row pt-3">
+  <div class="row pb-3">
     <div class="col">
       <button class="btn btn-success changeText">Marry Me</button>
     </div>
@@ -45,7 +45,7 @@
     </div>
   </div>
 
-  <div class="row pt-3">
+  <div class="row pb-3">
     <div class="col">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -56,12 +56,25 @@
     </div>
   </div>
 
-  <div class="row pt-3">
+  <div class="row pb-3">
     <div class="col">
       <button class="btn btn-primary" onclick="console.log($('.lili-text-container svg')[0].getBoundingClientRect().width);">Svg Width gbc</button>
     </div>
     <div class="col">
       <button class="btn btn-primary" onclick="console.log($('.lili-text-container svg text')[0].getBoundingClientRect().width);">Svg Text Width gbc</button>
+    </div>
+  </div>
+
+  <div class="row pb-3">
+    <div class="col">
+
+      <div class="lili-background-layer">
+        <img src="../assets/img/1200x768.jpg" class="d-block w-100">
+        <div class="lili-text-container lili-text-container-transform">
+          <img src="../assets/img/comming-soon-color-371x222.png" class="d-block mx-auto" alt=""/>
+        </div>
+      </div>
+
     </div>
   </div>
 
