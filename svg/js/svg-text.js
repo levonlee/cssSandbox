@@ -15,7 +15,7 @@
   }
 
   ns.setViewbox = function($el, $v) {
-    $el.removeAttr('viewBox');
+    //$el.removeAttr('viewBox'); // Don't remove and change.. just change it
     $el[0].setAttribute('viewBox', '0 0 ' + $v + ' 19');
   }
 
