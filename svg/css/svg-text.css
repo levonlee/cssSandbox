@@ -15,3 +15,10 @@
 .lili-text-container svg{
   width:100%;
 }
+.lili-text-container-transform {
+  top:61%;
+  left:53%;
+  transform: translate(-53%, -61%) rotateZ(-25deg) rotateY(20deg);
+  width:25%;
+  height:12%;
+}
