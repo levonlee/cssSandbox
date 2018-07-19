@@ -1,0 +1,17 @@
+.lili-background-layer {
+  position:relative;
+}
+
+.lili-text-container {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  max-width:60%;
+  text-align:center;
+  color:#fff;
+  background-color:rgba(255,0,0,.3);
+}
+.lili-text-container svg{
+  width:100%;
+}
