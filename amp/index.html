@@ -1,0 +1,128 @@
+<!doctype html>
+<html amp lang="en">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>Hello, AMPs</title>
+  <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    /* any custom style goes here */
+    /* supported CSS: https://www.ampproject.org/docs/design/responsive/style_pages */
+
+    /* Not allowed: !important
+       Only allowed in transition and @keyframes: opacity, transform and -vendorPrefix-transform
+       Sass https://www.ampproject.org/docs/design/responsive/style_pages
+    */
+
+    body {
+      background-color: white;
+    }
+    amp-img {
+      background-color: gray;
+      border: 1px solid black;
+    }
+  </style>
+
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <script async custom-element="amp-twitter"
+          src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-instagram"
+          src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+  <script async custom-element="amp-facebook"
+          src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+
+</head>
+<body>
+<h1>Welcome to the mobile web</h1>
+
+<amp-img src="http://via.placeholder.com/800x400/?text=800x400" alt="Welcome" height="400" width="800"></amp-img>
+
+Validate: https://www.ampproject.org/docs/fundamentals/validate
+1. add #development=1 to URL and debug in DevTools
+2. Paste code to https://validator.ampproject.org
+3. Chrome Extension: AMP Validator
+4. gulp-amphtml-validator
+5. Command line: amphtml-validator
+
+Conditional comment is not allowed
+Don't use -amp- for CSS class and ID and i-amp- for tag names and tag attribute
+Attribute onclick, onmouseover not allowed
+
+Use on attribute to install event handlers on elements
+<code>eventName:targetId[.methodName[(arg1=value, arg2=value)]]</code>
+e.g <code>on="tap:fooId.showLightbox"</code> <code>on="submit-success:lightbox1;submit-error:lightbox2"</code>
+
+Load extended components:
+<code>https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js</code>
+
+Extended template
+<template type="amp-mustache" id="template1">
+  Hello {{you}}!
+</template>
+
+<amp-twitter width="500"
+             height="583"
+             layout="responsive"
+             data-tweetid="638793490521001985">
+</amp-twitter>
+
+<amp-instagram data-shortcode="fBwFP"
+               width="320"
+               height="392"
+               layout="responsive">
+</amp-instagram>
+<amp-facebook width="486" height="657"
+              layout="responsive"
+              data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+</amp-facebook>
+
+<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+  Hello!
+</amp-fit-text>
+
+<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+  Big, bold article quote goes here.
+</amp-fit-text>
+
+<amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
+  And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+</amp-fit-text>
+
+<amp-carousel layout="fixed-height" height="168" type="carousel" >
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x1" width="300" height="168"></amp-img>
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x2" width="300" height="168"></amp-img>
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x3" width="300" height="168"></amp-img>
+</amp-carousel>
+
+<amp-carousel layout="responsive" width="300" height="168"  type="slides" autoplay delay="2000" loop>
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x1" width="300" height="168"></amp-img>
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x2" width="300" height="168"></amp-img>
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x3" width="300" height="168"></amp-img>
+</amp-carousel>
+
+<amp-carousel layout="fixed-height" height="168" type="carousel" >
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x1" width="300" height="168"></amp-img>
+  <amp-fit-text width="300" height="168" layout="fixed">
+    Big, bold article quote goes here.
+  </amp-fit-text>
+  <amp-img src="http://via.placeholder.com/300x168/?text=300x168x3" width="300" height="168"></amp-img>
+</amp-carousel>
+
+
+</body>
+</html>
