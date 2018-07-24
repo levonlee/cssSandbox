@@ -1,98 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>SVG</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+	      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	      crossorigin="anonymous">
+	<title>SVG</title>
 </head>
 <body>
 <h1>SVG</h1>
 <ul>
-  <li><a href="https://css-tricks.com/scale-svg/">CSS Tricks: Scale SVG</a></li>
+	<li><a href="https://css-tricks.com/scale-svg/">CSS Tricks: Scale SVG</a></li>
 </ul>
 
 <h2>Scale SVG in Modern Browsers</h2>
 <ul>
-  <li>For modern browsers, use <code>viewbox</code> is good enough</li>
+	<li>For modern browsers, use <code>viewbox</code> is good enough</li>
 </ul>
 
 <div class="lili-ex lili-ex-1">
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 900 600">
-    <circle cx="535" cy="175" r="20" />
-    <text x="490" y="245">Optional Anti-Slam System</text>
-    <circle cx="260" cy="220" r="20" />
-    <text x="110" y="270">Fits All Door Types</text>
-    <circle cx="370" cy="290" r="20" />
-    <text x="260" y="330">Various Mesh Options</text>
-    <circle cx="685" cy="300" r="20" />
-    <text x="590" y="340">Wide Range of Finishes</text>
-    <circle cx="560" cy="340" r="20" />
-    <text x="560" y="390">Comes with Warranty</text>
-    <circle cx="230" cy="440" r="20" />
-    <text x="160" y="420">Maintains Decor and View</text>
-    <circle cx="470" cy="435" r="20" />
-    <text x="430" y="420">Easy Operation with Secure Closure</text>
-    <circle cx="395" cy="535" r="20" />
-    <text x="430" y="560">Glides Smoothly Along Track</text>
-  </svg>
+	<svg xmlns="http://www.w3.org/2000/svg"
+	     xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 900 600">
+		<circle cx="535" cy="175" r="20"/>
+		<text x="490" y="245">Optional Anti-Slam System</text>
+		<circle cx="260" cy="220" r="20"/>
+		<text x="110" y="270">Fits All Door Types</text>
+		<circle cx="370" cy="290" r="20"/>
+		<text x="260" y="330">Various Mesh Options</text>
+		<circle cx="685" cy="300" r="20"/>
+		<text x="590" y="340">Wide Range of Finishes</text>
+		<circle cx="560" cy="340" r="20"/>
+		<text x="560" y="390">Comes with Warranty</text>
+		<circle cx="230" cy="440" r="20"/>
+		<text x="160" y="420">Maintains Decor and View</text>
+		<circle cx="470" cy="435" r="20"/>
+		<text x="430" y="420">Easy Operation with Secure Closure</text>
+		<circle cx="395" cy="535" r="20"/>
+		<text x="430" y="560">Glides Smoothly Along Track</text>
+	</svg>
 </div>
 
 <h2>Scale SVG: Cross browser compatible</h2>
 <ul>
-  <li>
-    IE and iOS 7 and lower does not scale svg according to <code>viewbox</code>.
-    <ul>
-      <li><code>style="width: 100%; padding-bottom: 66.67%; height: 1px; overflow: visible"</code></li>
-      <li><code>viewbox="0 0 900 600"</code> and <code>preserveAspectRatio="xMidYMin slice"</code></li>
-    </ul>
-  </li>
-  <li><code>preserveAspectRatio="xMidYMid meet"</code> is default
-    <ul>
-      <li>Mid means center, Min or Max is to align to one side</li>
-      <li><code>meet</code> is equivalent to <code>background-size:contain;</code></li>
-      <li><code>slice</code> is equivalent to <code>background-size:cover;</code></li>
-    </ul>
-  </li>
-  <li>66.67% = svg:height/svg:width</li>
+	<li>
+		IE and iOS 7 and lower does not scale svg according to <code>viewbox</code>.
+		<ul>
+			<li><code>style="width: 100%; padding-bottom: 66.67%; height: 1px;
+				overflow: visible"</code></li>
+			<li><code>viewbox="0 0 900 600"</code> and <code>preserveAspectRatio="xMidYMin
+				slice"</code></li>
+		</ul>
+	</li>
+	<li><code>preserveAspectRatio="xMidYMid meet"</code> is default
+		<ul>
+			<li>Mid means center, Min or Max is to align to one side</li>
+			<li><code>meet</code> is equivalent to
+				<code>background-size:contain;</code></li>
+			<li><code>slice</code> is equivalent to
+				<code>background-size:cover;</code></li>
+		</ul>
+	</li>
+	<li>66.67% = svg:height/svg:width</li>
 </ul>
 
 <div class="lili-ex lili-ex-2">
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-       viewbox="0 0 900 600"
-       preserveAspectRatio="xMidYMin slice"
-       style="width: 100%; padding-bottom: 66.67%; height: 1px; overflow: visible">
-    <circle cx="535" cy="175" r="20" />
-    <text x="490" y="245">Optional Anti-Slam System</text>
-    <circle cx="260" cy="220" r="20" />
-    <text x="110" y="270">Fits All Door Types</text>
-    <circle cx="370" cy="290" r="20" />
-    <text x="260" y="330">Various Mesh Options</text>
-    <circle cx="685" cy="300" r="20" />
-    <text x="590" y="340">Wide Range of Finishes</text>
-    <circle cx="560" cy="340" r="20" />
-    <text x="560" y="390">Comes with Warranty</text>
-    <circle cx="230" cy="440" r="20" />
-    <text x="160" y="420">Maintains Decor and View</text>
-    <circle cx="470" cy="435" r="20" />
-    <text x="430" y="420">Easy Operation with Secure Closure</text>
-    <circle cx="395" cy="535" r="20" />
-    <text x="430" y="560">Glides Smoothly Along Track</text>
-  </svg>
+	<svg xmlns="http://www.w3.org/2000/svg"
+	     xmlns:xlink="http://www.w3.org/1999/xlink"
+	     viewbox="0 0 900 600"
+	     preserveAspectRatio="xMidYMin slice"
+	     style="width: 100%; padding-bottom: 66.67%; height: 1px; overflow: visible">
+		<circle cx="535" cy="175" r="20"/>
+		<text x="490" y="245">Optional Anti-Slam System</text>
+		<circle cx="260" cy="220" r="20"/>
+		<text x="110" y="270">Fits All Door Types</text>
+		<circle cx="370" cy="290" r="20"/>
+		<text x="260" y="330">Various Mesh Options</text>
+		<circle cx="685" cy="300" r="20"/>
+		<text x="590" y="340">Wide Range of Finishes</text>
+		<circle cx="560" cy="340" r="20"/>
+		<text x="560" y="390">Comes with Warranty</text>
+		<circle cx="230" cy="440" r="20"/>
+		<text x="160" y="420">Maintains Decor and View</text>
+		<circle cx="470" cy="435" r="20"/>
+		<text x="430" y="420">Easy Operation with Secure Closure</text>
+		<circle cx="395" cy="535" r="20"/>
+		<text x="430" y="560">Glides Smoothly Along Track</text>
+	</svg>
 </div>
 
-<div class="row">
-  <div class="col">
-    <img src="../assets/img/plus.svg" class="d-block mx-auto" style="max-width:50%;">
-  </div>
-</div>
+<div class="container">
+	<h2># <code>img[src="plus.svg"]</code></h2>
+	<div class="row">
+		<div class="col">
+			<img src="../assets/img/plus.svg" class="d-block mx-auto"
+			     style="max-width:50%;">
+		</div>
+	</div>
 
-<h2>SVG Sprite</h2>
-<ul>
-  <li>It's better to strip <code>style</code> tags in <code>sprite.svg</code> and overwrite style using <code>svg.svg--plus-dims</code>
-    <pre>
+	<h2># <code>img[src="plus.svg"]</code></h2>
+	<div class="row">
+		<div class="col">
+			<iframe src="inc/svg-bg.html" width="100%" height="300" style="border:0;" title=""></iframe>
+		</div>
+	</div>
+
+	<h2>SVG Sprite</h2>
+	<ul>
+		<li>It's better to strip <code>style</code> tags in <code>sprite.svg</code>
+			and overwrite style using <code>svg.svg--plus-dims</code>
+			<pre>
       svg.icon-goldstar {
         fill: gold;
         stroke: currentColor; /* take the font color */
@@ -100,172 +121,231 @@
         stroke-linejoin: round;
       }
     </pre>
-  </li>
-  <li><code>fill="currentColor"</code></li>
-</ul>
+		</li>
+		<li><code>fill="currentColor"</code></li>
+	</ul>
 
-<h2>SVG Sprite: External Load</h2>
-<ul>
-  <li><code>../assets/img/sprite.svg#plus</code>
-    <ul>
-      <li>should be loaded using <code>svg use</code></li>
-      <li>For IE11, load polyfill <code>svg4everybody.min.js</code> and <code>svg.js</code> with <code>defer</code></li>
-      <li>Icons appear black because original <code>style</code> tag inside each <code>symbol</code> in <code>sprite.svg</code> is lost.</li>
-    </ul>
-  </li>
-</ul>
-<div class="row">
-  <div class="col">
-    <svg class="svg--plus-dims">
-      <use xlink:href="../assets/img/sprite.svg#plus"></use>
-    </svg>
-  </div>
-  <div class="col">
-    <svg class="svg--a--minus-dims">
-      <use xlink:href="../assets/img/sprite.svg#a--minus"></use>
-    </svg>
-  </div>
-</div>
+	<h3>SVG Sprite: External Load</h3>
+	<ul>
+		<li><code>../assets/img/sprite.svg#plus</code>
+			<ul>
+				<li>should be loaded using <code>svg use</code></li>
+				<li>For IE11, load polyfill <code>svg4everybody.min.js</code> and <code>svg.js</code>
+					with <code>defer</code></li>
+				<li>Icons appear black because original <code>style</code> tag inside
+					each <code>symbol</code> in <code>sprite.svg</code> is lost.
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="row">
+		<div class="col">
+			<svg class="svg--plus-dims">
+				<use xlink:href="../assets/img/sprite.svg#plus"></use>
+			</svg>
+		</div>
+		<div class="col">
+			<svg class="svg--a--minus-dims">
+				<use xlink:href="../assets/img/sprite.svg#a--minus"></use>
+			</svg>
+		</div>
+	</div>
 
-<h2>SVG Sprite External Load with CSS Inline</h2>
-<div class="row">
-  <div class="col">
-    <svg class="svg--plus-dims">
-      <use xlink:href="../assets/img/sprite-css-inline.svg#plus"></use>
-    </svg>
-  </div>
-  <div class="col">
-    <svg class="svg--a--minus-dims">
-      <use xlink:href="../assets/img/sprite-css-inline.svg#a--minus"></use>
-    </svg>
-  </div>
-</div>
+	<h3>SVG Sprite External Load with CSS Inline</h3>
+	<div class="row">
+		<div class="col">
+			<svg class="svg--plus-dims">
+				<use xlink:href="../assets/img/sprite-css-inline.svg#plus"></use>
+			</svg>
+		</div>
+		<div class="col">
+			<svg class="svg--a--minus-dims">
+				<use xlink:href="../assets/img/sprite-css-inline.svg#a--minus"></use>
+			</svg>
+		</div>
+	</div>
 
-<h2>SVG Sprite External Load with No Style Tag</h2>
-<ul>
-  <li>This is so far the best way to load SVG sprite.</li>
-  <li><a href="https://fvsch.com/svg-icons/" target="_blank">For more info on how to specify SVG sprite in parent HTML</a></li>
-</ul>
-<div class="row">
-  <div class="col">
-    <svg class="svg--plus-dims">
-      <use xlink:href="../assets/img/sprite-no-style-tag.svg#plus"></use>
-    </svg>
-  </div>
-  <div class="col">
-    <svg class="svg--a--minus-dims">
-      <use xlink:href="../assets/img/sprite-no-style-tag.svg#a--minus"></use>
-    </svg>
-  </div>
-</div>
+	<h3>SVG Sprite External Load with No Style Tag (Best Way)</h3>
+	<ul>
+		<li>This is so far the best way to load SVG sprite.</li>
+		<li><a href="https://fvsch.com/svg-icons/" target="_blank">For more info on
+			how to specify SVG sprite in parent HTML</a></li>
+	</ul>
+	<div class="row">
+		<div class="col">
+			<svg class="svg--plus-dims">
+				<use xlink:href="../assets/img/sprite-no-style-tag.svg#plus"></use>
+			</svg>
+		</div>
+		<div class="col">
+			<svg class="svg--a--minus-dims">
+				<use xlink:href="../assets/img/sprite-no-style-tag.svg#a--minus"></use>
+			</svg>
+		</div>
+	</div>
 
-<h2>Inline include the sprite.svg</h2>
-<ul>
-  <li><code>use[xlink:href="#a--minus"]</code></li>
-  <li>Does not require polyfill</li>
-  <li>Icons appear green because original <code>style</code> in each <code>symbol</code> is kept.</li>
-</ul>
+	<h3>Inline include the sprite.svg</h3>
+	<ul>
+		<li><code>use[xlink:href="#a--minus"]</code></li>
+		<li>Does not require polyfill</li>
+		<li>Icons appear green because original <code>style</code> in each <code>symbol</code>
+			is kept.
+		</li>
+	</ul>
+	<div class="row">
+		<div class="col">
+			<svg class="svg--plus-dims">
+				<use xlink:href="#plus"></use>
+			</svg>
+		</div>
+		<div class="col">
+			<svg class="svg--a--minus-dims">
+				<use xlink:href="#a--minus"></use>
+			</svg>
+		</div>
+	</div>
 
-<div class="row">
-  <div class="col">
-    <svg class="svg--plus-dims">
-      <use xlink:href="#plus"></use>
-    </svg>
-  </div>
-  <div class="col">
-    <svg class="svg--a--minus-dims">
-      <use xlink:href="#a--minus"></use>
-    </svg>
-  </div>
-</div>
+	<h3>Inline include the sprite.svg which has no style tag</h3>
+	<ul>
+		<li>It seems style cannot be overridden if it's loaded in this way..</li>
+	</ul>
+	<div class="row">
+		<div class="col">
+			<svg class="svg--plus-dims">
+				<use xlink:href="#icon-plus"></use>
+			</svg>
+		</div>
+		<div class="col">
+			<svg class="svg--a--minus-dims">
+				<use xlink:href="#icon-a--minus"></use>
+			</svg>
+		</div>
+	</div>
 
-<h2>Inline include the sprite.svg which has no style tag</h2>
-<ul>
-  <li>It seems style cannot be overridden if it's loaded in this way..</li>
-</ul>
+	<h3>SVG Sprite using <code>symbol</code> can't be loaded in CSS <code>background</code>
+	</h3>
+	<ul>
+		<li>Use <code>g</code> instead of <code>symbol</code></li>
+	</ul>
+	<div class="row">
+		<div class="col">
+			<div class="lili-svg-as-bg">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at atque
+				autem consectetur consequatur deleniti, dolorem ea incidunt iste
+				laboriosam laudantium, maiores, minima neque rem reprehenderit sapiente
+				sunt ullam voluptate.
+			</div>
+		</div>
+	</div>
 
-<div class="row">
-  <div class="col">
-    <svg class="svg--plus-dims">
-      <use xlink:href="#icon-plus"></use>
-    </svg>
-  </div>
-  <div class="col">
-    <svg class="svg--a--minus-dims">
-      <use xlink:href="#icon-a--minus"></use>
-    </svg>
-  </div>
-</div>
 
-<h2>SVG Sprite using <code>symbol</code> can't be loaded in CSS <code>background</code></h2>
-<ul>
-  <li>Use <code>g</code> instead of <code>symbol</code></li>
-</ul>
-<div class="row">
-  <div class="col">
-    <div class="lili-svg-as-bg">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at atque autem consectetur consequatur deleniti, dolorem ea incidunt iste laboriosam laudantium, maiores, minima neque rem reprehenderit sapiente sunt ullam voluptate.
-    </div>
-  </div>
+
 </div>
 
 <style>
-  .lili-ex{
-    margin:0 auto;
-    max-width:800px; /* To match the background image */
-  }
-  .lili-ex svg {
-    background-image: url('images/phantom-edited.jpg'); /* 800x535 */
-    background-size:cover;
-    background-repeat:no-repeat;
-  }
-  .lili-ex svg circle {
-    fill: none;
-    pointer-events: all;
-    cursor: pointer;
-  }
-  .lili-ex svg text {
-    opacity: 0;
-    transition: .3s;
-    font-size: 24px;
-    letter-spacing: .5px;
-    padding: 2px;
-    width: auto;
-    height: auto;
-    overflow: auto;
-    background-color: #fff;
-    display: block;
-    fill: #fff;
-  }
-  .lili-ex svg circle:hover + text,
-  .lili-ex svg circle:focus + text {
-    opacity: 1;
-  }
-  .svg--a--minus-dims,
-  .svg--plus-dims{
-    width:50%;
-    margin:0 auto;
-  }
-  svg.svg--plus-dims, svg.svg--plus-dims use{
-    fill:skyblue!important;
-  }
-  svg.svg--plus-dims path{
-    fill:inherit!important; /* IE11 requires this */
-  }
-  .lili-svg-as-bg {
-    background:url('//dev.webonomic.nl/demos/yoga.svg#position_2') left top repeat;
-    width:100%;
-    height:400px;
-    font-size:1rem;
-  }
+	.lili-ex{
+		margin:0 auto;
+		max-width:800px; /* To match the background image */
+	}
+
+	.lili-ex svg{
+		background-image:url('images/phantom-edited.jpg'); /* 800x535 */
+		background-size:cover;
+		background-repeat:no-repeat;
+	}
+
+	.lili-ex svg circle{
+		fill:none;
+		pointer-events:all;
+		cursor:pointer;
+	}
+
+	.lili-ex svg text{
+		opacity:0;
+		transition:.3s;
+		font-size:24px;
+		letter-spacing:.5px;
+		padding:2px;
+		width:auto;
+		height:auto;
+		overflow:auto;
+		background-color:#fff;
+		display:block;
+		fill:#fff;
+	}
+
+	.lili-ex svg circle:hover + text,
+	.lili-ex svg circle:focus + text{
+		opacity:1;
+	}
+
+	.svg--a--minus-dims,
+	.svg--plus-dims{
+		width:50%;
+		margin:0 auto;
+	}
+
+	svg.svg--plus-dims, svg.svg--plus-dims use{
+		fill:skyblue !important;
+	}
+
+	svg.svg--plus-dims path{
+		fill:inherit !important; /* IE11 requires this */
+	}
+
+	.lili-svg-as-bg{
+		background:url('//dev.webonomic.nl/demos/yoga.svg#position_2') left top repeat;
+		width:100%;
+		height:400px;
+		font-size:1rem;
+	}
 </style>
 
-<script src="//jonathantneal.github.io/svg4everybody/svg4everybody.min.js" defer></script>
+<script src="//jonathantneal.github.io/svg4everybody/svg4everybody.min.js"
+        defer></script>
 <script src="js/svg.js" defer></script>
 
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="a--minus" viewBox="0 0 215.5 215.4" xmlns="http://www.w3.org/2000/svg"><style>.ast0{fill:#76881e}</style><path class="ast0" d="M215.5 105.5c1.1 59.8-46.4 109.1-106.5 109.9-59.3.8-108-46.7-109-106.5C-1 50.1 46.8 1.1 106.5 0c58.8-1 107.8 46.4 109 105.5zm-9.8-.2c-1.3-54-46.1-96.7-100.1-95.5-53.8 1.2-97 46.1-95.8 99.6 1.2 54.2 46 97.5 99.5 96.3 54.7-1.3 97.7-46.1 96.4-100.4z"/><path class="ast0" d="M107.9 102.9h49c.8 0 1.6-.1 2.4.1 2.4.3 4.2 2.5 4.2 4.9 0 2.3-1.7 4.3-4.1 4.7-.9.1-1.8.1-2.7.1h-98c-.8 0-1.6.1-2.4 0-2.5-.3-4.3-2.3-4.3-4.8s1.9-4.6 4.5-4.9c1-.1 2 0 3 0 16.1-.1 32.2-.1 48.4-.1z"/></symbol><symbol id="plus" viewBox="0 0 179.4 179.4" xmlns="http://www.w3.org/2000/svg"><style>.bst0{fill:#76881e}</style><path class="bst0" d="M0 89.6C0 40.2 40.3 0 89.8 0s89.7 40.4 89.6 89.8c-.1 49.5-40.4 89.7-89.9 89.6C40.1 179.3 0 139 0 89.6zm170 .1c0-44.3-36-80.4-80.3-80.4-44.2 0-80.3 36-80.4 80.3-.1 44.4 36 80.5 80.3 80.5C133.9 170 170 134 170 89.7z"/><path class="bst0" d="M85 85V43.3c0-3.4 2.7-5.7 5.8-4.9 2.2.6 3.5 2.4 3.5 5v41.5h41.6c2.8 0 4.8 1.6 5.1 4 .4 3-1.8 5.3-4.9 5.3H94.3v41.7c0 2.1-.8 3.7-2.6 4.6-1.7.9-3.4.6-5-.6-1.3-1-1.8-2.5-1.8-4.1V94.3H43.3c-2.9 0-4.9-1.7-5.1-4.2-.2-2.9 1.9-5.1 5-5.1H85z"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="a--minus" viewBox="0 0 215.5 215.4"
+	        xmlns="http://www.w3.org/2000/svg">
+		<style>.ast0{
+			fill:#76881e
+		}</style>
+		<path class="ast0"
+		      d="M215.5 105.5c1.1 59.8-46.4 109.1-106.5 109.9-59.3.8-108-46.7-109-106.5C-1 50.1 46.8 1.1 106.5 0c58.8-1 107.8 46.4 109 105.5zm-9.8-.2c-1.3-54-46.1-96.7-100.1-95.5-53.8 1.2-97 46.1-95.8 99.6 1.2 54.2 46 97.5 99.5 96.3 54.7-1.3 97.7-46.1 96.4-100.4z"/>
+		<path class="ast0"
+		      d="M107.9 102.9h49c.8 0 1.6-.1 2.4.1 2.4.3 4.2 2.5 4.2 4.9 0 2.3-1.7 4.3-4.1 4.7-.9.1-1.8.1-2.7.1h-98c-.8 0-1.6.1-2.4 0-2.5-.3-4.3-2.3-4.3-4.8s1.9-4.6 4.5-4.9c1-.1 2 0 3 0 16.1-.1 32.2-.1 48.4-.1z"/>
+	</symbol>
+	<symbol id="plus" viewBox="0 0 179.4 179.4"
+	        xmlns="http://www.w3.org/2000/svg">
+		<style>.bst0{
+			fill:#76881e
+		}</style>
+		<path class="bst0"
+		      d="M0 89.6C0 40.2 40.3 0 89.8 0s89.7 40.4 89.6 89.8c-.1 49.5-40.4 89.7-89.9 89.6C40.1 179.3 0 139 0 89.6zm170 .1c0-44.3-36-80.4-80.3-80.4-44.2 0-80.3 36-80.4 80.3-.1 44.4 36 80.5 80.3 80.5C133.9 170 170 134 170 89.7z"/>
+		<path class="bst0"
+		      d="M85 85V43.3c0-3.4 2.7-5.7 5.8-4.9 2.2.6 3.5 2.4 3.5 5v41.5h41.6c2.8 0 4.8 1.6 5.1 4 .4 3-1.8 5.3-4.9 5.3H94.3v41.7c0 2.1-.8 3.7-2.6 4.6-1.7.9-3.4.6-5-.6-1.3-1-1.8-2.5-1.8-4.1V94.3H43.3c-2.9 0-4.9-1.7-5.1-4.2-.2-2.9 1.9-5.1 5-5.1H85z"/>
+	</symbol>
+</svg>
 
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-a--minus" viewBox="0 0 215.5 215.4" xmlns="http://www.w3.org/2000/svg"><path class="ast0" d="M215.5 105.5c1.1 59.8-46.4 109.1-106.5 109.9-59.3.8-108-46.7-109-106.5C-1 50.1 46.8 1.1 106.5 0c58.8-1 107.8 46.4 109 105.5zm-9.8-.2c-1.3-54-46.1-96.7-100.1-95.5-53.8 1.2-97 46.1-95.8 99.6 1.2 54.2 46 97.5 99.5 96.3 54.7-1.3 97.7-46.1 96.4-100.4z"/><path class="ast0" d="M107.9 102.9h49c.8 0 1.6-.1 2.4.1 2.4.3 4.2 2.5 4.2 4.9 0 2.3-1.7 4.3-4.1 4.7-.9.1-1.8.1-2.7.1h-98c-.8 0-1.6.1-2.4 0-2.5-.3-4.3-2.3-4.3-4.8s1.9-4.6 4.5-4.9c1-.1 2 0 3 0 16.1-.1 32.2-.1 48.4-.1z"/></symbol><symbol id="icon-plus" viewBox="0 0 179.4 179.4" xmlns="http://www.w3.org/2000/svg"><path class="bst0" d="M0 89.6C0 40.2 40.3 0 89.8 0s89.7 40.4 89.6 89.8c-.1 49.5-40.4 89.7-89.9 89.6C40.1 179.3 0 139 0 89.6zm170 .1c0-44.3-36-80.4-80.3-80.4-44.2 0-80.3 36-80.4 80.3-.1 44.4 36 80.5 80.3 80.5C133.9 170 170 134 170 89.7z"/><path class="bst0" d="M85 85V43.3c0-3.4 2.7-5.7 5.8-4.9 2.2.6 3.5 2.4 3.5 5v41.5h41.6c2.8 0 4.8 1.6 5.1 4 .4 3-1.8 5.3-4.9 5.3H94.3v41.7c0 2.1-.8 3.7-2.6 4.6-1.7.9-3.4.6-5-.6-1.3-1-1.8-2.5-1.8-4.1V94.3H43.3c-2.9 0-4.9-1.7-5.1-4.2-.2-2.9 1.9-5.1 5-5.1H85z"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="icon-a--minus" viewBox="0 0 215.5 215.4"
+	        xmlns="http://www.w3.org/2000/svg">
+		<path class="ast0"
+		      d="M215.5 105.5c1.1 59.8-46.4 109.1-106.5 109.9-59.3.8-108-46.7-109-106.5C-1 50.1 46.8 1.1 106.5 0c58.8-1 107.8 46.4 109 105.5zm-9.8-.2c-1.3-54-46.1-96.7-100.1-95.5-53.8 1.2-97 46.1-95.8 99.6 1.2 54.2 46 97.5 99.5 96.3 54.7-1.3 97.7-46.1 96.4-100.4z"/>
+		<path class="ast0"
+		      d="M107.9 102.9h49c.8 0 1.6-.1 2.4.1 2.4.3 4.2 2.5 4.2 4.9 0 2.3-1.7 4.3-4.1 4.7-.9.1-1.8.1-2.7.1h-98c-.8 0-1.6.1-2.4 0-2.5-.3-4.3-2.3-4.3-4.8s1.9-4.6 4.5-4.9c1-.1 2 0 3 0 16.1-.1 32.2-.1 48.4-.1z"/>
+	</symbol>
+	<symbol id="icon-plus" viewBox="0 0 179.4 179.4"
+	        xmlns="http://www.w3.org/2000/svg">
+		<path class="bst0"
+		      d="M0 89.6C0 40.2 40.3 0 89.8 0s89.7 40.4 89.6 89.8c-.1 49.5-40.4 89.7-89.9 89.6C40.1 179.3 0 139 0 89.6zm170 .1c0-44.3-36-80.4-80.3-80.4-44.2 0-80.3 36-80.4 80.3-.1 44.4 36 80.5 80.3 80.5C133.9 170 170 134 170 89.7z"/>
+		<path class="bst0"
+		      d="M85 85V43.3c0-3.4 2.7-5.7 5.8-4.9 2.2.6 3.5 2.4 3.5 5v41.5h41.6c2.8 0 4.8 1.6 5.1 4 .4 3-1.8 5.3-4.9 5.3H94.3v41.7c0 2.1-.8 3.7-2.6 4.6-1.7.9-3.4.6-5-.6-1.3-1-1.8-2.5-1.8-4.1V94.3H43.3c-2.9 0-4.9-1.7-5.1-4.2-.2-2.9 1.9-5.1 5-5.1H85z"/>
+	</symbol>
+</svg>
 
 </body>
 </html>
