@@ -10,6 +10,11 @@
 
 <ul>
 	<li><a href="#" class="twitter" title="Twitter">Twitter Icon</a></li>
+	<li><a href="#" class="twitter lili-filter-black-to-custom-green" title="Twitter">Twitter Icon</a></li>
+	<li><a href="#" class="twitter-white lili-filter-black-to-custom-green" title="Twitter">Twitter Icon</a></li>
+	<li><a href="#" class="twitter-white lili-filter-custom-green" title="Twitter">Twitter Icon</a></li>
+	<li><a href="#" class="twitter lili-filter-custom-green" title="Twitter">Twitter Icon</a></li>
+
 </ul>
 
 <style>
@@ -17,8 +22,9 @@
 		list-style:none;
 	}
 	li a{
-		color:transparent;
+		color:transparent; /* to hide text inside <a> */
 		display:inline-block;
+		float:left;
 		width:42px;
 		height:42px;
 		background-position:center;
@@ -26,6 +32,15 @@
 	}
 	.twitter{
 		background-image:url(../../assets/img/twitter.svg);
+	}
+	.twitter-white{
+		background-image:url(../../assets/img/twitter-white.svg);
+	}
+	.lili-filter-black-to-custom-green{
+		filter: invert(40%) sepia(98%) saturate(353%) hue-rotate(30deg) brightness(100%) contrast(86%);
+	}
+	.lili-filter-custom-green{
+		filter: brightness(0) saturate(100%) invert(40%) sepia(98%) saturate(353%) hue-rotate(30deg) brightness(100%) contrast(86%);
 	}
 </style>
 
