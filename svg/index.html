@@ -102,14 +102,19 @@
 		</div>
 	</div>
 
-	<h2># <code>img[src="plus.svg"]</code></h2>
+	<h2># SVG as Background <code>a.twitter</code> <code>background-image()</code></h2>
+	<ul>
+		<li><code>twitter.svg</code> has no fill and the fill color is black by default</li>
+		<li><a href="https://codepen.io/sosuke/pen/Pjoqqp" target="_blank">Use this to turn black to any color using CSS filters</a></li>
+		<li>Append <code>brightness(0) saturate(100%)</code> to <code>filter</code> to always convert any color to black and then do the filtering above to convert to the target color</li>
+	</ul>
 	<div class="row">
 		<div class="col">
-			<iframe src="inc/svg-bg.html" width="100%" height="300" style="border:0;" title=""></iframe>
+			<iframe src="inc/svg-bg.html" width="100%" height="100" style="border:0;" title="SVG as background"></iframe>
 		</div>
 	</div>
 
-	<h2>SVG Sprite</h2>
+	<h2># SVG Sprite</h2>
 	<ul>
 		<li>It's better to strip <code>style</code> tags in <code>sprite.svg</code>
 			and overwrite style using <code>svg.svg--plus-dims</code>
@@ -125,7 +130,7 @@
 		<li><code>fill="currentColor"</code></li>
 	</ul>
 
-	<h3>SVG Sprite: External Load</h3>
+	<h3>## SVG Sprite: External Load</h3>
 	<ul>
 		<li><code>../assets/img/sprite.svg#plus</code>
 			<ul>
@@ -151,7 +156,7 @@
 		</div>
 	</div>
 
-	<h3>SVG Sprite External Load with CSS Inline</h3>
+	<h3>## SVG Sprite External Load with CSS Inline</h3>
 	<div class="row">
 		<div class="col">
 			<svg class="svg--plus-dims">
@@ -165,7 +170,7 @@
 		</div>
 	</div>
 
-	<h3>SVG Sprite External Load with No Style Tag (Best Way)</h3>
+	<h3>## SVG Sprite External Load with No Style Tag (Best Way)</h3>
 	<ul>
 		<li>This is so far the best way to load SVG sprite.</li>
 		<li><a href="https://fvsch.com/svg-icons/" target="_blank">For more info on
@@ -184,7 +189,7 @@
 		</div>
 	</div>
 
-	<h3>Inline include the sprite.svg</h3>
+	<h3>## Inline include the sprite.svg</h3>
 	<ul>
 		<li><code>use[xlink:href="#a--minus"]</code></li>
 		<li>Does not require polyfill</li>
@@ -205,7 +210,7 @@
 		</div>
 	</div>
 
-	<h3>Inline include the sprite.svg which has no style tag</h3>
+	<h3>## Inline include the sprite.svg which has no style tag</h3>
 	<ul>
 		<li>It seems style cannot be overridden if it's loaded in this way..</li>
 	</ul>
@@ -222,7 +227,7 @@
 		</div>
 	</div>
 
-	<h3>SVG Sprite using <code>symbol</code> can't be loaded in CSS <code>background</code>
+	<h3>## SVG Sprite using <code>symbol</code> can't be loaded in CSS <code>background</code>
 	</h3>
 	<ul>
 		<li>Use <code>g</code> instead of <code>symbol</code></li>
@@ -237,8 +242,6 @@
 			</div>
 		</div>
 	</div>
-
-
 
 </div>
 
