@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Babylon Template</title>
+
+	<style>
+		html, body{
+			overflow:hidden;
+			width:100%;
+			height:100%;
+			margin:0;
+			padding:0;
+		}
+
+		#renderCanvas{
+			width:100%;
+			height:100%;
+			touch-action:none;
+		}
+	</style>
+
+	<script src="https://cdn.babylonjs.com/babylon.js"></script>
+	<script
+		src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+	<script src="https://code.jquery.com/pep/0.4.1/pep.js"></script>
+
+</head>
+
+<body>
+
+<canvas id="renderCanvas" touch-action="none" style="width:50%;height:auto;"></canvas>
+
+<canvas id="renderCanvas2" touch-action="none" style="width:50%;height:auto;"></canvas>
+//touch-action="none" for best results from PEP
+
+<script>
+
+	var canvas = document.getElementById("renderCanvas"); // Get the canvas element
+	var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+
+	/******* Add the create scene function ******/
+	var createScene = function () {
+
+		// Create the scene space
+		var scene = new BABYLON.Scene(engine);
+
+		// Add a camera to the scene and attach it to the canvas
+		var camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, BABYLON.Vector3.Zero(), scene);
+		camera.attachControl(canvas, true);
+
+		// Add lights to the scene
+		var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
+		var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
+
+		// Add and manipulate meshes in the scene
+		var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2}, scene);
+
+		return scene;
+	};
+
+	/******* End of the create scene function ******/
+
+	var scene = createScene(); //Call the createScene function
+
+	engine.runRenderLoop(function () { // Register a render loop to repeatedly render the scene
+		scene.render();
+	});
+
+	var canvas2 = document.getElementById("renderCanvas2"); // Get the canvas element
+	var engine2 = new BABYLON.Engine(canvas2, true); // Generate the BABYLON 3D engine
+	var createScene2 = function (engine, canvas) {
+		var scene = new BABYLON.Scene(engine);
+
+		//Adding a light
+		var light = new BABYLON.PointLight("Omni", new BABYLON.Vector3(20, 20, 100), scene);
+
+		//Adding an Arc Rotate Camera
+		var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0.8, 100, BABYLON.Vector3.Zero(), scene);
+		camera.attachControl(canvas, false);
+
+		var assetsManager = new BABYLON.AssetsManager(scene);
+		var meshTask = assetsManager.addMeshTask("skull task", "", "scenes/", "skull.babylon");
+
+		meshTask.onSuccess = function (task) {
+			task.loadedMeshes[0].position = BABYLON.Vector3.Zero();
+		}
+
+		// Move the light with the camera
+		scene.registerBeforeRender(function () {
+			light.position = camera.position;
+		});
+
+		assetsManager.onFinish = function (tasks) {
+			engine.runRenderLoop(function () {
+				scene.render();
+			});
+		};
+
+		assetsManager.load();
+
+		return scene;
+	}
+	var scene2 = createScene2(engine2,canvas2); //Call the createScene function
+
+	window.addEventListener("resize", function () { // Watch for browser/canvas resize events
+		engine.resize();
+		engine2.resize();
+	});
+</script>
+
+</body>
+
+</html>
