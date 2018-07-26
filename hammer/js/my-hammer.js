@@ -11,6 +11,7 @@ var cbGeneral = function(ev) {
 	//console.log(ev.scale);
 	console.log('ev.deltaX',ev.deltaX); // distance^2 = deltaX^2 + deltaY^2
 	console.log('ev.deltaY',ev.deltaY);
+	console.log('ev.isFirst',ev.isFirst);
 
 }
 
@@ -46,7 +47,6 @@ mc2.add(new Hammer.Swipe({
 })).recognizeWith(mc2.get('pan'));
 
 mc2.add(new Hammer.Rotate({ threshold: 0 })).recognizeWith(mc2.get('pan'));
-
 mc2.add(new Hammer.Pinch({ threshold: 0 })).recognizeWith([mc2.get('pan'), mc2.get('rotate')]);
 
 var mcRecTap1 = new Hammer.Tap({ event: 'doubletap', taps: 2 }),
@@ -69,3 +69,51 @@ mc2.on("pan panstart panmove panend pancancel panleft panright panup pandown", c
 //mc2.on("tap", cbGeneral);
 //mc2.on("doubletap", cbGeneral);
 
+var gThreshold = 70;
+var gsDistance = 0;
+var gsStep = 0;
+var gs360X = 0; // first image
+var gs360XTemp = 0; // first image
+var g360XMax = 3; // +3 or -3
+
+var fReturnValueInBoundary = function(v, min, max) {
+	if (v < min) {
+		return min;
+	}
+	if (v > max) {
+		return max;
+	}
+	return v;
+}
+
+var cbChangePicture = function(s) {
+	gs360XTemp = fReturnValueInBoundary(gs360X + s, -g360XMax, g360XMax);
+	myElement3.src = 'http://via.placeholder.com/300x250/?text=300x250x' + gs360XTemp;
+}
+
+var cbPanX = function(e) {
+	if (e.type === 'panend') {
+		console.log(e.type);
+		console.log('old gs360X',gs360X);
+		gs360X = gs360XTemp;
+		console.log('new gs360X',gs360X);
+		gsDistance = gsStep = 0;
+	}
+	else {
+		var step = parseInt(e.deltaX/gThreshold);
+		if (step !==gsStep) {
+			gsStep = step;
+			console.log('gsStep is changed',gsStep);
+			cbChangePicture(gsStep);
+		}
+	}
+}
+
+var myElement3 = document.getElementById('myElement3'),
+	mc3 = new Hammer.Manager(myElement3);
+mc3.add(new Hammer.Pan({
+	threshold: gThreshold,
+	direction: Hammer.DIRECTION_ALL })
+);
+//mc3.on("panstart panleft panright panup pandown pancancel panend", cbGeneral);
+mc3.on("panstart panleft panright panup pandown pancancel panend", cbPanX);
