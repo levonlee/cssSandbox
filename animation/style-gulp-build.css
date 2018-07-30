@@ -407,4 +407,137 @@
             transform: scale(.5);
   }
 }
+
+/*region Icomoon*/
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+/*endregion*/
+
+/*region button effects*/
+.cbutton {
+  position: relative;
+  display: inline-block;
+  margin: 1em;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #286aab;
+  font-size: 1.4em;
+  transition: color 0.7s;
+}
+.cbutton.cbutton--click,
+.cbutton.cbutton--repeat,
+.cbutton:focus {
+  outline: none;
+  color: #3c8ddc;
+}
+.cbutton__icon {
+  display: block;
+}
+.cbutton__text {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.cbutton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -35px 0 0 -35px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+.cbutton--effect-boris::after {
+  background: rgba(111,148,182,0.1);
+}
+.cbutton--effect-boris.cbutton--click::after {
+  -webkit-animation: anim-effect-boris 0.3s forwards;
+          animation: anim-effect-boris 0.3s forwards;
+}
+.cbutton--effect-boris.cbutton--repeat::after {
+  -webkit-animation: anim-effect-boris-repeat 3.3s infinite forwards;
+          animation: anim-effect-boris-repeat 3.3s infinite forwards;
+}
+@-webkit-keyframes anim-effect-boris {
+  0% {
+    -webkit-transform: scale3d(0.3, 0.3, 1);
+            transform: scale3d(0.3, 0.3, 1);
+  }
+  25%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+            transform: scale3d(1.2, 1.2, 1);
+  }
+}
+@keyframes anim-effect-boris {
+  0% {
+    -webkit-transform: scale3d(0.3, 0.3, 1);
+            transform: scale3d(0.3, 0.3, 1);
+  }
+  25%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+            transform: scale3d(1.2, 1.2, 1);
+  }
+}
+@-webkit-keyframes anim-effect-boris-repeat {
+  /* animation is 0.3 second, delay is 3 second, total 3.3 second */
+  /* 0x0.3/3.3 25%x0.3/3.3 50%x0.3/3.3 100%x0.3/3.3 */
+  0% {
+    -webkit-transform: scale3d(0.3, 0.3, 1);
+            transform: scale3d(0.3, 0.3, 1);
+  }
+  2.27%, 4.55% {
+    opacity: 1;
+  }
+  9.09% {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+            transform: scale3d(1.2, 1.2, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+            transform: scale3d(1.2, 1.2, 1);
+  }
+}
+@keyframes anim-effect-boris-repeat {
+  /* animation is 0.3 second, delay is 3 second, total 3.3 second */
+  /* 0x0.3/3.3 25%x0.3/3.3 50%x0.3/3.3 100%x0.3/3.3 */
+  0% {
+    -webkit-transform: scale3d(0.3, 0.3, 1);
+            transform: scale3d(0.3, 0.3, 1);
+  }
+  2.27%, 4.55% {
+    opacity: 1;
+  }
+  9.09% {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+            transform: scale3d(1.2, 1.2, 1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+            transform: scale3d(1.2, 1.2, 1);
+  }
+}
+/*endregion*/
+
 /*# sourceMappingURL=style-gulp.css.map */
