@@ -1,0 +1,29 @@
+#demo {
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+.box {
+  width:100px;
+  height:100px;
+  position:relative;
+  border-radius:6px;
+  margin-top:4px;
+  text-align:center;
+  line-height:100px;
+  color:black;
+  font-size:80px;
+}
+.box2 {
+  width:100px;
+  height:100px;
+  border-radius:6px;
+  margin-top:4px;
+  text-align:center;
+  line-height:100px;
+  color:black;
+  font-size:80px;
+}
+.green{
+  background-color:#6fb936;
+}
