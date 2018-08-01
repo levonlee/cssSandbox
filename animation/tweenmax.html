@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../assets/bootstrap-4.1.1/css/bootstrap.min.css">
+	<link href="css/my-tweenmax.css" rel="stylesheet">
+
+	<title>TweenMax</title>
+</head>
+<body>
+
+<div class="container">
+	<h1>TweenMax</h1>
+	<ul>
+		<li><a href="https://greensock.com/tweenmax" target="_blank">Intro</a></li>
+		<li><a href="https://greensock.com/docs/Easing" target="_blank">Easing</a></li>
+	</ul>
+
+	<h2>Basics</h2>
+	<ul>
+		<li><code>tween = TweenMax.to(box, 2, {left:"700px", repeat:10, yoyo:true, onRepeat:onRepeat, repeatDelay:0.5, ease:Linear.easeNone});</code></li>
+		<li><code>TweenLite.set(box, {backgroundColor:"hsl(" + Math.random() * 255 + ", 90%, 60%)"});</code></li>
+		<li><code>.set</code> is zero-duration of <code>.to</code></li>
+		<li><a href="https://greensock.com/docs/TweenMax/static.to()" target="_blank"><code>.to() sets properties including special properties provided by TweenMax</code> such as Easing</a></li>
+		<li><code>div.box</code> has <code>position:relative</code></li>
+	</ul>
+	<div class="row">
+		<div class="col">
+			<div id="demo">
+				<div class="box green" id="greenBox">0</div>
+			</div>
+		</div>
+	</div>
+
+	<h2>Use x instead of left</h2>
+	<ul>
+		<li><code>div.box</code> doesn't have to be <code>position:relative</code></li>
+	</ul>
+	<div class="row">
+		<div class="col">
+			<div id="demo2">
+				<div class="box2 green" id="greenBox2">0</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script src="../assets/js/greensock/TweenMax.min.js"></script>
+<script src="js/my-tweenmax.js"></script>
+
+</body>
+</html>
