@@ -5,7 +5,8 @@
 var box = document.getElementById("greenBox"),
 	box2 = document.getElementById("greenBox2"),
 	count = 0,
-	tween;
+	tween,
+tween2;
 
 tween = TweenMax.to(box, 2, {left:"700px", repeat:10, yoyo:true, onRepeat:onRepeat, repeatDelay:0.5, ease:Linear.easeNone});
 tween2 = TweenMax.to(box2, 2, {x:700, repeat:10, yoyo:true, repeatDelay:0.5, ease:Linear.easeNone});
