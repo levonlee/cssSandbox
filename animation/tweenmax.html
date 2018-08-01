@@ -15,6 +15,7 @@
 	<ul>
 		<li><a href="https://greensock.com/tweenmax" target="_blank">Intro</a></li>
 		<li><a href="https://greensock.com/docs/Easing" target="_blank">Easing</a></li>
+		<li>Tween runs as async</li>
 	</ul>
 
 	<h2>Basics</h2>
@@ -35,6 +36,7 @@
 
 	<h2>Use x instead of left</h2>
 	<ul>
+		<li><code>transform</code> is used when <code>x</code> or <code>y</code> is used. <code>left/right</code> <code>top/bottom</code> can only be set to an integer</li>
 		<li><code>div.box</code> doesn't have to be <code>position:relative</code></li>
 	</ul>
 	<div class="row">
@@ -44,6 +46,22 @@
 			</div>
 		</div>
 	</div>
+
+	<h2>Caveat</h2>
+	<ul>
+		<li>
+			<p>From numeric number to percentage might not work</p>
+			<ul>
+				<li>Say from <code>top:2800px</code> to <code>top:50%</code> for <code>.child</code> inside <code>body</code> when <code>.child</code> is <code>zoom:40%</code></li>
+				<li>Have to convert 2800px to percentage value first</li>
+				<li>Say without zoom on child, <code>top:50%</code> has a calculated value of <code>window.getComputedStyle(document.getElementById('child'),null).getPropertyValue('top').match(/\d+/)</code> of <code>(926+35)x0.5</code> where 926 and 35 are the height and padding-bottom of <code>body</code></li>
+				<li>Then with <code>zoom:40%</code>, <code>.child</code> has <code>top = (943+35)/0.4x0.5</code> where 943 and 35 are the height and padding-bottom of <code>body</code></li>
+				<li>Therefore, <code>top:2800px</code> is equivalent to <code>(body.height + body.padding-bottom)/0.4x%</code>, % is <code>2800/(body.height + body.padding-bottom)x0.4x100%</code></li>
+				<li>body.height = <code>parseInt(window.getComputedStyle(document.body,null).height.match(/\d+/)[0])</code></li>
+				<li>body.padding-bottom = <code>parseInt(window.getComputedStyle(document.body,null).paddingBottom.match(/\d+/)[0])</code></li>
+			</ul>
+		</li>
+	</ul>
 
 </div>
 
