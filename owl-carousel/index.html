@@ -13,13 +13,18 @@
   <title>Owl Carousel</title>
 </head>
 <body>
-<h1>Owl Carousel</h1>
-<h2>Dependency: Full jQuery not slim version, >= 1.8.3</h2>
-<ul>
-  <li><a href="https://rawgit.com/levonlee/cssSandbox/master/owl-carousel/index.html">This Page</a></li>
-  <li><a href="https://owlcarousel2.github.io/OwlCarousel2/demos/demos.html" title="Demos">Demos on Owl Carousel</a></li>
-  <li><a href="https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html" title="Docs">Docs</a></li>
-</ul>
+<div class="container">
+  <h1>Owl Carousel</h1>
+
+  <h2>Dependency: Full jQuery not slim version, >= 1.8.3</h2>
+  <ul>
+    <li><a href="https://rawgit.com/levonlee/cssSandbox/master/owl-carousel/index.html">This Page</a></li>
+    <li><a href="https://owlcarousel2.github.io/OwlCarousel2/demos/demos.html" title="Demos">Demos on Owl Carousel</a></li>
+    <li><a href="https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html" title="Docs">Docs</a></li>
+    <li><code>touchstart</code> and <code>touchmove</code> listeners by default have <code>passive:true</code> in <code>AddEventListenerOptions</code> which means preventDefault can't be used and if so it will throw error <code>[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive</code>. Add <code>.owl-carousel {touch-action:manipulation;}</code> to prevent the error.</li>
+  </ul>
+</div>
+
 
 <h2>CSS class prefix <code>owl-*</code></h2>
 <ul>
@@ -200,6 +205,7 @@
 
 <style>
   /* don't do #lili-ex-1 > div */
+  .owl-carousel { touch-action:manipulation; }
   .lili-ex .item{
     background: #4DC7A0;
     padding: 1rem;
