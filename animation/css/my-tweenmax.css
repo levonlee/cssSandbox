@@ -14,7 +14,7 @@
   color:black;
   font-size:80px;
 }
-.box2 {
+.box2, .box-normal{
   width:100px;
   height:100px;
   border-radius:6px;
