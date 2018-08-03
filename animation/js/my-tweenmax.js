@@ -18,13 +18,13 @@ function onRepeat() {
 	TweenLite.set(box, {backgroundColor:"hsl(" + Math.random() * 255 + ", 90%, 60%)"});
 }
 
-var hoverBefore = 'background-color:red',
-	hoverAfter = 'background-color:#6fb936';
+var hoverAfter = 'background-color:red',
+	hoverBefore = 'background-color:#6fb936';
 box3.addEventListener('mouseenter', function(event) {
 	/*TweenLite.killTweensOf(box3);*/
-	TweenLite.to(box3, 1, {css:hoverBefore, ease:Sine.easeOut});
+	TweenLite.to(box3, 1, {css:hoverAfter, ease:Sine.easeOut});
 });
 box3.addEventListener("mouseleave", function(event) {
 	/*TweenLite.killTweensOf(box3);*/
-	TweenLite.to(box3, 1, {css:hoverAfter, ease:Sine.easeOut});
+	TweenLite.to(box3, 1, {css:hoverBefore, ease:Sine.easeOut});
 });
