@@ -297,6 +297,7 @@
 .cbutton {
   position: relative;
   display: inline-block;
+  overflow:visible;
   margin: 1em;
   padding: 0;
   border: none;
