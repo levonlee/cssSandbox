@@ -2,17 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Bicubic for IE9+</title>
+
+  <link rel="stylesheet" href="../assets/bootstrap-4.1.1/css/bootstrap.min.css">
 </head>
 <body>
+
+<div class="container">
+  <h1>Bicubic Image Rendering for IE9+</h1>
+
+  <h2>Original library relies on img to have attribute width</h2>
+  <ul>
+    <li>Does not work for <code>.png</code> with transparency</li>
+    <li>CSS <code>-ms-interpolation-mode:bicubic</code> is already the default in IE11</li>
+  </ul>
   <img src="../assets/img/portrait-504s.jpg" width="70">
   <img class="render" src="../assets/img/portrait-504s.jpg" width="70">
-  <h2>Original library relies on img to have attribute width</h2>
+
+</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="bicubic-interpolation.js"></script>
   <script>
-    $( document ).ready(function() {
+    $(document).ready(function() {
       if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1)) {
         // target IE 11 only
         $('img.render').bicubicImgInterpolation({
