@@ -160,7 +160,8 @@ gulp.task('img-convert-webp', function () {
 });
 
 gulp.task('img-min', () => {
-  gulp.src('src/*')
+	var rename = require('gulp-rename');
+  return gulp.src('src/*')
   .pipe(gImageMin(
     // [plugins], default is
     //[imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()]
@@ -174,8 +175,10 @@ gulp.task('img-min', () => {
     ]
     ,{
       verbose:true // default false. Log for every image passed
-    })
-  )
+    }))
+  .pipe(rename(function (path) {
+    path.extname = path.extname.toLowerCase();
+  }))
   .pipe(gulp.dest('dist'));
 });
 
