@@ -1,3 +1,4 @@
+// https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0
 console.log('app.js version 1.1');
 
 (function() {
