@@ -1,3 +1,16 @@
+var ns = {};
+ns.fromNetwork = (request, timeout) => {
+	return new Promise((resolve, reject) => {
+		var timeoutId = setTimeout(reject, timeout);
+
+		fetch(request).then((response) => {
+			clearTimeout(timeoutId);
+			resolve(response);
+		}, reject);
+
+	});
+}
+
 var dataCacheName = 'weatherData-v1';
 var cacheName = 'weatherPWA-final-1';
 
@@ -105,7 +118,8 @@ self.addEventListener('fetch', function(e) {
 
 	// A few more caching strategies: https://jakearchibald.com/2014/offline-cookbook/
 
-	if ('return cache if exists, else network fetch and save to cache' === 0) {
+	// return cache if exists, else network fetch and save to cache
+	if (1 == 0) {
 		e.respondWith(
 			caches.open(cacheName).then(function(cache) {
 				return cache.match(e.request).then((response) => {
@@ -120,7 +134,8 @@ self.addEventListener('fetch', function(e) {
 	}
 
 	// Similar to above, but save network fetch result to cache.
-	if ('return cache if exists, else network fetch and save to cache and the cache is always refreshed' === 0) {
+	// return cache if exists, else network fetch and save to cache and the cache is always refreshed
+	if (1== 0) {
 		e.respondWith(
 			caches.open(cacheName).then(function (cache) {
 				return cache.match(e.request).then((response) => {
@@ -136,11 +151,21 @@ self.addEventListener('fetch', function(e) {
 
 	// Always network fetch. May take a long time to fail.
 	// If fail, return the cache if exists.
-	if ('Always network fetch. May take a long time to fail.' === 0) {
+	if (1 == 0) {
 		e.respondWith(
 			fetch(e.request).catch(() => {
 				return caches.match(event.request);
 			})
+		);
+	}
+
+	// network fetch first, after 400ms no response, fetch from cache
+	if (1==0) {
+		e.respondWith(
+			fromNetwork(e.request, 400)
+				.catch( () => {
+					return fromCache(e.request);
+				})
 		);
 	}
 
