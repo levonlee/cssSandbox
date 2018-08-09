@@ -2,10 +2,9 @@ var dataCacheName = 'weatherData-v1';
 var cacheName = 'weatherPWA-final-1';
 
 // Only GET request response can be cached using cache.addAll()
-
 var filesToCache = [
 	'./',
-	'index.html',
+	'index.html', // /index.html ./index.html
 	'scripts/app.js',
 	'styles/inline.css',
 	'images/clear.png',
@@ -72,8 +71,8 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-	console.log('[Service Worker] Fetch');
-	//console.log('[Service Worker] Fetch', e.request.url);
+	//console.log('[Service Worker] Fetch');
+	console.log('[Service Worker] Fetch', e.request.url);
 	var dataUrl = 'https://query.yahooapis.com/v1/public/yql';
 	if (e.request.url.indexOf(dataUrl) > -1) {
 		

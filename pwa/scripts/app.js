@@ -1,4 +1,6 @@
 // https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0
+// More examples by Service Worker Cookbook - https://serviceworke.rs/
+
 console.log('app.js version 1.1');
 
 (function() {
@@ -356,5 +358,25 @@ console.log('app.js version 1.1');
     navigator.serviceWorker
              .register('./service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
+
+    // .register('/sw.js') means sw applies to the whole domain even though this code is in example.com/product/index.html
+    // .register('/sw.js', {scope: './'}) in example.com/product/index.html would apply to resources under example.com/product
+    // scope is a url prefix which is usually a relative path
+
+    // navigator.serviceWorker returns ServiceWorkerContainer obj :: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer
+
+    if (1===0) {
+      // Run something after sw is active
+			navigator.serviceWorker.ready.then(function() {
+        // e.g. reload
+        var referenceIframe = document.getElementById('reference'),
+          sampleIframe = document.getElementById('sample');
+				referenceIframe.contentWindow.location.reload();
+				sampleIframe.contentWindow.location.reload();
+      });
+    }
+
+
+
   }
 })();
