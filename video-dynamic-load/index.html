@@ -23,7 +23,7 @@
   <div class="row">
     <div id="lili-youtube-1" class="col-xs-12 hidden">
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/CevxZvSJLk8?rel=0" frameborder="0" allowfullscreen title="B2B Sales Lead Generation from a Top Lead Generation Company"></iframe>
+        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/CevxZvSJLk8?rel=0" style="border:none;" allowfullscreen title=""></iframe>
       </div>
     </div>
   </div>
@@ -36,6 +36,7 @@
     <li>Create an element using <code>$('&lt;iframe /&gt;', attributes)</code></li>
     <li><code>jQuery().replaceWith()</code></li>
   </ul>
+
   <div class="row">
     <div class="col-xs-12">
       <button type="button" class="btn btn-default btn-block lili-youtube-control" aria-controls="lili-youtube-2">YouTube #2</button>
@@ -44,7 +45,24 @@
   <div class="row">
     <div id="lili-youtube-2" class="col-xs-12 hidden">
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item lili-youtube" src="//www.youtube.com/embed/CevxZvSJLk8?rel=0" frameborder="0" allowfullscreen title="B2B Sales Lead Generation from a Top Lead Generation Company"></iframe>
+        <iframe class="embed-responsive-item lili-youtube" src="//www.youtube.com/embed/CevxZvSJLk8?rel=0" allowfullscreen title="" style="border:none;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <h2>Vanilla JavaScript</h2>
+	<ul>
+		<li>Same origin <code></code></li>
+	</ul>
+  <div class="row">
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-default btn-block lili-youtube-control-js" aria-controls="lili-youtube-3">YouTube #3</button>
+    </div>
+  </div>
+  <div class="row">
+    <div id="lili-youtube-3" class="col-xs-12 hidden">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item lili-youtube" src="//www.youtube.com/embed/CevxZvSJLk8?rel=0" allowfullscreen title="" style="border:none;"></iframe>
       </div>
     </div>
   </div>
@@ -101,16 +119,41 @@
       if ($target.attr('aria-controls')) {
         var $content_target = '#'+$target.attr('aria-controls');
         $($content_target).removeClass('hidden');
-        var $iframes = $($content_target).find('iframe.lili-youtube');
-        ns.recreateIframes($iframes);
+				var $iframes = $($content_target).find('iframe.lili-youtube');
+				ns.recreateIframes($iframes);
       }
 
     }
 
+
+		ns.CbDynamicLoadIframe = function(e) {
+			var $target = $(e.target);
+			if ($target.attr('aria-controls')) {
+				var $content_target = '#'+$target.attr('aria-controls');
+
+				$($content_target).removeClass('hidden');
+
+				var jsIframe = document.getElementById($target.attr('aria-controls'));
+				jsIframe =jsIframe.querySelector('iframe');
+
+				// If iframe is in the same domain, below can be used
+				if (1===0) {
+					// true to always get from server while false the browser may get from cache
+					jsIframe.contentWindow.location.reload(true);
+        }
+
+				jsIframe.src = jsIframe.src;
+
+			}
+
+		}
+
     $(function() {
       $('button.lili-youtube-control-normal').on('click',ns.CbLoadYoutube);
       $('button.lili-youtube-control').on('click',ns.CbDynamicLoadYoutube);
-    });
+			$('button.lili-youtube-control-js').on('click',ns.CbDynamicLoadIframe);
+
+		});
 
   }($));
 </script>
