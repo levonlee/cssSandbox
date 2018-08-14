@@ -9,6 +9,8 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="css/logos.css">
+
   <title>Logos - Owl Carousel</title>
 </head>
 <body>
@@ -88,7 +90,7 @@
 </div>
 
 <div class="container">
-  <h2>Loop 1 item with <code>figure</code>'s</h2>
+  <h2>Loop a frame with multiple <code>figure</code>'s at a time</h2>
   <ul>
     <li><code>figure</code>'s in each <code>div.cs-i-logos</code> which is a flex item</li>
     <li><code>figure</code> has fixed width <code>flex:0 0 100px;</code></li>
@@ -167,137 +169,13 @@
   </div>
 </div>
 
-<style>
-  .lili-ex .item{
-    background: #4DC7A0; /* good for debug */
-  }
-  #lili-ex-1 .item{
-    height: 10rem;
-    display:flex;
-    align-items:center;
-  }
-  #lili-ex-1 .item > img {
-    margin:0 auto;
-    max-height:4rem;
-    width:auto;
-  }
-  /* these are .item's that are extra wide and need to shrink in width */
-  .lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
-    width:100% !important;
-  }
-  @media (max-width:1000px) {
-    /* Calculate next viewport width in javascript. No CSS is needed */
-  }
-  @media (max-width:600px) {
-    /* For displaying 1 item. You may need to set those extra width items to width:auto */
-    .lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
-      width:auto !important;
-    }
-  }
-  #lili-ex-2 .cs-i-logos {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-around;
-    align-items:center;
-    height:124px; /* comment out this first and get the largest height at largest viewport */
-  }
-  #lili-ex-2 .cs-i-logos figure{
-    flex:0 0 100px; /* fixed width for logos, this is usually larger than the biggest item width. Pay attention to the total width and your cut-off point which is 768px */
-    margin-left:0;
-    margin-right:0;
-    margin-bottom:0;
-    cursor:pointer;
-  }
-  #lili-ex-2 .cs-i-logos figure .figure-img{
-    margin-bottom:0;
-  }
-  #lili-ex-2 .cs-i-logos figure.cs-i-wbtv,
-  #lili-ex-2 .cs-i-logos figure.cs-i-archi-digest{
-    flex:0 0 60px; /* adjust logos that are too high (e.g. it's a square vs others rectangles) */
-    /* padding-top: 7px; move down certain logos */
-  }
-  @media (max-width:768px) {
-    #lili-ex-2 .cs-i-logos figure{
-      padding-top:0!important; /* This is reset the top padding for any item that has padding-top set on desktop */
-      flex:0 0 70px; /* #lili-ex-2 .cs-i-logos figure is used to fixed height flex:0 0 100px as above*/
-      /* change it to 70px */
-      /* or set it to auto height */
-      /* flex:0 0 auto; */
-
-    }
-    #lili-ex-2 .cs-i-logos {
-      flex-direction: column;
-      height:350px; /* Figure out the item with the largest height and times the number of items in any group. new fixed height 70 * 5 items = 350px */
-    }
-    /* set img to contain inside the figure */
-    #lili-ex-2 .cs-i-logos figure .figure-img{
-      width:auto;
-      max-height:40px; /* figure total height is 70px, set to a smaller value to create space */
-    }
-    /* If you want to the same width and height on mobile as on desktop */
-    /*
-    #lili-ex-2 .cs-i-logos figure.cs-i-wbtv .figure-img{
-      max-height:45px;
-    }
-    */
-  }
-</style>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-
-<script>
-  $(function() {
-    var $owl1 = $('#lili-ex-1');
-    $owl1.owlCarousel({
-      loop:true,
-      margin:10,
-      nav:false,
-      dots:false,
-      responsive:{
-        0:{
-          items:1
-        },
-        600:{
-          items:3 // 600/3 = 200 per item
-        },
-        1000:{
-          items:5 // 1000/5 = 200 per item
-        }
-      },
-      autoplay:true, // default false
-      autoplayTimeout:1000, // default 5000
-      autoplayHoverPause:true // default false
-    });
-    $('.lili-play').on('click',function(){
-      $owl1.trigger('play.owl.autoplay',[1000]);
-    })
-    $('.lili-stop').on('click',function(){
-      $owl1.trigger('stop.owl.autoplay');
-    })
-    var $owl2 = $('#lili-ex-2');
-    $owl2.owlCarousel({
-      loop:true,
-      margin:10,
-      nav:false,
-      dots:false,
-      items:1,
-      autoplay:true, // default false
-      autoplayTimeout:1000, // default 5000
-      autoplayHoverPause:true // default false
-    });
-    $('.lili-play-2').on('click',function(){
-      $owl2.trigger('play.owl.autoplay',[1000]);
-    })
-    $('.lili-stop-2').on('click',function(){
-      $owl2.trigger('stop.owl.autoplay');
-    })
-  });
-</script>
+<script src="js/logos.js"></script>
 
 </body>
 </html>
