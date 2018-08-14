@@ -1,5 +1,8 @@
 .lili-ex .item{
-  background: #4DC7A0; /* good for debug */
+  background-color: #4DC7A0; /* good for debug */
+}
+.lili-ex .item > img{
+  background-color: red; /* good for debug */
 }
 #lili-ex-1 .item{
   height: 10rem;
@@ -12,7 +15,7 @@
   width:auto;
 }
 /* these are .item's that are extra wide and need to shrink in width */
-.lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
+.lili-logo-2,.lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
   width:100% !important;
 }
 @media (max-width:1000px) {
@@ -20,7 +23,7 @@
 }
 @media (max-width:600px) {
   /* For displaying 1 item. You may need to set those extra width items to width:auto */
-  .lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
+  .lili-logo-2,.lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
     width:auto !important;
   }
 }
