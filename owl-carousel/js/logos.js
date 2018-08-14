@@ -26,6 +26,12 @@ $(function() {
 	$('.lili-stop').on('click',function(){
 		$owl1.trigger('stop.owl.autoplay');
 	})
+	$('.lili-prev').on('click',function(){
+		$owl1.trigger('prev.owl.carousel');
+	})
+	$('.lili-next').on('click',function(){
+		$owl1.trigger('next.owl.carousel');
+	})
 	var $owl2 = $('#lili-ex-2');
 	$owl2.owlCarousel({
 		loop:true,
