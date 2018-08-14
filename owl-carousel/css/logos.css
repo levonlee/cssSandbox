@@ -12,11 +12,12 @@
 #lili-ex-1 .item > img {
   margin:0 auto;
   max-height:4rem;
+  max-width:100%;
   width:auto;
 }
 /* these are .item's that are extra wide and need to shrink in width */
 .lili-logo-2,.lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
-  width:100% !important;
+  /*width:100% !important;*/
 }
 @media (max-width:1000px) {
   /* Calculate next viewport width in javascript. No CSS is needed */
@@ -24,7 +25,7 @@
 @media (max-width:600px) {
   /* For displaying 1 item. You may need to set those extra width items to width:auto */
   .lili-logo-2,.lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
-    width:auto !important;
+    /*width:auto !important;*/
   }
 }
 #lili-ex-2 .cs-i-logos {
