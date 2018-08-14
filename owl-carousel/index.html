@@ -23,185 +23,190 @@
     <li><a href="https://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html" title="Docs">Docs</a></li>
     <li><code>touchstart</code> and <code>touchmove</code> listeners by default have <code>passive:true</code> in <code>AddEventListenerOptions</code> which means preventDefault can't be used and if so it will throw error <code>[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive</code>. Add <code>.owl-carousel {touch-action:manipulation;}</code> to prevent the error.</li>
   </ul>
+
+
+  <h2>CSS class prefix <code>owl-*</code></h2>
+  <ul>
+    <li><code>.owl-carousel.owl-theme .item</code></li>
+    <li><code>.item img</code> by default is 100% width</li>
+    <li>Owl modifies the original HTML</li>
+    <li>Layout is re-calculated when viewport is changed</li>
+    <li>Add padding for all <code>.item</code>: <code>.owl-carousel.owl-theme.lili-ex .item {padding:...}</code></li>
+  </ul>
+
+  <h2>Loop Fixed height with Even Width, Navigation and Margin</h2>
+  <ul>
+    <li><code>#lili-ex-1 .item{ height: 10rem; }</code></li>
+    <li>If <code>.item</code> height is greater, it will be cut off. If parent height is greater, <code>.item</code> is placed at the top</li>
+    <li><code>$('#lili-ex-1').owlCarousel({ loop:true, margin:10, nav:true, ... });</code></li>
+    <li>Width is equal based on number of <code>.item</code></li>
+  </ul>
+  <div id="lili-ex-1" class="owl-carousel owl-theme lili-ex">
+    <div class="item bg-success"><h4>1 <code>.item.bg-success</code></h4></div>
+    <div class="item"><h4>2 <code>.item</code></h4></div>
+    <div class="item p-5"><h4>3 <code>.item.p-5</code></h4></div>
+    <div class="item">
+      <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item">
+      <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+  </div>
+
+  <h2>Loop Center with Dynamic Height, Even Width and Margin</h2>
+  <ul>
+    <li>Height is not fixed and it's set to the biggest calculated height of an item.</li>
+    <li><code>$('#lili-ex-2').owlCarousel({ center:true, ... });</code></li>
+    <li>Width is equal based on number of .item</li>
+  </ul>
+  <div id="lili-ex-2" class="owl-carousel owl-theme lili-ex">
+    <div class="item bg-success"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item p-5"><h4>3</h4></div>
+    <div class="item">
+      <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item">
+      <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+  </div>
+
+  <h2>No Loop Center with Dynamic Height, Even Width, Margin and <code>max-width</code> on one or all <code>.item</code></h2>
+  <ul>
+    <li>Height is not fixed and it's set to the biggest calculated height of an item.</li>
+    <li>Take a look at item #3 (scroll to right) <code>.item img.d-block.mx-auto.lili-max-width</code></li>
+  </ul>
+  <div id="lili-ex-3" class="owl-carousel owl-theme lili-ex">
+    <div class="item bg-success"><h4>1</h4></div>
+    <div class="item"><img src="//via.placeholder.com/200x200/?text=200x200x2" class="" alt=""></div>
+    <div class="item">
+      <img src="//via.placeholder.com/200x200/?text=200x200x3" class="d-block mx-auto lili-max-width" alt="">
+    </div>
+    <div class="item">
+      <h4>3</h4>
+    </div>
+    <div class="item">
+      <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="">
+    </div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+  </div>
+
+  <h2>Loop Dynamic Width with Dynamic Height and Margin</h2>
+  <ul>
+    <li>By default width is equal based on number of .item.</li>
+    <li>This sets the .item width to auto <code>$('#lili-ex-4').owlCarousel({loop:true,autoWidth:true, margin:10, items:3 });</code></li>
+    <li>However, <code>option:items:4</code>, <code>option:loop:true</code> won't have effect, the number of items depend on the wrapper's total width.</li>
+    <li>Height is not fixed and it's set to the biggest calculated height of an item.</li>
+  </ul>
+  <div id="lili-ex-4" class="owl-carousel owl-theme lili-ex">
+    <div class="item bg-success"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item p-5"><h4>3</h4></div>
+    <div class="item">
+      <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item">
+      <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+  </div>
+
+  <h2>Add Padding to both ends</h2>
+  <ul>
+    <li>By default items are aligned like flex space-between.</li>
+    <li>Add number of pixels at left and right ends <code>$('#lili-ex-5').owlCarousel({ stagePadding: 20, loop:true, margin:10, items:3 });</code></li>
+  </ul>
+  <div id="lili-ex-5" class="owl-carousel owl-theme lili-ex">
+    <div class="item bg-success"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item p-5"><h4>3</h4></div>
+    <div class="item">
+      <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item">
+      <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
+    </div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+  </div>
+
+  <h2>lazyLoad: true</h2>
+  <ul>
+    <li>img.owl-lazy and img::data-src="url_to_img" or/and img::data-src-retina="url_to_highres_img".</li>
+    <li>If you set above settings not on <img> but on other DOM element then Owl will load an image into css inline background style. Refer to Item #8</li>
+  </ul>
+  <div id="lili-ex-6" class="owl-carousel owl-theme">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=1" data-src-retina="https://placehold.it/350x250&text=1-retina" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=2" data-src-retina="https://placehold.it/350x250&text=2-retina" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=3" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=4" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=5" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=6" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=7" alt="">
+    <div class="item owl-lazy" data-src="https://placehold.it/350x250&text=8">
+      <p>The image is loaded as background image</p>
+      <p>Some content here</p>
+      <p>Some content here</p>
+      <p>Some content here</p>
+    </div>
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=9" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=10" alt="">
+    <img class="owl-lazy" data-src="https://placehold.it/350x250&text=11" alt="">
+  </div>
+
+  <h2>Video</h2>
+  <ul>
+    <li>video:true, lazyload:true, center:true, merge:true</li>
+    <li>Need to CSS set .item-video height</li>
+    <li>Or you can set video width or height as options</li>
+    <li><code>videoWidth: false, // Default false; Type: Boolean/Number</code></li>
+    <li><code>videoHeight: false, // Default false; Type: Boolean/Number</code></li>
+    <li>Use data-merge="2" to adjust width for an item</li>
+    <li>Apply .owl-video and href attribute on any tag other than <code>a</code>. This tag will display:none</li>
+  </ul>
+  <div id="lili-ex-7" class="owl-carousel owl-theme">
+    <div class="item-video" data-merge="3"><a class="owl-video" href="https://vimeo.com/23924346"></a></div>
+    <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ"></a></div>
+    <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=FBu_jxT1PkA"></a></div>
+    <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=oy18DJwy5lI"></a></div>
+    <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=H3jLkJrhHKQ"></a></div>
+    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=g3J4VxWIM6s"></a></div>
+    <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=EF_kj2ojZaE"></a></div>
+  </div>
+
 </div>
 
-
-<h2>CSS class prefix <code>owl-*</code></h2>
-<ul>
-  <li><code>.owl-carousel.owl-theme .item</code></li>
-  <li><code>.item img</code> by default is 100% width</li>
-  <li>Owl modifies the original HTML</li>
-  <li>Layout is re-calculated when viewport is changed</li>
-  <li>Add padding for all <code>.item</code>: <code>.owl-carousel.owl-theme.lili-ex .item {padding:...}</code></li>
-</ul>
-
-<h2>Loop Fixed height with Even Width, Navigation and Margin</h2>
-<ul>
-  <li><code>#lili-ex-1 .item{ height: 10rem; }</code></li>
-  <li>If <code>.item</code> height is greater, it will be cut off. If parent height is greater, <code>.item</code> is placed at the top</li>
-  <li><code>$('#lili-ex-1').owlCarousel({ loop:true, margin:10, nav:true, ... });</code></li>
-  <li>Width is equal based on number of <code>.item</code></li>
-</ul>
-<div id="lili-ex-1" class="owl-carousel owl-theme lili-ex">
-  <div class="item bg-success"><h4>1 <code>.item.bg-success</code></h4></div>
-  <div class="item"><h4>2 <code>.item</code></h4></div>
-  <div class="item p-5"><h4>3 <code>.item.p-5</code></h4></div>
-  <div class="item">
-    <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item">
-    <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item"><h4>6</h4></div>
-  <div class="item"><h4>7</h4></div>
-  <div class="item"><h4>8</h4></div>
-  <div class="item"><h4>9</h4></div>
-  <div class="item"><h4>10</h4></div>
-  <div class="item"><h4>11</h4></div>
-  <div class="item"><h4>12</h4></div>
-</div>
-
-<h2>Loop Center with Dynamic Height, Even Width and Margin</h2>
-<ul>
-  <li>Height is not fixed and it's set to the biggest calculated height of an item.</li>
-  <li><code>$('#lili-ex-2').owlCarousel({ center:true, ... });</code></li>
-  <li>Width is equal based on number of .item</li>
-</ul>
-<div id="lili-ex-2" class="owl-carousel owl-theme lili-ex">
-  <div class="item bg-success"><h4>1</h4></div>
-  <div class="item"><h4>2</h4></div>
-  <div class="item p-5"><h4>3</h4></div>
-  <div class="item">
-    <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item">
-    <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item"><h4>6</h4></div>
-  <div class="item"><h4>7</h4></div>
-  <div class="item"><h4>8</h4></div>
-  <div class="item"><h4>9</h4></div>
-  <div class="item"><h4>10</h4></div>
-  <div class="item"><h4>11</h4></div>
-  <div class="item"><h4>12</h4></div>
-</div>
-
-<h2>No Loop Center with Dynamic Height, Even Width, Margin and <code>max-width</code> on one or all <code>.item</code></h2>
-<ul>
-  <li>Height is not fixed and it's set to the biggest calculated height of an item.</li>
-  <li>Take a look at item #3 (scroll to right) <code>.item img.d-block.mx-auto.lili-max-width</code></li>
-</ul>
-<div id="lili-ex-3" class="owl-carousel owl-theme lili-ex">
-  <div class="item bg-success"><h4>1</h4></div>
-  <div class="item"><img src="//via.placeholder.com/200x200/?text=200x200x2" class="" alt=""></div>
-  <div class="item">
-    <img src="//via.placeholder.com/200x200/?text=200x200x3" class="d-block mx-auto lili-max-width" alt="">
-  </div>
-  <div class="item">
-    <h4>3</h4>
-  </div>
-  <div class="item">
-    <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="">
-  </div>
-  <div class="item"><h4>6</h4></div>
-  <div class="item"><h4>7</h4></div>
-  <div class="item"><h4>8</h4></div>
-  <div class="item"><h4>9</h4></div>
-  <div class="item"><h4>10</h4></div>
-  <div class="item"><h4>11</h4></div>
-  <div class="item"><h4>12</h4></div>
-</div>
-
-<h2>Loop Dynamic Width with Dynamic Height and Margin</h2>
-<ul>
-  <li>By default width is equal based on number of .item.</li>
-  <li>This sets the .item width to auto <code>$('#lili-ex-4').owlCarousel({loop:true,autoWidth:true, margin:10, items:3 });</code></li>
-  <li>However, <code>option:items:4</code>, <code>option:loop:true</code> won't have effect, the number of items depend on the wrapper's total width.</li>
-  <li>Height is not fixed and it's set to the biggest calculated height of an item.</li>
-</ul>
-<div id="lili-ex-4" class="owl-carousel owl-theme lili-ex">
-  <div class="item bg-success"><h4>1</h4></div>
-  <div class="item"><h4>2</h4></div>
-  <div class="item p-5"><h4>3</h4></div>
-  <div class="item">
-    <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item">
-    <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item"><h4>6</h4></div>
-  <div class="item"><h4>7</h4></div>
-  <div class="item"><h4>8</h4></div>
-  <div class="item"><h4>9</h4></div>
-  <div class="item"><h4>10</h4></div>
-  <div class="item"><h4>11</h4></div>
-  <div class="item"><h4>12</h4></div>
-</div>
-
-<h2>Add Padding to both ends</h2>
-<ul>
-  <li>By default items are aligned like flex space-between.</li>
-  <li>Add number of pixels at left and right ends <code>$('#lili-ex-5').owlCarousel({ stagePadding: 20, loop:true, margin:10, items:3 });</code></li>
-</ul>
-<div id="lili-ex-5" class="owl-carousel owl-theme lili-ex">
-  <div class="item bg-success"><h4>1</h4></div>
-  <div class="item"><h4>2</h4></div>
-  <div class="item p-5"><h4>3</h4></div>
-  <div class="item">
-    <img src="//via.placeholder.com/200x200/?text=200x200" class="" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item">
-    <img src="//via.placeholder.com/300x300/?text=300x300" class="rounded-circle" alt="A generic square placeholder image with rounded corners in a figure.">
-  </div>
-  <div class="item"><h4>6</h4></div>
-  <div class="item"><h4>7</h4></div>
-  <div class="item"><h4>8</h4></div>
-  <div class="item"><h4>9</h4></div>
-  <div class="item"><h4>10</h4></div>
-  <div class="item"><h4>11</h4></div>
-  <div class="item"><h4>12</h4></div>
-</div>
-
-<h2>lazyLoad: true</h2>
-<p>img.owl-lazy and img::data-src="url_to_img" or/and img::data-src-retina="url_to_highres_img".</p>
-<p>If you set above settings not on <img> but on other DOM element then Owl will load an image into css inline background style. Refer to Item #8</p>
-<div id="lili-ex-6" class="owl-carousel owl-theme">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=1" data-src-retina="https://placehold.it/350x250&text=1-retina" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=2" data-src-retina="https://placehold.it/350x250&text=2-retina" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=3" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=4" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=5" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=6" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=7" alt="">
-  <div class="item owl-lazy" data-src="https://placehold.it/350x250&text=8">
-    <p>The image is loaded as background image</p>
-    <p>Some content here</p>
-    <p>Some content here</p>
-    <p>Some content here</p>
-  </div>
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=9" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=10" alt="">
-  <img class="owl-lazy" data-src="https://placehold.it/350x250&text=11" alt="">
-</div>
-
-<h2>Video</h2>
-<p>video:true, lazyload:true, center:true, merge:true</p>
-<p>Need to CSS set .item-video height</p>
-<p>Or you can set video width or height as options</p>
-<p><code>videoWidth: false, // Default false; Type: Boolean/Number</code></p>
-<p><code>videoHeight: false, // Default false; Type: Boolean/Number</code></p>
-<p>Use data-merge="2" to adjust width for an item</p>
-<p>Apply .owl-video and href attribute on any tag other than <code>a</code>. This tag will display:none</p>
-
-<div id="lili-ex-7" class="owl-carousel owl-theme">
-  <div class="item-video" data-merge="3"><a class="owl-video" href="https://vimeo.com/23924346"></a></div>
-  <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=JpxsRwnRwCQ"></a></div>
-  <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=FBu_jxT1PkA"></a></div>
-  <div class="item-video" data-merge="1"><a class="owl-video" href="https://www.youtube.com/watch?v=oy18DJwy5lI"></a></div>
-  <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=H3jLkJrhHKQ"></a></div>
-  <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=g3J4VxWIM6s"></a></div>
-  <div class="item-video" data-merge="2"><a class="owl-video" href="https://www.youtube.com/watch?v=EF_kj2ojZaE"></a></div>
-</div>
 
 <style>
   /* don't do #lili-ex-1 > div */
