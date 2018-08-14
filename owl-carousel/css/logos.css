@@ -14,11 +14,21 @@
   max-height:4rem;
   max-width:100%;
   width:auto;
+  flex-shrink: 0; /* fix for IE11 */
+  box-sizing:border-box;
 }
 /* these are .item's that are extra wide and need to shrink in width */
 .lili-logo-2,.lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
   /*width:100% !important;*/
 }
+
+/* these are the ones need to custom shrink (text inside image is too big) */
+#lili-ex-1 .item > img.lili-logo-2{
+  max-width:80%;
+  /* you might need to move it down a little bit */
+  padding-top:10%; box-sizing:content-box;
+}
+
 @media (max-width:1000px) {
   /* Calculate next viewport width in javascript. No CSS is needed */
 }
@@ -26,6 +36,11 @@
   /* For displaying 1 item. You may need to set those extra width items to width:auto */
   .lili-logo-2,.lili-logo-3,.lili-logo-6,.lili-logo-8,.lili-logo-9,.lili-logo-11,.lili-logo-12,.lili-logo-13 {
     /*width:auto !important;*/
+  }
+
+  /* these are the ones need to custom shrink (large width small height) when there's only 1 item showing on mobile */
+  #lili-ex-1 .item > img.lili-logo-3{
+    max-width:80%;
   }
 }
 #lili-ex-2 .cs-i-logos {
