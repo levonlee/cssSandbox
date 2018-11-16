@@ -1,13 +1,77 @@
+const config = require( './config.js' );
+
 var gulp = require('gulp'),
   gResponsive = require('gulp-responsive'),
   // https://github.com/mahnunchik/gulp-responsive
   gSvgSprite = require('gulp-svg-sprite'),
-  gImageMin = require('gulp-imagemin');
+  gImageMin = require('gulp-imagemin'),
+  sourcemaps = require('gulp-sourcemaps'),
+  rename = require('gulp-rename'),
+  minifycss = require( 'gulp-uglifycss' ),
+  uglify = require( 'gulp-uglify' ),
+  sass = require( 'gulp-sass' ),
+  flatmap = require('gulp-flatmap'),
+  plumber = require( 'gulp-plumber' ),
+  remember = require( 'gulp-remember' );
+
+gulp.task( 'myscss', () => {
+
+  return gulp.src('**/myscss/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(
+      sass({
+        errLogToConsole: config.errLogToConsole,
+        outputStyle: config.outputStyle,
+        precision: config.precision
+      })
+    )
+    .on( 'error', sass.logError )
+    .pipe( minifycss({ maxLineLen: config.maxLineLen }) )
+    .pipe(rename( (path) => {
+      path.extname = '.css';
+    }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task( 'myvendorsjs', function() {
+  return gulp
+    .src( config.jsVendorSRC, { since: gulp.lastRun( 'myvendorsjs' ) }) // Only run on changed files.
+    .pipe(
+      plumber({
+        errorHandler: function( err ) {
+          //notify.onError( 'Error: <%= error.message %>' )( err );
+          this.emit( 'end' ); // End stream if error is found
+        }
+      })
+    )
+    .pipe( remember( 'myvendorsjs' ) ) // Bring all files back to stream
+    // .pipe( concat( config.jsVendorFile + '.js' ) )
+    .pipe(
+      rename((path) => {
+        path.dirname += '/' + path.basename;
+      })
+    )
+    .pipe(flatmap(function(stream, file){
+      return stream
+        //.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+        .pipe( gulp.dest( config.jsVendorDestination ) )
+        .pipe(
+          rename((path) => {
+            //path.dirname += '/' + path.basename;
+            path.basename += '.min';
+          })
+        )
+        .pipe( uglify() )
+        //.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+    }))
+    .pipe( gulp.dest( config.jsVendorDestination ) )
+    //.pipe( notify({ message: 'TASK: "vendorsJS" Completed! 💯', onLast: true }) );
+});
+
 
 gulp.task('autoprefixer', function () {
   var postcss = require('gulp-postcss');
-  var sourcemaps = require('gulp-sourcemaps');
-  var rename = require('gulp-rename');
   var autoprefixer = require('autoprefixer');
 
   return gulp.src('**/*-gulp.css', {base: '.'})
@@ -90,7 +154,6 @@ function padLeft(nr, n, str){
   return Array(n-String(nr).length+1).join(str||'0')+nr;
 }
 gulp.task('rename-img-add-index', function () {
-  var rename = require('gulp-rename');
   var index = 0;
 
   return gulp.src('src/*.{jpg,JPG}')
@@ -160,7 +223,6 @@ gulp.task('img-convert-webp', function () {
 });
 
 gulp.task('img-min', () => {
-	var rename = require('gulp-rename');
   return gulp.src('src/*')
   .pipe(gImageMin(
     // [plugins], default is
