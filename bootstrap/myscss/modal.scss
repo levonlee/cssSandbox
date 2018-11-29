@@ -1,11 +1,23 @@
 // Bootstrap Core Variable Override
 
-/*
-$modal-lg:                          800px !default;
-$modal-md:                          500px !default;
-$modal-sm:                          300px !default;
- */
-
 // Import Bootstrap Core
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+$modal-lg:                          800px !default;
+$modal-md:                          500px !default;
+$modal-sm:                          300px !default;
+
+.modal-header {
+  display: flex;
+  align-items: flex-start; // so the close btn always stays on the upper right corner
+  justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
+  padding: $modal-header-padding;
+  border-bottom: $modal-header-border-width solid $modal-header-border-color;
+  @include border-top-radius($modal-content-border-radius);
+
+  .close {
+    padding: $modal-header-padding;
+    // auto on the left force icon to the right even when there is no .modal-title
+    margin: (-$modal-header-padding) (-$modal-header-padding) (-$modal-header-padding) auto;
+  }
+}
