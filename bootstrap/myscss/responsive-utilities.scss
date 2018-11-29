@@ -1,0 +1,12 @@
+// Bootstrap Core Variable Override
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.embed-responsive-custom-ratio{
+  &:before {
+    /* height/width */
+    $lili-ratio: percentage(4/5);
+    padding-top: $lili-ratio;
+  }
+}
