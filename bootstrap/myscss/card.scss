@@ -1,0 +1,12 @@
+// Bootstrap Core Variable Override
+
+/*
+.card {
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+}
+ */
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
