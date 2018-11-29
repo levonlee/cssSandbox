@@ -1762,5 +1762,6 @@ body{min-width:992px !important}
 .table-dark{color:inherit}
 .table-dark th,.table-dark td,.table-dark thead th,.table-dark tbody+tbody{border-color:#dee2e6}
 .table .thead-dark th{color:inherit;border-color:#dee2e6}
-}
+}.modal-header{display:flex;align-items:flex-start;justify-content:space-between;padding:1rem;border-bottom:1px solid #e9ecef;border-top-left-radius:.3rem;border-top-right-radius:.3rem}
+.modal-header .close{padding:1rem;margin:-1rem -1rem -1rem auto}
 /*# sourceMappingURL=modal.css.map */
