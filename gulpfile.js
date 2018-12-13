@@ -223,7 +223,7 @@ gulp.task('img-convert-webp', function () {
 });
 
 gulp.task('img-min', () => {
-  return gulp.src('src/*')
+  return gulp.src('src/**/*')
   .pipe(gImageMin(
     // [plugins], default is
     //[imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()]
