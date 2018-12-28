@@ -1763,5 +1763,5 @@ body{min-width:992px !important}
 .table-dark th,.table-dark td,.table-dark thead th,.table-dark tbody+tbody{border-color:#dee2e6}
 .table .thead-dark th{color:inherit;border-color:#dee2e6}
 }.btn-ll-red{color:#fff;background-color:#cd1713;border-color:#cd1713}
-.btn-ll-red:hover{color:#fff;background-color:#bd1512}
+.btn-ll-red:hover,.btn-ll-red:active,.btn-ll-red:focus{color:#fff;background-color:#bd1512;border-color:#cd1713;box-shadow:none}
 /*# sourceMappingURL=button.css.map */
