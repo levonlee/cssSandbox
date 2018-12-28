@@ -7,8 +7,10 @@
   color:#fff;
   background-color: #cd1713;
   border-color:#cd1713;
-  &:hover {
+  &:hover, &:active, &:focus {
     color:#fff;
     background-color: #bd1512;
+    border-color:#cd1713;
+    box-shadow:none;
   }
 }
