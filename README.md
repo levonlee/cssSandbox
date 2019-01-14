@@ -3,7 +3,7 @@
 
 - `gulp img-min` :: losslessly optimize files in `src` directory to `dist` directory. Files cannot be optimized will be copied to `dist` directory
 
-- `gulp myscss` :: compile myscss
+- `gulp myscss` :: compile myscss `**/myscss/*.scss`
 - `gulp myvendorsjs` :: minimize vendor js files
 
 # Table of Contents
