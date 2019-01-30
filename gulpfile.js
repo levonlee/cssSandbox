@@ -1,20 +1,22 @@
 const config = require( './config.js' );
 
 var gulp = require('gulp'),
-  gResponsive = require('gulp-responsive'),
-  // https://github.com/mahnunchik/gulp-responsive
-  gSvgSprite = require('gulp-svg-sprite'),
-  gImageMin = require('gulp-imagemin'),
+    gResponsive = require('gulp-responsive'),
+    // https://github.com/mahnunchik/gulp-responsive
+    gSvgSprite = require('gulp-svg-sprite'),
+    gImageMin = require('gulp-imagemin'),
     gImageResize = require('gulp-image-resize'),
     gFilter = require('gulp-filter'),
-  sourcemaps = require('gulp-sourcemaps'),
-  rename = require('gulp-rename'),
-  minifycss = require( 'gulp-uglifycss' ),
-  uglify = require( 'gulp-uglify' ),
-  sass = require( 'gulp-sass' ),
-  flatmap = require('gulp-flatmap'),
-  plumber = require( 'gulp-plumber' ),
-  remember = require( 'gulp-remember' );
+    gSort = require('gulp-sort'),
+    gPlumber = require('gulp-plumber'),
+    sourcemaps = require('gulp-sourcemaps'),
+    rename = require('gulp-rename'),
+    minifycss = require('gulp-uglifycss'),
+    uglify = require('gulp-uglify'),
+    sass = require('gulp-sass'),
+    flatmap = require('gulp-flatmap'),
+    plumber = require('gulp-plumber'),
+    remember = require('gulp-remember');
 
 gulp.task( 'myscss', () => {
 
@@ -187,34 +189,25 @@ gulp.task('img-resize-square', function () {
 
 gulp.task('img-resize-max-width', function () {
 
+    // case sensitive
     const imgs = gFilter('**/*.{jpg,JPG,jpeg,JPEG,png,PNG}', {restore: true});
 
-    var maxw=1440; // Smartphone max physical pixels https://www.mydevice.io/
-    // case sensitive
+    var maxw = 1440; // Smartphone max physical pixels https://www.mydevice.io/
 
+    // gulp-image-resize already gulp-imagemin
     return gulp.src('src/**/*')
+        .pipe(gPlumber())
+        .pipe(gSort())
         .pipe(imgs)
         .pipe(gImageResize({
-                width: maxw,
-                height: 0,
-            imageMagick:true, // default uses graphicsmagick
-            interlace: true
+            width: maxw,
+            height: 0,
+            // imageMagick:false > default uses graphicsmagick
+            //interlace: true
         }))
         .pipe(imgs.restore)
-        .pipe(gImageMin(
-            // refer to gulp task img-min
-            [
-                gImageMin.gifsicle({interlaced: true}),
-                gImageMin.jpegtran({progressive: true}),
-                gImageMin.optipng({optimizationLevel: 5}),
-                gImageMin.svgo()
-            ]
-            ,{
-                verbose:true
-            }))
         .pipe(gulp.dest('dist'));
 });
-
 
 // may encounter cannot convert cmyk to srgb
 gulp.task('img-resize-max-width-sharp', function () {
@@ -262,22 +255,24 @@ gulp.task('img-convert-webp', function () {
 });
 
 gulp.task('img-min', () => {
-  return gulp.src('src/**/*')
-  .pipe(gImageMin(
-    // [plugins], default is
-    //[imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()]
+    return gulp.src('src/**/*')
+        .pipe(gPlumber())
+        .pipe(gSort())
+        .pipe(gImageMin(
+            // [plugins], default is
+            //[imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()]
 
-    // fine tune for lossless optimizers
-    [
-      gImageMin.gifsicle({interlaced: true}),
-      gImageMin.jpegtran({progressive: true}),
-      gImageMin.optipng({optimizationLevel: 5}),
-      gImageMin.svgo() // default will move <style> to attributes and remove svg[id]
-    ]
-    ,{
-      verbose:true // default false. Log for every image passed
-    }))
-  .pipe(gulp.dest('dist'));
+            // fine tune for lossless optimizers
+            [
+                gImageMin.gifsicle({interlaced: true}),
+                gImageMin.jpegtran({progressive: true}),
+                gImageMin.optipng({optimizationLevel: 5}),
+                gImageMin.svgo() // default will move <style> to attributes and remove svg[id]
+            ]
+            , {
+                verbose: true // default false. Log for every image passed
+            }))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('img-min-rename', () => {
