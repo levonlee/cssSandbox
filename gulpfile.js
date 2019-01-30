@@ -5,6 +5,8 @@ var gulp = require('gulp'),
   // https://github.com/mahnunchik/gulp-responsive
   gSvgSprite = require('gulp-svg-sprite'),
   gImageMin = require('gulp-imagemin'),
+    gImageResize = require('gulp-image-resize'),
+    gFilter = require('gulp-filter'),
   sourcemaps = require('gulp-sourcemaps'),
   rename = require('gulp-rename'),
   minifycss = require( 'gulp-uglifycss' ),
@@ -184,16 +186,53 @@ gulp.task('img-resize-square', function () {
 });
 
 gulp.task('img-resize-max-width', function () {
+
+    const imgs = gFilter('**/*.{jpg,JPG,jpeg,JPEG,png,PNG}', {restore: true});
+
+    var maxw=1440; // Smartphone max physical pixels https://www.mydevice.io/
+    // case sensitive
+
+    return gulp.src('src/**/*')
+        .pipe(imgs)
+        .pipe(gImageResize({
+                width: maxw,
+                height: 0,
+            imageMagick:true, // default uses graphicsmagick
+            interlace: true
+        }))
+        .pipe(imgs.restore)
+        .pipe(gImageMin(
+            // refer to gulp task img-min
+            [
+                gImageMin.gifsicle({interlaced: true}),
+                gImageMin.jpegtran({progressive: true}),
+                gImageMin.optipng({optimizationLevel: 5}),
+                gImageMin.svgo()
+            ]
+            ,{
+                verbose:true
+            }))
+        .pipe(gulp.dest('dist'));
+});
+
+
+// may encounter cannot convert cmyk to srgb
+gulp.task('img-resize-max-width-sharp', function () {
+  var maxw=1440; // Smartphone max physical pixels https://www.mydevice.io/
   // case sensitive
-  return gulp.src('src/*.{jpg,png}')
+  // gulp-responsive does not support GIF
+  return gulp.src('src/**/*')
     .pipe(gResponsive({
-      '*': {
-        width: 1440, /* Smartphone max physical pixels https://www.mydevice.io/ */
+      '**/*.{jpg,JPG,jpeg,JPEG,png,PNG,tiff,TIFF}': {
+        width: maxw,
         height: 99999,
         max:true, //
         progressive: true
       },
     }, {
+        passThroughUnused: true,
+      errorOnUnusedConfig: false, // don't emit error when a filter is not used
+      errorOnUnusedImage: false, // don't emit error when an image is not used
       errorOnEnlargement:false // skip error when final image is enlarged or shrunk
     }))
     .pipe(gulp.dest('dist'));
@@ -238,10 +277,29 @@ gulp.task('img-min', () => {
     ,{
       verbose:true // default false. Log for every image passed
     }))
-  .pipe(rename(function (path) {
-    path.extname = path.extname.toLowerCase();
-  }))
   .pipe(gulp.dest('dist'));
+});
+
+gulp.task('img-min-rename', () => {
+  return gulp.src('src/**/*')
+      .pipe(gImageMin(
+          // [plugins], default is
+          //[imagemin.gifsicle(), imagemin.jpegtran(), imagemin.optipng(), imagemin.svgo()]
+
+          // fine tune for lossless optimizers
+          [
+            gImageMin.gifsicle({interlaced: true}),
+            gImageMin.jpegtran({progressive: true}),
+            gImageMin.optipng({optimizationLevel: 5}),
+            gImageMin.svgo() // default will move <style> to attributes and remove svg[id]
+          ]
+          ,{
+            verbose:true // default false. Log for every image passed
+          }))
+      .pipe(rename(function (path) {
+        path.extname = path.extname.toLowerCase();
+      }))
+      .pipe(gulp.dest('dist'));
 });
 
 gulp.task('svg-sprite', function() {
