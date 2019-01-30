@@ -277,6 +277,7 @@ gulp.task('img-min', () => {
 });
 
 gulp.task('img-min-parallel', () => {
+    var threads = 8;
     return gulp.src('src/**/*')
         .pipe(gPlumber())
         .pipe(gSort())
@@ -293,7 +294,7 @@ gulp.task('img-min-parallel', () => {
                         verbose: true // default false. Log for every image passed
                     }
                 ),
-                2
+                threads
             )
         )
         .pipe(gulp.dest('dist'));
