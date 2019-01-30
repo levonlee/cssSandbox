@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     gFilter = require('gulp-filter'),
     gSort = require('gulp-sort'),
     gPlumber = require('gulp-plumber'),
+    gParallel = require("concurrent-transform"),
     sourcemaps = require('gulp-sourcemaps'),
     rename = require('gulp-rename'),
     minifycss = require('gulp-uglifycss'),
@@ -266,12 +267,35 @@ gulp.task('img-min', () => {
             [
                 gImageMin.gifsicle({interlaced: true}),
                 gImageMin.jpegtran({progressive: true}),
-                gImageMin.optipng({optimizationLevel: 5}),
+                gImageMin.optipng({optimizationLevel: 5}), // less is less compression. Significantly improve time
                 gImageMin.svgo() // default will move <style> to attributes and remove svg[id]
             ]
             , {
                 verbose: true // default false. Log for every image passed
             }))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('img-min-parallel', () => {
+    return gulp.src('src/**/*')
+        .pipe(gPlumber())
+        .pipe(gSort())
+        .pipe(
+            gParallel(
+                gImageMin(
+                    [
+                        gImageMin.gifsicle({interlaced: true}),
+                        gImageMin.jpegtran({progressive: true}),
+                        gImageMin.optipng({optimizationLevel: 5}),
+                        gImageMin.svgo() // default will move <style> to attributes and remove svg[id]
+                    ]
+                    , {
+                        verbose: true // default false. Log for every image passed
+                    }
+                ),
+                2
+            )
+        )
         .pipe(gulp.dest('dist'));
 });
 
