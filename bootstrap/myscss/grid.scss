@@ -1,0 +1,67 @@
+// Bootstrap Core Variable Override
+
+/* _variables.scss
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+*/
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.row div {
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid rgba(86,61,124,.2);
+}
+.row.cs-item-higher-row {
+  height:100px;
+  background-color:rgba(255,0,0,.1);
+}
+.col-no-padding{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+.w-col-20 {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+@include media-breakpoint-up(sm) {
+  .w-col-sm-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .w-col-md-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .w-col-lg-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .w-col-lg-20 {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}

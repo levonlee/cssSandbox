@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="myscss/grid.css">
   <title>Grid</title>
 </head>
 <body>
@@ -307,56 +306,30 @@
     <div class="col-auto">.col-auto</div>
   </div>
 
+  <h2>5 columns: Row version</h2>
+  <ul>
+    <li><code>.row </code></li>
+  </ul>
+  <div class="row">
+    <div class="col-12 w-col-md-20">Column 1</div>
+    <div class="col-12 w-col-md-20">Column 2</div>
+    <div class="col-12 w-col-md-20">Column 3</div>
+    <div class="col-12 w-col-md-20">Column 4</div>
+    <div class="col-12 w-col-md-20">Column 5</div>
+  </div>
+
   <h2>Variables</h2>
   <div class="form-group">
 <textarea readonly rows="5" class="form-control">
-$grid-columns:      12;
 $grid-gutter-width: 30px;
-
-$grid-breakpoints: (
-  // Extra small screen / phone
-  xs: 0,
-  // Small screen / phone
-  sm: 576px,
-  // Medium screen / tablet
-  md: 768px,
-  // Large screen / desktop
-  lg: 992px,
-  // Extra large screen / wide desktop
-  xl: 1200px
-);
-
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
-);
 </textarea>
 
 </div>
 </div>
 
-<style>
-  .row div {
-    background-color: rgba(86,61,124,.15);
-    border: 1px solid rgba(86,61,124,.2);
-  }
-  .row.cs-item-higher-row {
-    height:100px;
-    background-color:rgba(255,0,0,.1);
-  }
-  .col-no-padding{
-    padding-left:0!important;
-    padding-right:0!important;
-  }
-</style>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="../assets/js/jquery/jquery.min.js"></script>
+<script src="../assets/js/popper/popper.min.js"></script>
+<script src="../assets/js/bootstrap/bootstrap.min.js"></script>
 
 </body>
 </html>
