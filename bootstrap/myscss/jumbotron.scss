@@ -1,0 +1,10 @@
+// Bootstrap Core Variable Override
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$ll-color-1: transparent;
+
+.jumbotron.ll-1 {
+  background-color: $ll-color-1;
+}
