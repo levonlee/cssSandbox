@@ -6,6 +6,7 @@
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/prismjs/prism.css">
   <link rel="stylesheet" href="myscss/collapse.css">
 
   <title>Collapse</title>
@@ -75,18 +76,46 @@
   <h2>Accordion</h2>
   <ul>
     <li>Add the data attribute <code>data-parent="#selector"</code>.</li>
+    <li>
+      <code>PrismJS using script tag</code>
+      <script type="text/plain" class="language-markup ll-prismjs-wrap">
+<div id="accordion">
+    <div class="card">
+      <div class="card-header" id="accordion-i-1-heading">
+        <h5 class="m-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#accordion-i-1-collapse" aria-expanded="true" aria-controls="accordion-i-1-collapse">
+            ...
+          </button>
+        </h5>
+      </div>
+
+      <div id="accordion-i-1-collapse" class="collapse show" aria-labelledby="accordion-i-1-heading" data-parent="#accordion">
+        <div class="card-body">
+          ...
+        </div>
+      </div>
+    </div>
+    <!-- .card end -->
+
+    <div class="card">
+      ...
+    </div>
+    <!-- .card end -->
+</div>
+</script>
+    </li>
   </ul>
   <div id="accordion">
     <div class="card">
-      <div class="card-header" id="headingOne">
+      <div class="card-header" id="accordion-i-1-heading">
         <h5 class="m-0">
-          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#accordion-i-1-collapse" aria-expanded="true" aria-controls="accordion-i-1-collapse">
             Collapsible Group Item #1 (Opened by default)
           </button>
         </h5>
       </div>
 
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div id="accordion-i-1-collapse" class="collapse show" aria-labelledby="accordion-i-1-heading" data-parent="#accordion">
         <div class="card-body">
           <ul>
             <li><code>h5.d-flex.align-items-center</code></li>
@@ -98,43 +127,93 @@
         </div>
       </div>
     </div>
+    <!-- .card end -->
+
     <div class="card">
-      <div class="card-header" id="headingTwo">
+      <div class="card-header" id="accordion-i-2-heading">
         <h5 class="m-0 p-0 d-flex align-items-center">
-          <div class="lili-accordion-item-title-icon collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></div>
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <div class="lili-accordion-item-title-icon collapsed" data-toggle="collapse" data-target="#accordion-i-2-collapse" aria-expanded="false" aria-controls="accordion-i-2-collapse"></div>
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#accordion-i-2-collapse" aria-expanded="false" aria-controls="accordion-i-2-collapse">
             Collapsible Group Item #2 (Collapsed by default)
           </button>
         </h5>
       </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div id="accordion-i-2-collapse" class="collapse" aria-labelledby="accordion-i-2-heading" data-parent="#accordion">
         <div class="card-body">
           <ul>
             <li><code>button.collapsed[aria-expanded=false]</code></li>
-            <li><code>#collapseTwo.collapse</code></li>
+            <li><code>#accordion-i-2-collapse.collapse</code></li>
           </ul>
         </div>
       </div>
     </div>
+
     <div class="card">
-      <div class="card-header" id="headingThree">
+      <div class="card-header" id="accordion-i-3-heading">
         <h5 class="m-0 p-0 d-flex align-items-center">
-          <button class="btn btn-link pl-0" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          <button class="btn btn-link pl-0" data-toggle="collapse" data-target="#accordion-i-3-collapse" aria-expanded="true" aria-controls="accordion-i-3-collapse">
             Collapsible Group Item #3 (Opened by default)
           </button>
-          <div class="lili-accordion-item-title-icon" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree"></div>
+          <div class="lili-accordion-item-title-icon" data-toggle="collapse" data-target="#accordion-i-3-collapse" aria-expanded="true" aria-controls="accordion-i-3-collapse"></div>
         </h5>
       </div>
-      <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+      <div id="accordion-i-3-collapse" class="collapse show" aria-labelledby="accordion-i-3-heading" data-parent="#accordion">
         <div class="card-body">
           <ul>
             <li><code>button.pl-0</code></li>
             <li><code>button.collapsed[aria-expanded=true]</code></li>
-            <li><code>#collapseThree.collapse.show</code></li>
+            <li><code>#accordion-i-3-collapse.collapse.show</code></li>
           </ul>
         </div>
       </div>
     </div>
+    <!-- .card end -->
+
+    <div class="card">
+      <div class="card-header" id="accordion-i-4-heading">
+        <h5 class="m-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#accordion-i-4-collapse" aria-expanded="true" aria-controls="accordion-i-4-collapse">
+            Collapsible Group Item #4 (Opened by default) <code>.card #accordion-i-4-heading.card-header h5 button.collapsed[data-toggle=collapse,  data-target=#accordion-i-4-collapse, aria-expanded=true]</code>
+          </button>
+        </h5>
+      </div>
+      <div id="accordion-i-4-collapse" class="collapse show" aria-labelledby="accordion-i-4-heading" data-parent="#accordion">
+        <div class="card-body">
+          <ul>
+            <li><code>.card div#accordion-i-4-collapse.collapse.show[aria-labelledby="accordion-i-4-heading",data-parent="#accordion"] .card-body</code></li>
+          </ul>
+
+          <div id="accordion-i-4-i-1">
+
+            <div class="card">
+              <div class="card-header" id="accordion-i-4-i-1-heading">
+                <h5 class="m-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#accordion-i-4-i-1-collapse" aria-expanded="true" aria-controls="accordion-i-4-i-1-collapse">
+                    Collapsible Group Item #4 Sub Item(Opened by default) <code>.card #accordion-i-4-i-1-heading.card-header h5 button.collapsed[data-toggle=collapse,  data-target=#accordion-i-4-i-1-collapse, aria-expanded=true]</code>
+                  </button>
+                </h5>
+
+                <div id="accordion-i-4-i-1-collapse" class="collapse show" aria-labelledby="accordion-i-4-i-1-heading" data-parent="#accordion-i-4-i-1">
+                  <div class="card-body">
+                    <ul>
+                      <li><code>.card div#accordion-i-4-i-1-collapse.collapse.show[aria-labelledby="accordion-i-4-i-1-heading",data-parent="#accordion-i-4-i-1"] .card-body</code></li>
+                    </ul>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <!-- .card end -->
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- .card end -->
+
   </div>
 
   <h2>Accordion #2</h2>
@@ -212,6 +291,7 @@
 <script src="../assets/js/jquery/jquery.min.js"></script>
 <script src="../assets/js/popper/popper.min.js"></script>
 <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/prismjs/prism.js"></script>
 
 </body>
 </html>

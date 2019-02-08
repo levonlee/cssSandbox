@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../assets/prismjs/prism.css">
+    <link rel="stylesheet" href="myscss/prismjs.css">
+
+    <title>PrismJS</title>
+</head>
+<body>
+<div class="container">
+    <h1>PrismJS</h1>
+    <ul>
+        <li><a href="https://prismjs.com/" target="_blank">PrismJS</a></li>
+        <li><pre class="language-markup"><code><!-- <link rel="stylesheet" href="../assets/prismjs/prism.css"> --></code></pre></li>
+        <li><pre class="language-markup"><code><!-- <script src="../assets/prismjs/prism.js"></script> --></code></pre></li>
+    </ul>
+
+    <h2 class="mt-3">Unescape: use <pre class="language-markup d-inline p-0 m-0"><code><!-- <pre> --></code></pre> and <pre class="language-markup d-inline p-0 m-0"><code><!-- <code> --></code></pre> tags</h2>
+    <ul>
+        <li>
+            <script type="text/plain" class="language-markup"> <pre class="language-markup"><code><!-- Your unescaped code --></code></pre></script>
+        </li>
+        <li>
+            <span class="badge badge-danger">Limitation</span>
+            HTML comment block cannot be used inside your code:
+            <script type="text/plain" class="language-markup"> <!-- --> </script>
+        </li>
+        <li>
+            <span class="badge badge-success">Advantage</span> Inline:
+            <script type="text/plain" class="language-markup"> <pre class="language-markup d-inline p-0 m-0"><code><!-- Your unescaped code e.g. <pre> --></code></pre></script>
+        </li>
+
+    </ul>
+
+    <h2>Unescape: use script tag</h2>
+    <ul>
+        <li>
+            <pre class="language-markup"><code><!-- <script type="text/plain" class="language-markup"> Your unescaped code </script> --></code></pre>
+        </li>
+        <li>
+            <span class="badge badge-danger">Limitation</span> Escape <code>&lt;/script></code> to <code>&amp;lt;/script&gt;</code>: <pre class="language-markup"><code><!-- <script type="text/plain" class="language-markup"> <script type="text/plain"> Your unescaped code &lt;/script> </script>--></code></pre>
+        </li>
+    </ul>
+
+    <h2>Wrap code</h2>
+    <ul>
+        <li>
+            <script type="text/plain" class="language-scss ll-prismjs-wrap">
+pre.ll-prismjs-wrap[class*="language-"] {
+  > code {
+    white-space: pre-wrap;
+  }
+}
+</script>
+        </li>
+        <li>
+            <script type="text/plain" class="language-markup ll-prismjs-wrap"> <pre class="language-markup lili-wrap"><code><!-- ... --></code></pre></script>
+        </li>
+        <li>
+            <pre class="language-markup ll-prismjs-wrap"><code><!-- <script type="text/plain" class="language-markup lili-wrap"> ... </script>--></code></pre>
+        </li>
+    </ul>
+
+</div>
+
+<script src="../assets/prismjs/prism.js"></script>
+
+</body>
+</html>
