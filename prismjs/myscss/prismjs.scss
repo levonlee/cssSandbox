@@ -1,0 +1,10 @@
+// Bootstrap Core Variable Override
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+pre.ll-prismjs-wrap[class*="language-"] {
+  > code {
+    white-space: pre-wrap;
+  }
+}

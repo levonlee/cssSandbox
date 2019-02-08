@@ -1763,11 +1763,4 @@ body{min-width:992px !important}
 .table-dark th,.table-dark td,.table-dark thead th,.table-dark tbody+tbody{border-color:#dee2e6}
 .table .thead-dark th{color:inherit;border-color:#dee2e6}
 }pre.ll-prismjs-wrap[class*="language-"]>code{white-space:pre-wrap}
-.lili-accordion-item-title-icon{font-family:'Material Icons';color:#007bff;background-color:transparent}
-.lili-accordion-item-title-icon:before{content:"\e15d";font-size:23px;width:53px;height:23px}
-.lili-accordion-item-title-icon.collapsed:before{content:"\e148";font-size:23px;width:23px;height:23px}
-button.lili-btn-inline{white-space:normal;text-align:left}
-button.lili-btn-inline:hover{text-decoration:none}
-button.lili-btn-inline .lili-accordion-btn{background:url("../../assets/material.io/round_remove_circle_black_18dp.png") no-repeat 0 6px;background-size:13px auto;width:18px;height:18px;padding-top:2px;display:inline-block}
-button.lili-btn-inline.collapsed .lili-accordion-btn{background:url("../../assets/material.io/round_add_circle_black_18dp.png") no-repeat 0 6px;background-size:13px auto}
-/*# sourceMappingURL=collapse.css.map */
+/*# sourceMappingURL=prismjs.css.map */
