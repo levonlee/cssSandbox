@@ -15,6 +15,18 @@
   }
 }
 
+.btn-outline-ll-red {
+  color:#cd1713;
+  background-color: transparent;
+  border-color:#cd1713;
+  &:hover, &:active, &:focus {
+    color:#fff;
+    background-color: #cd1713;
+    border-color:#cd1713;
+    box-shadow:none;
+  }
+}
+
 .btn-ll-transparent {
   color:#cd1713;
   background-color: transparent;
