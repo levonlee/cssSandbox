@@ -1,3 +1,8 @@
+// Bootstrap Core Variable Override
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .lili-sec-video{
   position:relative;
   table-layout:fixed; /* the whole layout depends on the table's width and the width of columns instead of the contents of the cells */
@@ -33,10 +38,10 @@
   min-height: 100%;
   top: 0;
   left:0;
-  -webkit-object-fit: cover;
+  /*-webkit-object-fit: cover;
   -moz-object-fit: cover;
   -ms-object-fit: cover;
-  -o-object-fit: cover;
+  -o-object-fit: cover;*/
   object-fit: cover;
 }
 .lili-sec-video .lili-div-content{
