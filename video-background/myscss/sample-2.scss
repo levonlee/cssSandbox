@@ -1,3 +1,9 @@
+// Bootstrap Core Variable Override
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
 .lili-sec-video-2 {
   position:relative;
 }
@@ -28,10 +34,10 @@
   height: auto;
   vertical-align: middle;
   width: 100%;
-  -webkit-object-fit: contain;
+  /*-webkit-object-fit: contain;
   -moz-object-fit: contain;
   -ms-object-fit: contain;
-  -o-object-fit: contain;
+  -o-object-fit: contain;*/
   object-fit: contain;
   background: transparent url('https://picsum.photos/1600/1600/?random') no-repeat 0 0;
   -webkit-background-size: cover;
