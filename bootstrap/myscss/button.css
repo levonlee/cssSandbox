@@ -1768,4 +1768,6 @@ body{min-width:992px !important}
 .btn-outline-ll-red:hover,.btn-outline-ll-red:active,.btn-outline-ll-red:focus{color:#fff;background-color:#cd1713;border-color:#cd1713;box-shadow:none}
 .btn-ll-transparent{color:#cd1713;background-color:transparent;border-color:transparent}
 .btn-ll-transparent:hover,.btn-ll-transparent:active,.btn-ll-transparent:focus{color:#bd1512;background-color:transparent;border-color:transparent;text-decoration:underline;box-shadow:none}
+.btn-outline-ll-white{color:#fff;background-color:transparent;border-color:#fff}
+.btn-outline-ll-white:hover,.btn-outline-ll-white:active,.btn-outline-ll-white:focus{color:#000;background-color:#fff;border-color:#fff;box-shadow:none}
 /*# sourceMappingURL=button.css.map */

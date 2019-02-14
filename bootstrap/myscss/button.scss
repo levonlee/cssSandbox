@@ -39,3 +39,15 @@
     box-shadow:none;
   }
 }
+
+.btn-outline-ll-white {
+  color:#fff;
+  background-color: transparent;
+  border-color:#fff;
+  &:hover, &:active, &:focus {
+    color:#000;
+    background-color: #fff;
+    border-color:#fff;
+    box-shadow:none;
+  }
+}

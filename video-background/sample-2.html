@@ -21,16 +21,18 @@
       <code>position:absolute</code></li>
     <li><code>.lili-div-item</code> all have 0 height because its child is position:absolute</li>
     <li><code>.lili-div-item</code> is used to define width:90% of <code>section</code></li>
-    <li>Position elements inside <code>.lili-div-item</code> using its own element.
+    <li>Items in <code>.lili-div-item</code> have <code>z-index:100</code></li>
+    <li>Child item <code>.lili-div-video</code> is also position:relative. <code>video</code> inside it is position:static</li>
+    <li>Extra Child Item. Position elements inside <code>.lili-div-item</code> using its own element.
       <ul>
         <li><code>.lili-div-item.lili-div-logo img</code></li>
         <li><code>.lili-div-item.lili-div-content-div .lili-div-content</code></li>
+        <li><code>.lili-div-arrow-down</code> is position:absolute bottom aligned horizontally centered</li>
       </ul>
     </li>
-    <li>Items in <code>.lili-div-item</code> have z-index:100</li>
-    <li>Child item .lili-div-video is also position:relative. <code>video</code> inside it is position:static</li>
-    <li>Child .lili-div-arrow-down is position:absolute bottom aligned horizontally centered</li>
   </ul>
+
+  <h3>Browser Compatibility</h3>
   <ul>
     <li>iOS 10 and up supports <code>autoplay</code> and <code>muted</code> for <code>video</code> tags in non-fullscreen mode</li>
     <li>Android 4.4 and up support <code>autoplay</code></li>
