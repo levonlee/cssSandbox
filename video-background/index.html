@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link rel="stylesheet" href="../assets/simple-text-rotator/simpletextrotator.css">
   <link rel="stylesheet" href="myscss/sample-1.css">
 
   <title>Video as Background</title>
@@ -35,7 +35,7 @@
   <div class="position-relative w-100 d-table-cell align-middle text-center lili-div-content">
     <div class="container">
       <div class="jumbotron bg-transparent text-white mb-0">
-        <h2 class="display-3">Transparent Jumbotron</h2>
+        <h2 class="display-3"><span class="ll-rotate">Simple, Customizable, Light Weight, Easy</span> Jumbotron</h2>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
@@ -62,5 +62,14 @@
 <script src="../assets/js/jquery/jquery.min.js"></script>
 <script src="../assets/js/popper/popper.min.js"></script>
 <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script>
+  $(".ll-rotate").textrotator({
+    animation: "flipUp", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+    separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+    speed: 2000 // How many milliseconds until the next word show.
+  });
+</script>
+
 </body>
 </html>
