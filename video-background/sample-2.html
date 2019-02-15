@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="../fonts/icomoon/icomoon.css" rel="stylesheet"  type='text/css'>
+  <link rel="stylesheet" href="../assets/simple-text-rotator/simpletextrotator.css">
   <link rel="stylesheet" href="myscss/sample-2.css">
   <title>Video as Background</title>
 </head>
@@ -17,17 +18,22 @@
       Demo</a></li>
     <li><code>video</code> shows 100% across all browsers. Width is 100% and height is auto adjusted according to ratio</li>
     <li>Whole <code>section</code> is <code>position:relative</code></li>
-    <li>Child items <code>div.lili-div-item</code> have <code>position:relative</code> and content within in it has
-      <code>position:absolute</code></li>
-    <li><code>.lili-div-item</code> all have 0 height because its child is position:absolute</li>
-    <li><code>.lili-div-item</code> is used to define width:90% of <code>section</code></li>
+    <li>Child items <code>div.lili-div-item</code> have <code>position:relative</code> and under each child the wrapper has <code>position:absolute</code></li>
+    <li><code>.lili-div-item</code> have 0 height because its direct child is <code>position:absolute</code></li>
+    <li><code>.lili-div-item</code> is <code>max-width:1600px;</code></li>
+    <li><code>.lili-div-item.ll-w-90</code> to control width to 90%</li>
     <li>Items in <code>.lili-div-item</code> have <code>z-index:100</code></li>
-    <li>Child item <code>.lili-div-video</code> is also position:relative. <code>video</code> inside it is position:static</li>
-    <li>Extra Child Item. Position elements inside <code>.lili-div-item</code> using its own element.
+    <li>Child item <code>.lili-div-video</code> is also <code>position:relative</code>. <code>video</code> inside it is
+      <code>position:static</code></li>
+    <li>Child items that are placed relative to parent <code>section</code>. Direct child (wrapper) of <code>.lili-div-item</code> are positioned using <code>margin-top: x%;</code>
       <ul>
         <li><code>.lili-div-item.lili-div-logo img</code></li>
         <li><code>.lili-div-item.lili-div-content-div .lili-div-content</code></li>
-        <li><code>.lili-div-arrow-down</code> is position:absolute bottom aligned horizontally centered</li>
+      </ul>
+    </li>
+    <li>Extra Child Item
+      <ul>
+        <li><code>.lili-div-arrow-down</code> is <code>position:absolute</code> and bottom aligned, horizontally centered</li>
       </ul>
     </li>
   </ul>
@@ -49,12 +55,12 @@
   </ul>
 </div>
 
-<section id="lili-ex-2" class="lili-sec-video-2">
-  <div class="lili-div-item lili-div-logo">
+<section id="lili-ex-2" class="position-relative lili-sec-video-2">
+  <div class="position-relative mx-auto my-auto lili-div-item ll-w-90 lili-div-logo">
     <img src="http://via.placeholder.com/125x125/?text=125x125" alt="" class="">
   </div>
 
-  <div class="lili-div-item lili-div-content-div">
+  <div class="position-relative mx-auto my-auto lili-div-item ll-w-90 lili-div-content-div">
     <div class="lili-div-content">
       <h5>Title</h5>
       <p>Paragraph 1.</p>
@@ -68,6 +74,21 @@
 
   <div class="lili-div-arrow-down" data-target="arrow-target-content">
     <i class="icon-down"></i>
+  </div>
+
+  <div class="position-relative mx-auto my-auto lili-div-item">
+    <div class="container position-absolute ll-div-item-absolute-child-center">
+      <div class="jumbotron bg-transparent text-white mb-0">
+        <h2 class="display-3"><span class="ll-rotate">Simple, Customizable, Light Weight, Easy</span> Jumbotron</h2>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+        <p class="lead">
+          <a class="btn btn-outline-ll-white-solid btn-lg" href="#" role="button">Learn more</a>
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="lili-div-video">
@@ -91,6 +112,15 @@
 <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
 
 <script src="js/modernizr-custom.js"></script>
+
+<script src="../assets/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script>
+  $(".ll-rotate").textrotator({
+    animation: "flipUp", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+    separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+    speed: 2000 // How many milliseconds until the next word show.
+  });
+</script>
 
 <script>
   var LiliJs = {};
