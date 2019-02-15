@@ -17,13 +17,13 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   flatmap = require('gulp-flatmap'),
   plumber = require('gulp-plumber'),
-  remember = require('gulp-remember')
+  remember = require('gulp-remember');
 
 var scssPath = '**/myscss/*.scss'
 
 gulp.task('myscss', () => {
 
-  return gulp.src(scssPath).
+  return gulp.src(scssPath, { since: gulp.lastRun('myscss') }).
     pipe(sourcemaps.init()).
     pipe(
       sass({
@@ -40,6 +40,25 @@ gulp.task('myscss', () => {
     pipe(sourcemaps.write('.')).
     pipe(gulp.dest('.'))
 })
+
+function myscssOneFile(file) {
+  return gulp.src(file).
+    pipe(sourcemaps.init()).
+    pipe(
+      sass({
+        errLogToConsole: config.errLogToConsole,
+        outputStyle: config.outputStyle,
+        precision: config.precision,
+      }),
+    ).
+    on('error', sass.logError).
+    pipe(minifycss({ maxLineLen: config.maxLineLen })).
+    pipe(rename((path) => {
+      path.extname = '.css'
+    })).
+    pipe(sourcemaps.write('.')).
+    pipe(gulp.dest('.'))
+}
 
 gulp.task('myvendorsjs', function () {
   return gulp.src(config.jsVendorSRC, { since: gulp.lastRun('myvendorsjs') }) // Only
@@ -508,7 +527,11 @@ gulp.task('svg-sprite-mode-view', function () {
 })
 
 gulp.task('watch', () => {
-  gulp.watch(scssPath, gulp.series('myscss')).on('change', function (path) {
-    console.log('File ' + path + ' was changed...')
+  gulp.watch(scssPath, gulp.parallel('myscss')).on('all', function (event, path) {
+    console.log('File ' + path + ' was on ' + event);
   })
+  /*gulp.watch(scssPath).on('all', function (event, path) {
+    console.log('File ' + path + ' was on ' + event);
+    myscssOneFile(path);
+  })*/
 })
