@@ -21,17 +21,18 @@
     <li>Chrome will have <code>video</code> 'cover' and its top and bottom will be overflow:hidden</li>
     <li><code>section.lili-sec-video:before</code> sets shadow for the whole section</li>
     <li><code>div.lili-div-bg-img</code> sets background image that is visible to Edge but not IE11. Chrome has <code>video</code> 'cover'</li>
+    <li>Overlay can be set for <code>div.position-relative.lili-div-content</code> using <code>background:rgba(0,0,0,.5);</code></li>
   </ul>
 </div>
 
 
 <section id="lili-ex-1" class="d-table w-100 lili-sec-video">
+
   <div class="position-absolute w-100 h-100 lili-div-bg-img" style="background-image:url('https://picsum.photos/1600/1000/?random')"></div>
   <video class="position-absolute w-100 h-100 display-inline-block text-center" autoplay="" loop="" muted="">
     <source src="http://veronicarodriguez.online/video/sample.MP4"
             type="video/mp4">
   </video>
-
   <div class="position-relative w-100 d-table-cell align-middle text-center lili-div-content">
     <div class="container">
       <div class="jumbotron bg-transparent text-white mb-0">
