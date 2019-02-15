@@ -1770,20 +1770,19 @@ body{min-width:992px !important}
 }.btn-outline-ll-white-solid{color:#000;background-color:#fff;border-color:#fff}
 .btn-outline-ll-white-solid:hover,.btn-outline-ll-white-solid:active,.btn-outline-ll-white-solid:focus{color:#fff;background-color:transparent;border-color:#fff;box-shadow:none}
 .ll-w-90{width:90%}
-.ll-item-overlay{position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.5);text-align:center}
 .lili-sec-video-2{overflow:hidden}
+.lili-sec-video-2 .ll-item-overlay{position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.5)}
 .lili-sec-video-2 .lili-div-item{max-width:1600px}
-.ll-item-over-video{z-index:100}
+.lili-sec-video-2 .ll-item-over-video{z-index:100}
+.lili-sec-video-2 .ll-div-item-absolute-child-center{left:0;top:0;right:0;bottom:0;text-align:center}
 .lili-sec-video-2 .lili-div-item.lili-div-logo img{position:absolute;margin-top:50px;margin-left:15px}
 .lili-sec-video-2 .lili-div-item.lili-div-content-div .lili-div-content{position:absolute;margin-top:20%;color:#fff;background-color:red}
-.lili-sec-video-2 .lili-div-video{position:relative}
-.lili-sec-video-2 .lili-div-video video{height:auto;vertical-align:middle;width:100%;-o-object-fit:contain;object-fit:contain;background:transparent url("https://picsum.photos/1600/1600/?random") no-repeat 0 0;background-size:cover}
-.lili-sec-video-2 .lili-div-arrow-down{font-size:2.5em;position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;bottom:1.5rem;cursor:pointer}
-.lili-sec-video-2 .lili-div-arrow-down i{font-size:1em;color:#fff;opacity:.8}
 @media all and (max-width:1200px){.lili-sec-video-2 .lili-div-item.lili-div-logo img{margin-top:50px}
 .lili-sec-video-2 .lili-div-item.lili-div-content-div .lili-div-content{margin-top:25%}
 }@media all and (max-width:1000px){.lili-sec-video-2 .lili-div-item.lili-div-logo img{margin-top:60px}
 .lili-sec-video-2 .lili-div-item.lili-div-content-div .lili-div-content{margin-top:30%}
 }@media screen and (max-width:700px){.lili-sec-video-2 .lili-div-item.lili-div-logo img{display:none}
-}.ll-div-item-absolute-child-center{z-index:100;left:0;top:0;right:0;bottom:0;text-align:center}
+}.lili-sec-video-2 .lili-div-arrow-down{font-size:2.5em;position:absolute;-webkit-transform:translateX(-50%);transform:translateX(-50%);left:50%;bottom:1.5rem;cursor:pointer}
+.lili-sec-video-2 .lili-div-arrow-down i{font-size:1em;color:#fff;opacity:.8}
+.lili-sec-video-2 .lili-div-video video{height:auto;vertical-align:middle;width:100%;-o-object-fit:contain;object-fit:contain;background:transparent url("https://picsum.photos/1600/1600/?random") no-repeat 0 0;background-size:cover}
 /*# sourceMappingURL=sample-2.css.map */
