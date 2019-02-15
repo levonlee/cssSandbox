@@ -6,6 +6,10 @@
 - `gulp myscss` :: compile myscss `**/myscss/*.scss`
 - `gulp myvendorsjs` :: minimize vendor js files
 
+# Config
+## Browserslist
+Use Bootstrap 4's `browserslist` in `package.json` 
+
 # Table of Contents
 ## [SVG Inline, Sprite, Background](https://rawgit.com/levonlee/cssSandbox/master/svg/index.html)
 ## [SVG Resize Text](https://rawgit.com/levonlee/cssSandbox/master/svg/svg-text.html)
