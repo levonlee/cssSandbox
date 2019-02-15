@@ -22,7 +22,8 @@
     <li><code>.lili-div-item</code> have 0 height because its direct child is <code>position:absolute</code></li>
     <li><code>.lili-div-item</code> is <code>max-width:1600px;</code></li>
     <li><code>.lili-div-item.ll-w-90</code> to control width to 90%</li>
-    <li>Items in <code>.lili-div-item</code> have <code>z-index:100</code></li>
+    <li>Items that are not <code>video</code> has <code>.ll-item-over-video</code> which is <code>z-index:100</code></li>
+    <li>Overlay <code>.ll-item-overlay</code> is the first child</li>
     <li>Child item <code>.lili-div-video</code> is also <code>position:relative</code>. <code>video</code> inside it is
       <code>position:static</code></li>
     <li>Child items that are placed relative to parent <code>section</code>. Direct child (wrapper) of <code>.lili-div-item</code> are positioned using <code>margin-top: x%;</code>
@@ -56,11 +57,11 @@
 </div>
 
 <section id="lili-ex-2" class="position-relative lili-sec-video-2">
-  <div class="position-relative mx-auto my-auto lili-div-item ll-w-90 lili-div-logo">
+  <div class="ll-item-overlay ll-item-over-video"></div>
+  <div class="position-relative mx-auto my-auto lili-div-item ll-w-90 lili-div-logo ll-item-over-video">
     <img src="http://via.placeholder.com/125x125/?text=125x125" alt="" class="">
   </div>
-
-  <div class="position-relative mx-auto my-auto lili-div-item ll-w-90 lili-div-content-div">
+  <div class="position-relative mx-auto my-auto lili-div-item ll-w-90 lili-div-content-div ll-item-over-video">
     <div class="lili-div-content">
       <h5>Title</h5>
       <p>Paragraph 1.</p>
@@ -72,7 +73,7 @@
     </div>
   </div>
 
-  <div class="lili-div-arrow-down" data-target="arrow-target-content">
+  <div class="lili-div-arrow-down ll-item-over-video" data-target="arrow-target-content">
     <i class="icon-down"></i>
   </div>
 
@@ -90,7 +91,6 @@
       </div>
     </div>
   </div>
-
   <div class="lili-div-video">
     <video autoplay loop muted playsinline poster="https://via.placeholder.com/400x300/?text=400x300" data-target="lili-video-fallback-1" >
       <source src="http://veronicarodriguez.online/video/sample.MP4"

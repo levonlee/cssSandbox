@@ -19,6 +19,18 @@
   width:90%;
 }
 
+.ll-item-overlay{
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,.5);
+  text-align:center;
+  /*display: flex;
+  align-items: center;*/
+}
+
 .lili-sec-video-2 {
   overflow:hidden;
 }
@@ -26,15 +38,16 @@
   /*display: block;*/
   max-width: 1600px;
 }
+.ll-item-over-video {
+  z-index: 100;
+}
 .lili-sec-video-2 .lili-div-item.lili-div-logo img {
   position:absolute;
-  z-index: 100;
   margin-top: 50px;
   margin-left: 15px;
 }
 .lili-sec-video-2 .lili-div-item.lili-div-content-div .lili-div-content{
   position:absolute;
-  z-index: 100;
   margin-top: 20%;
   color:#fff;
   background-color:red;
@@ -57,10 +70,6 @@
 .lili-sec-video-2 .lili-div-arrow-down{
   font-size:2.5em;
   position:absolute;
-  z-index:100;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
   transform: translateX(-50%);
   left:50%;
   bottom:1.5rem;
