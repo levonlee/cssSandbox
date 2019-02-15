@@ -22,6 +22,8 @@ var gulp = require('gulp'),
 var scssPath = '**/myscss/*.scss'
 
 gulp.task('myscss', () => {
+  var postcss = require('gulp-postcss')
+  var autoprefixer = require('autoprefixer')
 
   return gulp.src(scssPath, { since: gulp.lastRun('myscss') }).
     pipe(sourcemaps.init()).
@@ -33,6 +35,7 @@ gulp.task('myscss', () => {
       }),
     ).
     on('error', sass.logError).
+    pipe(postcss([autoprefixer()])).
     pipe(minifycss({ maxLineLen: config.maxLineLen })).
     pipe(rename((path) => {
       path.extname = '.css'

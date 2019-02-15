@@ -1,5 +1,5 @@
-.row.is-flex{display:flex;flex-wrap:wrap}
-.row.is-flex>[class*='col-']{display:flex;flex-direction:column}
+.row.is-flex{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.row.is-flex>[class*='col-']{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}
 .row.match-my-cols{overflow:hidden}
 .row.match-my-cols [class*="col-"]{margin-bottom:-99999px;padding-bottom:99999px}
 /*# sourceMappingURL=grid.css.map */
