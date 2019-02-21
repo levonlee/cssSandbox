@@ -56,6 +56,12 @@
   </div>
 
   <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+  <h3>Uneven Column Height: Stack</h3>
+  <ul>
+    <li>3 columns, first column has higher height and the other 2 columns have small height</li>
+    <li>For <code>md</code>, even width for 3 columns</li>
+    <li>For <code>xs</code>, first column 50% width, and stack the other 2 columns of 50% width</li>
+  </ul>
   <div class="row">
     <div class="col-xs-6 col-md-4">
       <img src="http://via.placeholder.com/300x250/?text=.col-xs-6.col-md-4" class="img-responsive center-block" alt="Responsive image">
@@ -63,6 +69,24 @@
     <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
     <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
   </div>
+
+  <h3>Uneven Column Height: New Row</h3>
+  <ul>
+    <li>3 columns, first column has higher height and the other 2 columns have small height</li>
+    <li>For <code>md</code>, even width for 3 columns</li>
+    <li>For <code>xs</code>, first column 50% width, 2nd column 50% width. 3rd column has 50% width and it's forced to another row</li>
+  </ul>
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+      <img src="http://via.placeholder.com/300x250/?text=.col-xs-6.col-md-4" class="img-responsive center-block" alt="Responsive image">
+    </div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    <!-- Add the extra clearfix for only the required viewport -->
+    <div class="clearfix visible-xs visible-sm"></div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+
+
 
   <h2>Vertical Center a Row of Columns - Method #1</h2>
   <ul>
