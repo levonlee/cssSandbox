@@ -7,6 +7,7 @@ $container-max-widths: (
   lg: 960px,
   xl: 1140px
 ) !default;
+$grid-gutter-width:           30px !default;
 
 $grid-breakpoints: (
   xs: 0,
@@ -64,4 +65,9 @@ $grid-breakpoints: (
     flex: 0 0 20%;
     max-width: 20%;
   }
+}
+
+.ll-bs-container-vp-full-width {
+  margin-left:  calc(-100vw / 2 + 1140px / 2 + #{$grid-gutter-width} / 2);
+  margin-right: calc(-100vw / 2 + 1140px / 2 + #{$grid-gutter-width} / 2);
 }
