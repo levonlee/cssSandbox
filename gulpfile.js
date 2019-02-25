@@ -1,6 +1,11 @@
+console.time('Loading plugins');
+
 const config = require('./config.js')
 
 var gulp = require('gulp'),
+  gDebug = require('gulp-debug'),
+  gPostcss = require('gulp-postcss'),
+  autoprefixer = require('autoprefixer'),
   gResponsive = require('gulp-responsive'),
   // https://github.com/mahnunchik/gulp-responsive
   gSvgSprite = require('gulp-svg-sprite'),
@@ -19,13 +24,21 @@ var gulp = require('gulp'),
   plumber = require('gulp-plumber'),
   remember = require('gulp-remember');
 
-var scssPath = '**/myscss/*.scss'
+console.timeEnd('Loading plugins');
+
+var scssPath = [
+  'bootstrap/myscss/*.scss',
+  'grid/myscss/*.scss',
+  'parallax/myscss/*.scss',
+  'prismjs/myscss/*.scss',
+  'simple-text-rotator/myscss/*.scss',
+  'video-background/myscss/*.scss'
+];
+// don't use ** at the beginning as it will contain a lot of folders in node_modules
 
 gulp.task('myscss', () => {
-  var postcss = require('gulp-postcss')
-  var autoprefixer = require('autoprefixer')
-
-  return gulp.src(scssPath, { since: gulp.lastRun('myscss') }).
+  return gulp.src(scssPath, { base: '.', since: gulp.lastRun('myscss') }).
+    pipe(gDebug()).
     pipe(sourcemaps.init()).
     pipe(
       sass({
@@ -35,8 +48,8 @@ gulp.task('myscss', () => {
       }),
     ).
     on('error', sass.logError).
-    pipe(postcss([autoprefixer()])).
-    pipe(minifycss({ maxLineLen: config.maxLineLen })).
+    pipe(gPostcss([autoprefixer()])).
+    pipe(minifycss()). // this causes errors { maxLineLen: config.maxLineLen }
     pipe(rename((path) => {
       path.extname = '.css'
     })).

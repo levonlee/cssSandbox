@@ -14,7 +14,7 @@ module.exports = {
   precision: 10,
 
   // gulp-uglifycss
-  maxLineLen: 10,
+  maxLineLen: 10, // ditch because it causes final .css have errors e.g. break at @support conditional operators `or`
 
   // JS Vendor options.
   jsVendorSRC: [
