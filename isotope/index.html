@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="myscss/isotope.css">
+
+    <title>Isotope</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>jQuery or Vanilla Isotope</h1>
+    <ul>
+        <li><a href="https://github.com/metafizzy/isotope" target="_blank">GitHub</a></li>
+        <li>Default layout mode is <a href="https://github.com/desandro/masonry" target="_blank">Masonry</a> and uses the same options</li>
+    </ul>
+</div>
+
+<div class="container">
+    <h2>Simple</h2>
+    <ul>
+        <li><code>.ll-grid .ll-grid-sizer</code> for sizing only</li>
+        <li>Each item has CSS <code>width:25%</code> :: <code>.ll-grid .ll-grid-item img.img-fluid</code></li>
+    </ul>
+
+    <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-primary ll-action-shuffle">Shuffle</button>
+        </div>
+
+    </div>
+
+    <h2>Filter</h2>
+    <ul>
+        <li>OR <code>$grid.isotope({ filter: '.alkali, .alkaline-earth' });</code></li>
+        <li>AND <code>$grid.isotope({ filter: '.metal.transition' });</code></li>
+        <li>If jQuery, this is possible: <code>$grid.isotope({ filter: '.metal:not(.transition)' });</code></li>
+    </ul>
+    <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-filter" data-filter=".ll-portrait">Show <code>.ll-portrait</code> items</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-filter" data-filter="*">Show all</button>
+        </div>
+    </div>
+
+    <h2>Layout Mode</h2>
+    <ul>
+        <li>Built in layout modes: <code>masonry</code> (default), <code>fitRows</code>, <code>vertical</code></li>
+    </ul>
+
+    <h3>Masonry Mode</h3>
+    <ul>
+        <li>Horizontal order is not guaranteed to work</li>
+        <li>If <code>columnWidth</code> option is not set, it's set the first item's width. If it is set, it has to be set to a fixed number representing number of pixels. Percentage cannot be set</li>
+    </ul>
+    <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-layoutmode" data-layoutmode="masonry">Masonry</button>
+            <p>Blank options</p>
+        </div>
+        <div class="col">
+            <!-- Use double quotes for JSON in data-opt. jQuery .data will auto convert the JSON string to an object -->
+            <button type="button" class="btn btn-dark ll-action-layoutmode" data-layoutmode="masonry" data-opt='{"itemSelector": ".ll-grid-item", "percentPosition": true, "masonry": {"columnWidth": ".ll-grid-sizer-col-3"}}'>Masonry</button>
+            <p>change from 4 columns to 3 columns using percentPosition and columnWidth</p>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-layoutmode" data-layoutmode="masonry" data-opt='{"masonry": {"horizontalOrder": true}}'>Masonry</button>
+            <p>horizontalOrder</p>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-layoutmode" data-layoutmode="masonry" data-opt='{"masonry": {"fitWidth": true}}'>Masonry</button>
+            <p>fitWidth</p>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-layoutmode" data-layoutmode="masonry" data-opt='{"masonry": {}}'>Masonry</button>
+            <p>Reset</p>
+        </div>
+    </div>
+
+    <h3><code>fitRows</code> Mode, <code>vertical</code> Mode</h3>
+    <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-primary ll-action-layoutmode" data-layoutmode="fitRows">fitRows</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary ll-action-layoutmode" data-layoutmode="vertical">vertical</button>
+        </div>
+    </div>
+
+    <h3><code>fitColumns</code> Mode</h3>
+    <ul>
+        <li><a href="https://github.com/metafizzy/isotope-fit-columns" target="_blank">Install separately</a></li>
+        <li>Works great when items have the same <strong>fixed</strong> width</li>
+        <li><a href="https://isotope.metafizzy.co/layout-modes/fitcolumns.html" target="_blank">More Docs</a></li>
+    </ul>
+    <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-layoutmode" data-layoutmode="fitColumns">fitColumns</button>
+        </div>
+    </div>
+
+    <h3>Packery Mode</h3>
+    <ul>
+        <li><a href="https://isotope.metafizzy.co/layout-modes/packery.html" target="_blank">Install separately</a></li>
+        <li>Free for Open source but require license for commercial projects</li>
+        <li>Same as Masonry and it provides Masonry during draggable interactions!</li>
+        <li><a href="https://isotope.metafizzy.co/layout-modes/packery.html" target="_blank">More Docs</a></li>
+    </ul>
+    <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-primary ll-action-layoutmode" data-layoutmode="packery">packery</button>
+        </div>
+    </div>
+
+    <h3><code>cellsByRow</code> Mode</h3>
+    <ul>
+        <li><a href="https://github.com/metafizzy/isotope-cells-by-row" target="_blank">Install separately</a></li>
+        <li>If rowHeight is not set, it will take the first item's height</li>
+        <li><a href="https://isotope.metafizzy.co/layout-modes/cellsbyrow.html" target="_blank">More Docs</a></li>
+    </ul>
+    <div class="row my-3">
+        <div class="col">
+            <button type="button" class="btn btn-dark ll-action-layoutmode" data-layoutmode="cellsByRow" data-opt='{"layoutMode": "cellsByRow", "itemSelector": ".ll-grid-item", "percentPosition": true, "cellsByRow": {"columnWidth": ".ll-grid-sizer-col-3","rowHeight": ".ll-grid-sizer-col-3"}}'>cellsByRow</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col bg-dark">
+            <div class="ll-grid bg-success w-100">
+                <!-- ll-grid-sizer for sizing only -->
+                <div class="ll-grid-sizer-col-4 ll-grid-sizer-col-3"></div>
+                <div class="ll-grid-item">
+                    <img src="http://via.placeholder.com/540x180/?text=i1x540x180" class="img-fluid">
+                </div>
+                <div class="ll-grid-item">
+                    <img src="http://via.placeholder.com/300x250/?text=i2x300x250" class="img-fluid">
+                </div>
+                <div class="ll-grid-item">
+                    <img src="http://via.placeholder.com/728x90/?text=i3x728x90" class="img-fluid">
+                </div>
+                <div class="ll-grid-item">
+                    <img src="http://via.placeholder.com/300x250/?text=i4x300x250" class="img-fluid">
+                </div>
+                <div class="ll-grid-item">
+                    <img src="http://via.placeholder.com/728x90/?text=i5x728x90" class="img-fluid">
+                </div>
+                <div class="ll-grid-item">
+                    <img src="http://via.placeholder.com/540x180/?text=i6x540x180" class="img-fluid">
+                </div>
+                <div class="ll-grid-item ll-portrait">
+                    <img src="http://via.placeholder.com/180x540/?text=i7x180x540" class="img-fluid">
+                </div>
+                <div class="ll-grid-item ll-portrait">
+                    <img src="http://via.placeholder.com/90x728/?text=i8x90x728" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../assets/js/jquery/jquery.min.js"></script>
+<script src="../assets/js/popper/popper.min.js"></script>
+<script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/js/imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+<script src="../assets/js/isotope/3.0.6/isotope.pkgd.min.js"></script>
+<!-- different layout modes which are required to be installed separately -->
+<script src="../assets/js/isotope/packery/packery-mode.pkgd.min.2.0.1.js"></script>
+<script src="../assets/js/isotope/cells-by-row/cells-by-row.1.1.4.js"></script>
+<script src="../assets/js/isotope/fit-columns/fit-columns.1.1.4.js"></script>
+
+<script>
+    $(function() {
+      var $llEleGrid = $('.ll-grid');
+      var $llGrid = $llEleGrid.isotope({
+        // Options
+        itemSelector: '.ll-grid-item', // optional. required when there is sizing element e.g. .ll-grid-sizer
+      });
+      $llGrid.imagesLoaded().progress(function () {
+        // refresh layout after each image is loaded
+        $llGrid.isotope('layout');
+      });
+      $('.ll-action-shuffle').on('click', function() {
+        $llGrid.isotope('shuffle');
+      });
+
+      $('.ll-action-filter').on( 'click', function() {
+        console.log('hello');
+        var f = $(this).attr('data-filter');
+        console.log(f);
+        $llGrid.isotope({ filter: f });
+      });
+
+      $('.ll-action-layoutmode').on( 'click', function() {
+        var lm = $(this).data('layoutmode'),
+          dataOpt = $(this).data('opt')
+          opt = {layoutMode: lm};
+
+        if (dataOpt) {
+          console.log(dataOpt);
+          // the following is wrong! the data is already an object
+          //opt = JSON.parse(dataOpt);
+          opt = dataOpt;
+        }
+
+        console.log(opt);
+        $llGrid.isotope(opt);
+      });
+
+    });
+</script>
+</body>
+</html>
