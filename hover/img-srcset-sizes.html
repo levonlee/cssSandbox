@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="myscss/img-srcset-sizes.css">
+
+    <title>HTML5 Img Srcset and Sizes</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>HTML5 Img Srcset and Sizes</h1>
+</div>
+
+<div class="container-fluid p-0">
+    <img src="http://via.placeholder.com/3375x1125/?text=3375x1125" class="d-block img-fluid"
+    srcset="http://via.placeholder.com/3375x1125/?text=3375x1125 1140w, http://via.placeholder.com/960x320/?text=960x320 960w, http://via.placeholder.com/720x240/?text=720x240 720w, http://via.placeholder.com/540x180/?text=540x180 540w"
+    sizes="(max-width: 540px) 100vw, (max-width: 720px) 720px, (max-width: 960px) 960px, 100vw">
+</div>
+
+<script src="../assets/js/jquery/jquery.min.js"></script>
+<script src="../assets/js/popper/popper.min.js"></script>
+<script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>
