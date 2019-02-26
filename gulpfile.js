@@ -33,7 +33,8 @@ var scssPath = [
   'prismjs/myscss/*.scss',
   'simple-text-rotator/myscss/*.scss',
   'video-background/myscss/*.scss',
-  'hover/myscss/*.scss'
+  'hover/myscss/*.scss',
+  'isotope/myscss/*.scss'
 ];
 // don't use ** at the beginning as it will contain a lot of folders in node_modules
 
