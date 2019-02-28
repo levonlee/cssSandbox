@@ -5,10 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <title>Navbar</title>
+  <link rel="stylesheet" href="myscss/nav.css">
+  <title>Navbar and Nav</title>
 </head>
 <body>
 <h1>Navbar</h1>
@@ -20,52 +18,54 @@
 
 <h2>Example 1</h2>
 <ul>
-  <li><code>nav.navbar.navbar-expand{-sm|-md|-lg|-xl}.navbar-dark</code></li>
-  <li>Always collapse <code>.navbar-expand</code></li>
-  <li>
-    Placement <code>nav.navbar.fixed-top.navbar-expand{-sm|-md|-lg|-xl}.navbar-dark</code>
+  <li><code>nav.navbar.navbar-expand{-sm|-md|-lg|-xl}.navbar-dark</code>
     <ul>
-      <li><code>.fixed-top</code></li>
-      <li><code>.fixed-bottom</code></li>
-      <li><code>.sticky-top</code> (position:sticky not supported in IE11)</li>
-    </ul>
-  </li>
-  <li>Align navbar components <code>nav.navbar.justify-content-center</code></li>
-  <li><code>.navbar-light</code> <code>.navbar-dark</code> <code>.navbar-light.bg-*</code></li>
-  <li>Force navbar to be printed <code>nav.navbar.d-print</code></li>
-  <li>If not <code>nav</code>, then <code>div[role="navigation"]</code></li>
-
-  <li>
-    Use <code>div.container</code> to wrap navbar components e.g. <code>div.container a.navbrand</code>
-  </li>
-
-  <li>
-    <code>a.navbar-brand</code>
-    <ul>
-      <li>Align left <code>a.navbar-brand.mr-auto</code></li>
-    </ul>
-  </li>
-
-  <li>
-    <code>button.navbar-toggler[data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]</code>
-    <ul>
-      <li>If there's no element before <code>.navbar-toggler</code>, then toggler is aligned to left</li>
-      <li>If there's element, then toggler is aligned to right</li>
-    </ul>
-  </li>
-
-  <li>
-    <code>div#navbarSupportedContent.collapse.navbar-collapse</code>
-    <ul>
-      <li>Any content can be put here but usually <code>ul.navbar-nav</code></li>
+      <li>Always collapse <code>nav.navbar.navbar-expand</code></li>
       <li>
-        <code>ul.navbar-nav li.nav-item a.nav-link</code>
+        Placement <code>nav.navbar.fixed-top.navbar-expand{-sm|-md|-lg|-xl}.navbar-dark</code>
         <ul>
-          <li>Align right <code>ul.navbar-nav.ml-auto.justify-content-end</code></li>
-          <li><code>li.nav-item.active</code></li>
+          <li><code>.fixed-top</code></li>
+          <li><code>.fixed-bottom</code></li>
+          <li><code>.sticky-top</code> (position:sticky not supported in IE11)</li>
+        </ul>
+      </li>
+      <li>Align navbar components <code>nav.navbar.justify-content-center</code></li>
+      <li><code>.navbar-light</code> <code>.navbar-dark</code> <code>.navbar-light.bg-*</code></li>
+      <li>Force navbar to be printed <code>nav.navbar.d-print</code></li>
+      <li>If not <code>nav</code>, then <code>div[role="navigation"]</code></li>
+    </ul>
+  </li>
+  <li>Direct children of <code>nav.navbar</code> could be:
+    <ul>
+      <li><code>a.navbar-brand</code>
+        <ul>
+          <li>Align left <code>a.navbar-brand.mr-auto</code></li>
+        </ul>
+      </li>
+      <li>
+        <code>button.navbar-toggler[data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]</code>
+        <ul>
+          <li>If there's no element before <code>.navbar-toggler</code>, then toggler is aligned to left</li>
+          <li>If there's element, then toggler is aligned to right</li>
+        </ul>
+      </li>
+      <li>
+        <code>div#navbarSupportedContent.collapse.navbar-collapse</code>
+        <ul>
+          <li>Any content can be put here but usually <code>ul.navbar-nav</code>. <strong>Not <code>ul.nav</code>!</strong></li>
+          <li>
+            <code>ul.navbar-nav li.nav-item a.nav-link</code>
+            <ul>
+              <li>Align right <code>ul.navbar-nav.ml-auto.justify-content-end</code></li>
+              <li><code>li.nav-item.active</code></li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
+  </li>
+  <li>
+    Use <code>div.container</code> to wrap navbar components e.g. <code>div.container a.navbrand</code>
   </li>
 </ul>
 
@@ -142,6 +142,38 @@
   </nav>
 </div>
 
+<div class="container">
+  <h2>Nav</h2>
+  <h3>Basics</h3>
+  <ul>
+    <li><code>div[role=navigation] ul.nav li.nav-item a.nav-link.active</code></li>
+    <li>When non <code>ul</code> tag is used, the parent of the <code>ul</code> should have attribute <code>[role=navigation]</code></li>
+    <li>Can be <code>nav.nav</code>. <code>.nav</code> uses <code>display:flex</code></li>
+    <li>Dropdown on items <code>li.nav-item.dropdown</code></li>
+    <li>To center items <code>ul.nav.justify-content-center</code></li>
+    <li>Vertical <code>ul.nav.flex-column</code></li>
+    <li>Tabs <code>ul.nav.nav-tabs</code></li>
+    <li>Pills <code>ul.nav.nav-pills</code></li>
+    <li>Fill and Justify <code>ul.nav.nav-pills.nav-fill</code></li>
+    <li>Items with equal width <code>ul.nav.nav-pills.nav-justified</code></li>
+    <li>Small vw or above use row, below use column <code>ul.nav.nav-pills.flex-column.flex-sm-row</code></li>
+  </ul>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+</div>
+
 <div class="container-fluid bg-success mt-5 py-5">
   <div class="row">
     <div class="col">
@@ -150,16 +182,8 @@
   </div>
 </div>
 
-<style>
-  .lili-bg-blue {
-    background-color: #2760ac;
-  }
-</style>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="../assets/js/jquery/jquery.min.js"></script>
+<script src="../assets/js/popper/popper.min.js"></script>
+<script src="../assets/js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
