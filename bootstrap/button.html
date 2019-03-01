@@ -64,19 +64,100 @@
     <li>Take full width</li>
     <li>Text inside button will extend if the button width is too small</li>
   </ul>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <a class="btn btn-primary btn-block" href="#" role="button">A tag</a>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-outline-primary btn-block">Button tag, outline color</button>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-primary btn-sm btn-block">Small button</button>
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary btn-block" href="#" role="button">A tag</a>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-outline-primary btn-block">Button tag, outline color</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary btn-sm btn-block">Small button</button>
+    </div>
+  </div>
+
+  <h2><code>.btn-group</code></h2>
+  <ul>
+    <li><code>.btn-group button.btn.btn-secondary</code></li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Left</button>
+        <button type="button" class="btn btn-secondary">Middle</button>
+        <button type="button" class="btn btn-secondary">Right</button>
       </div>
     </div>
   </div>
+
+  <ul>
+    <li>Font Awesome in a button group
+
+      <ul>
+        <li><a href="https://fontawesome.com/v4.7.0/examples/" target="_blank">Font Awesome Examples</a></li>
+        <li><a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Font Awesome v4.7.0 icons</a></li>
+        <li>Size
+          <ul>
+            <li><code>.fa-lg</code> 33% increase</li>
+            <li><code>.fa-2x</code> to <code>.fa-5x</code></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+    <li><code>div.btn.btn-light a.text-center i.fa.fa-2x.fa-twitter</code></li>
+    <li><code>.btn-light</code> (<code>.btn-darker</code> does not work well) controls the background color and <code>a</code> tag controls the icon color</li>
+  </ul>
+  <div class="row">
+    <div class="col">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-2x fa-facebook-square" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-dark">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-google-plus-circle" aria-hidden="true"></i></a>
+        </div>
+        <div class="btn btn-light">
+          <a href="#" class="text-center" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 
 <script src="../assets/js/jquery/jquery.min.js"></script>
