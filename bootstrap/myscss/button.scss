@@ -3,6 +3,12 @@
 // Import Bootstrap Core
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+// copy fonts from ../../node_modules/font-awesome/fonts
+$fa-font-path: "../../assets/font/fontawesome";
+
+// Font Awesome
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
 .btn-ll-red {
   color:#fff;
   background-color: #cd1713;
