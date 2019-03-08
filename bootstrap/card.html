@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link rel="stylesheet" href="../assets/prismjs/prism.css">
   <link rel="stylesheet" href="myscss/card.css">
 
   <title>Card</title>
@@ -14,6 +14,19 @@
 
 <div class="container">
   <h2>Basic Components: similar to BS3's <code>.thumbnail</code></h2>
+  <ul>
+    <li><code>.card</code>
+      <ul>
+        <li>One or more <code>.card-header</code></li>
+        <li>One or more <code>.card-body</code></li>
+        <li>One or more <code>ul.list-group</code></li>
+        <li>One or more <code>.card-footer</code></li>
+        <li><code>img.card-img-top</code></li>
+        <li><code>img.card-img-bottom</code></li>
+      </ul>
+    </li>
+    <li>Default <code>.card</code> takes full width, <code>.card.w-50</code>, <code>.card.w-75</code> are possible</li>
+  </ul>
   <div class="row">
     <div class="col-md-4">
       <div class="card" style="width: 18rem;">
@@ -49,32 +62,6 @@
         </div>
         <div class="card-footer text-muted">
           2 days ago
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h2>Use cards in navigation</h2>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
@@ -199,7 +186,7 @@
     <div class="col-md-12">
       <div class="card bg-dark text-white">
         <img class="card-img" src="http://via.placeholder.com/728x90/?text=728x90" alt="Card image">
-        <div class="card-img-overlay">
+        <div class="card-img-overlay text-dark">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <p class="card-text">Last updated 3 mins ago</p>
@@ -236,7 +223,92 @@
 </textarea>
   </div>
 
-  <h2>Overwrite header and footer colors</h2>
+  <h2>Header and Footer</h2>
+  <pre class="language-scss"><code><!--
+  .card-header {
+  padding: $card-spacer-y $card-spacer-x;
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  background-color: $card-cap-bg;
+  border-bottom: $card-border-width solid $card-border-color;
+
+  &:first-child {
+    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+  }
+
+  + .list-group {
+    .list-group-item:first-child {
+      border-top: 0;
+    }
+  }
+}
+  --></code></pre>
+
+
+  <h3>Add navigation to <code>.card-header</code></h3>
+  <ul>
+    <li><code>.card</code>
+      <ul>
+        <li><code>.card-header</code>
+          <ul>
+            <li><code>ul.nav.nav-tabs.card-header-tabs</code> or <code>ul.nav.nav-pills.card-header-pills</code>
+              <ul>
+                <li><code>li.nav-item a.nav-link</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <h3>Overwrite header and footer colors</h3>
   <div class="form-group">
 <textarea readonly rows="5" class="form-control">
 <div class="card border-success mb-3" style="max-width: 18rem;">
@@ -416,6 +488,7 @@
 <script src="../assets/js/jquery/jquery.min.js"></script>
 <script src="../assets/js/popper/popper.min.js"></script>
 <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/prismjs/prism.js"></script>
 
 </body>
 </html>
