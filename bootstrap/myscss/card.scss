@@ -15,3 +15,9 @@ $fa-font-path: "../../assets/font/fontawesome";
 
 // Font Awesome
 @import "../../node_modules/font-awesome/scss/font-awesome";
+
+pre.ll-prismjs-wrap[class*="language-"] {
+  > code {
+    white-space: pre-wrap;
+  }
+}
