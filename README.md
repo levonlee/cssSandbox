@@ -2,7 +2,7 @@
 `npm install`
 
 - `gulp img-min` :: losslessly optimize files in `src` directory to `dist` directory. Files cannot be optimized will be copied to `dist` directory
-
+- `gulp img-min-rename` :: the same as above and replace spaces with hyphens and lowercase the file basename and extension name
 - `gulp myscss` :: compile myscss `**/myscss/*.scss`
 - `gulp myvendorsjs` :: minimize vendor js files
 
