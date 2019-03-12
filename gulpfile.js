@@ -338,11 +338,12 @@ gulp.task('img-min-rename', () => {
       gImageMin.jpegtran({ progressive: true }),
       gImageMin.optipng({ optimizationLevel: 5 }),
       gImageMin.svgo(), // default will move <style> to attributes and remove
-                       // svg[id]
+      // svg[id]
     ]
     , {
       verbose: true, // default false. Log for every image passed
     })).pipe(rename(function (path) {
+    path.basename = path.basename.split(' ').join('-').toLowerCase()
     path.extname = path.extname.toLowerCase()
   })).pipe(gulp.dest('dist'))
 })
