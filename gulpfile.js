@@ -79,17 +79,14 @@ function myscssOneFile(file) {
 }
 
 gulp.task('myvendorsjs', function () {
-  return gulp.src(config.jsVendorSRC, { since: gulp.lastRun('myvendorsjs') }) // Only
-                                                                     // run on
-                                                                     // changed
-                                                                     // files.
+  return gulp.src(config.jsVendorSRC, { since: gulp.lastRun('myvendorsjs') })
     .pipe(
       plumber({
         errorHandler: function (err) {
           //notify.onError( 'Error: <%= error.message %>' )( err );
           this.emit('end') // End stream if error is found
-        },
-      }),
+        }
+      })
     ).pipe(remember('myvendorsjs')) // Bring all files back to stream
     // .pipe( concat( config.jsVendorFile + '.js' ) )
     .pipe(
@@ -99,14 +96,15 @@ gulp.task('myvendorsjs', function () {
     ).pipe(flatmap(function (stream, file) {
       return stream
       //.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-        .pipe(gulp.dest(config.jsVendorDestination)).pipe(
-          rename((path) => {
+        .pipe(gulp.dest(config.jsVendorDestination))
+        .pipe(rename((path) => {
             //path.dirname += '/' + path.basename;
             path.basename += '.min'
-          }),
-        ).pipe(uglify())
+          }))
+        .pipe(uglify())
       //.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-    })).pipe(gulp.dest(config.jsVendorDestination))
+    }))
+    .pipe(gulp.dest(config.jsVendorDestination))
   //.pipe( notify({ message: 'TASK: "vendorsJS" Completed! 💯', onLast: true })
   // );
 })

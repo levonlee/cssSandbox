@@ -21,7 +21,8 @@ module.exports = {
     './assets/js/vendor/*.js',
     'node_modules/jquery/dist/jquery.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
-    'node_modules/popper.js/dist/umd/popper.js'
+    'node_modules/popper.js/dist/umd/popper.js',
+    'node_modules/owl.carousel/dist/owl.carousel.js'
   ], // Path to JS vendor folder.
   jsVendorDestination: './assets/js/', // Path to place the compiled JS vendors file.
   jsVendorFile: 'vendors', // Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
