@@ -34,7 +34,8 @@ var scssPath = [
   'simple-text-rotator/myscss/*.scss',
   'video-background/myscss/*.scss',
   'hover/myscss/*.scss',
-  'isotope/myscss/*.scss'
+  'isotope/myscss/*.scss',
+  'owl-carousel/myscss/*.scss'
 ];
 // don't use ** at the beginning as it will contain a lot of folders in node_modules
 
