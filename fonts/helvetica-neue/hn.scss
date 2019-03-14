@@ -1,0 +1,22 @@
+$helvetica-neue-font-path: "../../assets/fonts/helvetica-neue";
+@font-face {
+  font-family: 'HelveticaNeue-Light';
+  src: local('Helvetical Neue Light'), url('#{$helvetica-neue-font-path}/HelveticaNeueLTStd-Lt.woff') format('woff'),
+  url('#{$helvetica-neue-font-path}/HelveticaNeueLTStd-Lt.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeue-CBold';
+  src: local('Helvetical Neue CBold'), local('Helvetical Neue Condensed Bold'), local('Helvetical Neue Bold'), url('#{$helvetica-neue-font-path}/HelveticaNeue-CondensedBold.woff') format('woff'), url('#{$helvetica-neue-font-path}/HelveticaNeue-CondensedBold.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+.font-hn-light {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.font-hn-cbold {
+  font-family: "HelveticaNeue-CBold", "Helvetica Neue CBold", "Helvetica Neue Condensed Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
