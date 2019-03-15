@@ -60,25 +60,6 @@ gulp.task('myscss', () => {
     pipe(gulp.dest('.'))
 })
 
-function myscssOneFile(file) {
-  return gulp.src(file).
-    pipe(sourcemaps.init()).
-    pipe(
-      sass({
-        errLogToConsole: config.errLogToConsole,
-        outputStyle: config.outputStyle,
-        precision: config.precision,
-      }),
-    ).
-    on('error', sass.logError).
-    pipe(minifycss({ maxLineLen: config.maxLineLen })).
-    pipe(rename((path) => {
-      path.extname = '.css'
-    })).
-    pipe(sourcemaps.write('.')).
-    pipe(gulp.dest('.'))
-}
-
 gulp.task('myvendorsjs', function () {
   return gulp.src(config.jsVendorSRC, { since: gulp.lastRun('myvendorsjs') })
     .pipe(
@@ -548,8 +529,5 @@ gulp.task('watch', () => {
   gulp.watch(scssPath, gulp.parallel('myscss')).on('all', function (event, path) {
     console.log('File ' + path + ' was on ' + event);
   })
-  /*gulp.watch(scssPath).on('all', function (event, path) {
-    console.log('File ' + path + ' was on ' + event);
-    myscssOneFile(path);
-  })*/
+
 })

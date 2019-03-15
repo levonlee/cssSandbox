@@ -11,13 +11,12 @@
 
 <div class="container">
     <h1>Simple Text Rotator</h1>
-
     <ul>
         <li><a href="https://github.com/peachananr/simple-text-rotator">GitHub</a></li>
     </ul>
 
     <div>
-        Super <span class="rotate d-none">Simple, Customizable, Light Weight, Easy</span> Text Rotator with Style
+        Super <span class="rotate">Simple, Customizable, Light Weight, Easy</span> Text Rotator with Style
     </div>
 </div>
 
@@ -28,9 +27,9 @@
 
 <script>
   $(function(){
-    $(".rotate").removeClass('d-none');
-    $(".rotate").textrotator({
-      animation: '"flipUp', // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+    $('.rotate').removeClass('d-none');
+    $('.rotate').textrotator({
+      animation: 'flipUp', // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
       separator: ',', // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
       speed: 2000 // How many milliseconds until the next word show.
     });
