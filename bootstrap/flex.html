@@ -4,83 +4,156 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="../assets/prismjs/prism.css">
+  <link rel="stylesheet" href="myscss/flex.css">
   <title>Flex</title>
 </head>
 <body>
-<h1>Flex</h1>
-<ul>
-  <li><code>justify-content-start</code> <code>justify-content-end</code> <code>justify-content-center</code> <code>justify-content-between</code> <code>justify-content-around</code></li>
-  <li><code>justify-content{-sm|-md|-lg|-xl}-*</code></li>
-</ul>
-
-<h2 class="p-2">Justify start, wrap</h2>
-<div class="d-flex justify-content-start lili-flex-wrap">
-  <div class="p-2">Flex item 1</div>
-  <div class="p-2">Flex item 2</div>
-  <div class="p-2">Flex item 3</div>
-</div>
-
-<h2 class="p-2">Each item is 50% width</h2>
-<div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-2">
-  <div class="p-2">Flex item 1</div>
-  <div class="p-2">Flex item 2</div>
-  <div class="p-2">Flex item 3</div>
-</div>
-
-<h2 class="p-2">Each item is 50% width with max-width 300px</h2>
-<div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-3">
-  <div class="p-2">Flex item 1</div>
-  <div class="p-2">Flex item 2</div>
-  <div class="p-2">Flex item 3</div>
-</div>
-
-<h2 class="p-2">Vertical align badge among multiple lines of header tags</h2>
-<div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-4">
-  <h2>Flex item 1</h2>
-  <div class="p-2">Flex item 2</div>
-  <div class="p-2">Flex item 3</div>
-</div>
-
-<h2 class="p-2">From start with gap</h2>
-<div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-5">
-  <div class="p-2">Flex item 1</div>
-  <div class="p-2">Flex item 2</div>
-  <div class="p-2">Flex item 3</div>
-</div>
-
-<h2 class="p-2">space-between with fixed 1rem gap, 3 columns -> 2 columns</h2>
-<div class="d-flex flex-wrap justify-content-between lili-flex-wrap lili-ex-6">
-  <div class="p-2">Flex item 1</div>
-  <div class="p-2">Flex item 2</div>
-  <div class="p-2">Flex item 3</div>
-</div>
-
-<h2 class="p-2">Align Items: Image Vertical Center with Paragraph</h2>
-<ul>
-  <li><code>align-items{-sm|-md|-lg|-xl}-*</code></li>
-  <li><code>.item.align-self{-sm|-md|-lg|-xl}-*</code></li>
-  <ul>
-    <li><code>align-items-stretch</code></li>
-    <li><code>align-items-center</code></li>
-    <li><code>align-items-start</code></li>
-    <li><code>align-items-end</code></li>
-    <li><code>align-items-baseline</code></li>
-  </ul>
-</ul>
-<div class="d-flex align-items-center">
-  <p>fdjlfjsdl kjdflasj</p>
-  <img src="http://via.placeholder.com/300x250/?text=300x250">
-</div>
-<div class="d-flex align-items-center">
-  <p class="m-0 p-0">fdjlfjsdl kjdflasj.</p>
-  <img src="http://via.placeholder.com/30x25/?text=30x25" class="p-3">
-</div>
 
 <div class="container">
+  <h1>Flex</h1>
+  <ul>
+    <li><code>justify-content-start</code> <code>justify-content-end</code> <code>justify-content-center</code> <code>justify-content-between</code> <code>justify-content-around</code></li>
+    <li><code>justify-content{-sm|-md|-lg|-xl}-*</code></li>
+  </ul>
+
+  <h2 class="p-2">Justify start, wrap</h2>
+  <div class="d-flex justify-content-start lili-flex-wrap">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+  </div>
+
+  <h2 class="p-2">Each item is 50% width</h2>
+  <div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-2">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+  </div>
+
+  <h2 class="p-2">Each item is 50% width with max-width 300px</h2>
+  <div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-3">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+  </div>
+
+  <h2 class="p-2">Vertical align badge among multiple lines of header tags</h2>
+  <div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-4">
+    <h2>Flex item 1</h2>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+  </div>
+
+  <h2 class="p-2">From start with gap</h2>
+  <div class="d-flex flex-wrap justify-content-start lili-flex-wrap lili-ex-5">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+  </div>
+
+  <h2 class="p-2">space-between with fixed 2rem gap, 3 columns -> 2 columns -> 1 column</h2>
+  <script type="text/plain" class="language-scss">
+.lili-ex-6 {
+  > div {
+    flex:0 0 calc(33% - 2rem);
+    margin-bottom:1rem;
+  }
+
+  // need to change to 1 column otherwise width of items becomes so small and they don't follow (33% - 2rem) anymore
+  @include media-breakpoint-down(md) {
+    > div {
+      flex:0 0 calc(50% - 2rem);
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    > div {
+      flex:0 0 100%;
+    }
+  }
+}
+  </script>
+  <div class="d-flex flex-wrap justify-content-between lili-flex-wrap lili-ex-6">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+    <div class="p-2">Flex item 4</div>
+    <div class="p-2">Flex item 5</div>
+  </div>
+
+  <h2 class="p-2">space-between 3 columns with fixed 2rem gap</h2>
+  <ul>
+    <li>Fix last item is not aligned to left when number of items is e.g. 5</li>
+    <li>Also works for <code>.justify-content-around</code></li>
+  </ul>
+  <script type="text/plain" class="language-scss ll-prismjs-wrap">
+.ll-flex-3-fix-left {
+  > div {
+    flex:0 0 calc(33% - 2rem);
+    margin-bottom:1rem;
+  }
+  &:after {
+    content: "";
+    flex:0 0 calc(33% - 2rem);
+  }
+
+  // need to change to 1 column otherwise width of items becomes so small and they don't follow (33% - 2rem) anymore
+  @include media-breakpoint-down(sm) {
+    > div {
+      flex:0 0 100%;
+    }
+  }
+}
+  </script>
+
+  <div class="d-flex flex-wrap justify-content-between lili-flex-wrap ll-flex-3-fix-left">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+    <div class="p-2">Flex item 4</div>
+    <div class="p-2">Flex item 5</div>
+  </div>
+  <div class="d-flex flex-wrap justify-content-between lili-flex-wrap ll-flex-3-fix-left">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+    <div class="p-2">Flex item 4</div>
+    <div class="p-2">Flex item 5</div>
+    <div class="p-2">Flex item 6</div>
+  </div>
+  <ul>
+    <li>Also works for <code>.justify-content-around</code></li>
+  </ul>
+  <div class="d-flex flex-wrap justify-content-around lili-flex-wrap ll-flex-3-fix-left">
+    <div class="p-2">Flex item 1</div>
+    <div class="p-2">Flex item 2</div>
+    <div class="p-2">Flex item 3</div>
+    <div class="p-2">Flex item 4</div>
+    <div class="p-2">Flex item 5</div>
+  </div>
+
+  <h2 class="p-2">Align Items: Image Vertical Center with Paragraph</h2>
+  <ul>
+    <li><code>align-items{-sm|-md|-lg|-xl}-*</code></li>
+    <li><code>.item.align-self{-sm|-md|-lg|-xl}-*</code></li>
+    <ul>
+      <li><code>align-items-stretch</code></li>
+      <li><code>align-items-center</code></li>
+      <li><code>align-items-start</code></li>
+      <li><code>align-items-end</code></li>
+      <li><code>align-items-baseline</code></li>
+    </ul>
+  </ul>
+
+  <div class="d-flex align-items-center">
+    <p>fdjlfjsdl kjdflasj</p>
+    <img src="http://via.placeholder.com/300x250/?text=300x250">
+  </div>
+  <div class="d-flex align-items-center">
+    <p class="m-0 p-0">fdjlfjsdl kjdflasj.</p>
+    <img src="http://via.placeholder.com/30x25/?text=30x25" class="p-3">
+  </div>
+
   <h2>Images Same Height with aspect (width/height)</h2>
   <ul>
     <li><a href="https://kartikprabhu.com/static/demo/equal-height-images-flexbox-demo.html" target="_blank">Reference</a></li>
@@ -148,46 +221,45 @@
     </div>
   </div>
 
+  <h2 class="p-2">Align Content</h2>
+  <ul>
+    <li><code>align-content{-sm|-md|-lg|-xl}-*</code></li>
+    <ul>
+      <li><code>align-content-start</code></li>
+      <li><code>align-content-end</code></li>
+      <li><code>align-content-center</code></li>
+      <li><code>align-content-around</code></li>
+      <li><code>align-content-stretch</code></li>
+    </ul>
+  </ul>
+
+  <h2 class="p-2">Direction</h2>
+  <ul>
+    <li><code>flex{-sm|-md|-lg|-xl}-*</code></li>
+    <ul>
+      <li><code>flex-row</code></li>
+      <li><code>flex-row-reverse</code></li>
+      <li><code>flex-column-reverse</code></li>
+    </ul>
+  </ul>
+
+  <h2 class="p-2">Wrap</h2>
+  <ul>
+    <li><code>flex{-sm|-md|-lg|-xl}-*</code></li>
+    <ul>
+      <li><code>flex-nowrap</code></li>
+      <li><code>flex-wrap</code></li>
+      <li><code>flex-wrap-reverse</code></li>
+    </ul>
+  </ul>
+
+  <h2 class="p-2"><code>.item.order-{0-12}</code></h2>
+  <ul>
+    <li>e.g. <code>.item.order-0</code></li>
+    <li><code>.order{-sm|-md|-lg|-xl}-{0-12}</code></li>
+  </ul>
+
 </div>
-
-
-<h2 class="p-2">Align Content</h2>
-<ul>
-  <li><code>align-content{-sm|-md|-lg|-xl}-*</code></li>
-  <ul>
-    <li><code>align-content-start</code></li>
-    <li><code>align-content-end</code></li>
-    <li><code>align-content-center</code></li>
-    <li><code>align-content-around</code></li>
-    <li><code>align-content-stretch</code></li>
-  </ul>
-</ul>
-
-<h2 class="p-2">Direction</h2>
-<ul>
-  <li><code>flex{-sm|-md|-lg|-xl}-*</code></li>
-  <ul>
-    <li><code>flex-row</code></li>
-    <li><code>flex-row-reverse</code></li>
-    <li><code>flex-column-reverse</code></li>
-  </ul>
-</ul>
-
-<h2 class="p-2">Wrap</h2>
-<ul>
-  <li><code>flex{-sm|-md|-lg|-xl}-*</code></li>
-  <ul>
-    <li><code>flex-nowrap</code></li>
-    <li><code>flex-wrap</code></li>
-    <li><code>flex-wrap-reverse</code></li>
-  </ul>
-</ul>
-
-<h2 class="p-2"><code>.item.order-{0-12}</code></h2>
-<ul>
-  <li>e.g. <code>.item.order-0</code></li>
-  <li><code>.order{-sm|-md|-lg|-xl}-{0-12}</code></li>
-</ul>
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <symbol id="icon-mail-envelope-closed" viewBox="0 0 32 32">
@@ -196,82 +268,9 @@
   </symbol>
 </svg>
 
-<style>
-  .lili-flex-wrap {
-    background-color:red;
-  }
-  .lili-flex-wrap > div {
-    background-color: #2760ac;
-  }
-  .lili-ex-2 > div {
-    flex:0 0 50%;
-  }
-  .lili-ex-3 > div {
-    flex:0 0 50%;
-    max-width:300px;
-  }
-  .lili-ex-5 {
-    width:33rem; /* 33rem = 3x10 + 1*3 will contain 3 items in a row */
-    margin:0 -.5rem; /* .5*2 = 1rem gap between 2 child items */
-  }
-  .lili-ex-5 > div {
-    margin:0 .5rem 5rem .5rem;
-    flex:0 0 10rem;
-  }
-  .lili-ex-6 {
-  }
-  .lili-ex-6 > div {
-    flex:0 0 calc(33% - 2rem);
-    margin-bottom:5rem;
-  }
-  @media only screen and (max-width:897px) {
-    .lili-ex-6 > div {
-      flex:0 0 calc(50% - 2rem);
-    }
-  }
-  @media only screen and (max-width:697px) {
-    .lili-ex-6 > div {
-      flex:0 0 100%;
-    }
-  }
-
-  .lili-flex-imgs-no-extend-h div img,
-  .lili-flex-imgs-no-extend-h div svg{
-    width: 100%;
-    height: auto;
-  }
-  .lili-flex-imgs-extend-h-aspect .lili-1{
-    flex: 0.5656; /* apsect =.5656 = width/height; flex-grow flex-shrink flex-basis: 0.5656 1 0%; */
-  }
-  .lili-flex-imgs-extend-h-aspect .lili-2{
-    flex: 1.7679;
-  }
-  .lili-flex-imgs-extend-h-aspect .lili-3{
-    flex: 1;
-  }
-  .lili-flex-imgs-extend-h-aspect .lili-4{
-    flex: 19.75675676;
-  }
-  .lili-flex-imgs-extend-h-aspect div img,
-  .lili-flex-imgs-extend-h-aspect div svg{
-    width: 100%;
-    height: auto;
-  }
-
-  .icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
-  }
-
-</style>
-
-
 <script src="../assets/js/jquery/jquery.min.js"></script>
 <script src="../assets/js/popper/popper.min.js"></script>
 <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/prismjs/prism.js"></script>
 </body>
 </html>

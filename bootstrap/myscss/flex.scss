@@ -1,0 +1,100 @@
+// Bootstrap Core Variable Override
+
+// Import Bootstrap Core
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.lili-flex-wrap {
+  background-color:red;
+}
+
+.lili-flex-wrap > div {
+  background-color: #2760ac;
+}
+.lili-ex-2 > div {
+  flex:0 0 50%;
+}
+.lili-ex-3 > div {
+  flex:0 0 50%;
+  max-width:300px;
+}
+.lili-ex-5 {
+  width:33rem; /* 33rem = 3x10 + 1*3 will contain 3 items in a row */
+  margin:0 -.5rem; /* .5*2 = 1rem gap between 2 child items */
+}
+.lili-ex-5 > div {
+  margin:0 .5rem 5rem .5rem;
+  flex:0 0 10rem;
+}
+.lili-ex-6 {
+  > div {
+    flex:0 0 calc(33% - 2rem);
+    margin-bottom:1rem;
+  }
+
+  // need to change to 1 column otherwise width of items becomes so small and they don't follow (33% - 2rem) anymore
+  @include media-breakpoint-down(md) {
+    > div {
+      flex:0 0 calc(50% - 2rem);
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    > div {
+      flex:0 0 100%;
+    }
+  }
+}
+
+.ll-flex-3-fix-left {
+  > div {
+    flex:0 0 calc(33% - 2rem);
+    margin-bottom:1rem;
+  }
+  &:after {
+    content: "";
+    flex:0 0 calc(33% - 2rem);
+  }
+
+  // need to change to 1 column otherwise width of items becomes so small and they don't follow (33% - 2rem) anymore
+  @include media-breakpoint-down(sm) {
+    > div {
+      flex:0 0 100%;
+    }
+  }
+}
+
+.lili-flex-imgs-no-extend-h div img,
+.lili-flex-imgs-no-extend-h div svg{
+  width: 100%;
+  height: auto;
+}
+.lili-flex-imgs-extend-h-aspect .lili-1{
+  flex: 0.5656; /* apsect =.5656 = width/height; flex-grow flex-shrink flex-basis: 0.5656 1 0%; */
+}
+.lili-flex-imgs-extend-h-aspect .lili-2{
+  flex: 1.7679;
+}
+.lili-flex-imgs-extend-h-aspect .lili-3{
+  flex: 1;
+}
+.lili-flex-imgs-extend-h-aspect .lili-4{
+  flex: 19.75675676;
+}
+.lili-flex-imgs-extend-h-aspect div img,
+.lili-flex-imgs-extend-h-aspect div svg{
+  width: 100%;
+  height: auto;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+pre.ll-prismjs-wrap[class*="language-"] {
+  > code {
+    white-space: pre-wrap;
+  }
+}
