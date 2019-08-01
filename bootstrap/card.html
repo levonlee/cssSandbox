@@ -67,7 +67,71 @@
     </div>
   </div>
 
-  <h2>Use text alignment</h2>
+  <pre class="language-scss"><code><!--
+  /* _card.scss */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $card-bg;
+  background-clip: border-box;
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+
+  > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  > .list-group:first-child {
+    .list-group-item:first-child {
+      @include border-top-radius($card-border-radius);
+    }
+  }
+
+  > .list-group:last-child {
+    .list-group-item:last-child {
+      @include border-bottom-radius($card-border-radius);
+    }
+  }
+}
+
+.card-body {
+  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+  // as much space as possible, ensuring footers are aligned to the bottom.
+  flex: 1 1 auto;
+  padding: $card-spacer-x;
+}
+
+/* inside .card-body */
+.card-title {
+  margin-bottom: $card-spacer-y;
+}
+
+.card-subtitle {
+  margin-top: -($card-spacer-y / 2);
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link {
+  @include hover {
+    text-decoration: none;
+  }
+
+  + .card-link {
+    margin-left: $card-spacer-x;
+  }
+}
+/* inside .card-body. */
+  --></code></pre>
+
+  <h2 class="mt-5">Use text alignment</h2>
   <ul>
     <li><code>.card.text-center</code></li>
   </ul>
@@ -100,9 +164,8 @@
     </div>
   </div>
 
-  <h2>Use w-* or custom CSS for sizing</h2>
-  <div class="form-group">
-<textarea readonly rows="5" class="form-control">
+  <h2 class="mt-5">Use <code>w-*</code> or custom CSS for sizing</h2>
+  <pre class="language-html"><code><!--
 <div class="card w-75">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -125,10 +188,9 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-</textarea>
-  </div>
+  --></code></pre>
 
-  <h2><code>img.card-img-top</code> and <code>img.card-img-bottom</code></h2>
+  <h2 class="mt-5"><code>img.card-img-top</code> and <code>img.card-img-bottom</code></h2>
   <div class="row">
     <div class="col-md-12">
       <div class="card mb-3">
@@ -151,7 +213,25 @@
     </div>
   </div>
 
-  <h2>Icons as <code>div.card-img-top</code> and <code>div.card-img-bottom</code></h2>
+  <pre class="language-scss"><code><!--
+/* _card.scss */
+.card-img {
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  @include border-radius($card-inner-border-radius);
+}
+
+.card-img-top {
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  @include border-top-radius($card-inner-border-radius);
+}
+
+.card-img-bottom {
+  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  @include border-bottom-radius($card-inner-border-radius);
+}
+  --></code></pre>
+
+  <h2 class="mt-5">Icons as <code>div.card-img-top</code> and <code>div.card-img-bottom</code></h2>
   <div class="row">
     <div class="col">
       <div class="card text-center">
@@ -195,7 +275,19 @@
     </div>
   </div>
 
-  <h2>Use text-*, bg-*, border-* for color along with <code>.card</code></h2>
+  <pre class="language-scss"><code><!--
+/* next to .card-img */
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $card-img-overlay-padding;
+}
+  --></code></pre>
+
+  <h2>Use <code>text-*</code>, <code>bg-*</code>, <code>border-*</code> for color along with <code>.card</code></h2>
   <ul>
     <li><code>.border</code> <code>.border-0</code></li>
     <li><code>.border-top</code> <code>.border-top-0</code></li>
@@ -203,8 +295,8 @@
     <li><code>.border-bottom</code> <code>.border-bottom-0</code></li>
     <li><code>.border-left</code> <code>.border-left-0</code></li>
   </ul>
-  <div class="form-group">
-<textarea readonly rows="5" class="form-control">
+
+  <pre class="language-html"><code><!--
 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
   <div class="card-header">Header</div>
   <div class="card-body">
@@ -220,12 +312,11 @@
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
-</textarea>
-  </div>
+  --></code></pre>
 
-  <h2>Header and Footer</h2>
+  <h2 class="mt-5">Header and Footer</h2>
   <pre class="language-scss"><code><!--
-  .card-header {
+.card-header {
   padding: $card-spacer-y $card-spacer-x;
   margin-bottom: 0; // Removes the default margin-bottom of <hN>
   background-color: $card-cap-bg;
@@ -241,10 +332,19 @@
     }
   }
 }
+
+.card-footer {
+  padding: $card-spacer-y $card-spacer-x;
+  background-color: $card-cap-bg;
+  border-top: $card-border-width solid $card-border-color;
+
+  &:last-child {
+    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+  }
+}
   --></code></pre>
 
-
-  <h3>Add navigation to <code>.card-header</code></h3>
+  <h3 class="mt-5">Add navigation to <code>.card-header</code></h3>
   <ul>
     <li><code>.card</code>
       <ul>
@@ -308,9 +408,26 @@
     </div>
   </div>
 
-  <h3>Overwrite header and footer colors</h3>
-  <div class="form-group">
-<textarea readonly rows="5" class="form-control">
+  <pre class="language-scss"><code><!--
+  /* _card.scss */
+/* inside .card-header */
+.card-header-tabs {
+  margin-right: -($card-spacer-x / 2);
+  margin-bottom: -$card-spacer-y;
+  margin-left: -($card-spacer-x / 2);
+  border-bottom: 0;
+}
+
+.card-header-pills {
+  margin-right: -($card-spacer-x / 2);
+  margin-left: -($card-spacer-x / 2);
+}
+/* inside .card-header. */
+  --></code></pre>
+
+  <h3 class="mt-5">Overwrite header and footer colors</h3>
+
+  <pre class="language-html"><code><!--
 <div class="card border-success mb-3" style="max-width: 18rem;">
   <div class="card-header bg-transparent border-success">Header</div>
   <div class="card-body text-success">
@@ -319,10 +436,9 @@
   </div>
   <div class="card-footer bg-transparent border-success">Footer</div>
 </div>
-</textarea>
-  </div>
+  --></code></pre>
 
-  <h2>Card groups</h2>
+  <h2 class="mt-5">Card groups</h2>
   <ul>
     <li>Cards in a card group have equal width and height and have no gap</li>
     <li>Cards with footers will be lined up</li>
