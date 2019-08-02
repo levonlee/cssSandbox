@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../assets/prismjs/prism.css">
+  <link rel="stylesheet" href="myscss/component-media-object.css">
+  <title>Media Object</title>
+</head>
+<body>
+<h1>Media Object</h1>
+
+<div class="container">
+  <h2 class="mt-5"><code>div.media</code></h2>
+  <ul>
+    <li><code>img</code></li>
+    <li><code>div.media-body</code></li>
+  </ul>
+
+  <div class="media">
+    <img src="http://via.placeholder.com/64x64/?text=64x64" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Media heading</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </div>
+
+  <h2 class="mt-5">Nesting</h2>
+  <ul>
+    <li><code>img</code></li>
+    <li><code>div.media-body</code>
+      <ul>
+        <li><code>h5</code></li>
+        <li><code>div.media</code>
+          <ul>
+            <li><code>a img</code></li>
+            <li><code>div.media-body h5</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <pre class="language-scss"><code><!--
+/* _media.scss */
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-body {
+  flex: 1;
+}
+  --></code></pre>
+
+  <div class="media">
+    <img src="http://via.placeholder.com/64x64/?text=64x64" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Media heading</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+      <div class="media mt-3">
+        <a class="mr-3" href="#">
+          <img src="http://via.placeholder.com/64x64/?text=64x64" class="mr-3" alt="...">
+        </a>
+        <div class="media-body">
+          <h5 class="mt-0">Media heading child</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-5">Media (image) alignment</h2>
+  <ul>
+    <li>Use <code>img.align-self{-sm|-md|-lg|-xl}-*</code>
+      <ul>
+        <li>start (default, top)</li>
+        <li>center</li>
+        <li>end</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="media">
+    <img src="http://via.placeholder.com/64x64/?text=64x64" class="align-self-center mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Center-aligned media</h5>
+      <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      <p class="mb-0">Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    </div>
+  </div>
+
+  <h2 class="mt-5">Order</h2>
+  <ul>
+    <li>Switch HTML elements to change order
+      <ul>
+        <li><code>div.media-body</code></li>
+        <li><code>img</code></li>
+      </ul>
+    </li>
+    <li>Use flex <code>.order{-sm|-md|-lg|-xl}-{0-12}</code></li>
+  </ul>
+
+  <h2 class="mt-5">Media list</h2>
+  <ul>
+    <li><code>ul.list-unstyled</code> or <code>ol.list-unstyled</code>
+      <ul>
+        <li><code>li.media</code>
+          <ul>
+            <li><code>img</code></li>
+            <li><code>div.media-body</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="list-unstyled">
+    <li class="media">
+      <img src="http://via.placeholder.com/64x64/?text=64x64" class="mr-3" alt="...">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">List-based media object</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </div>
+    </li>
+    <li class="media my-4">
+      <img src="http://via.placeholder.com/64x64/?text=64x64" class="mr-3" alt="...">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">List-based media object</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </div>
+    </li>
+    <li class="media">
+      <img src="http://via.placeholder.com/64x64/?text=64x64" class="mr-3" alt="...">
+      <div class="media-body">
+        <h5 class="mt-0 mb-1">List-based media object</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </div>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<script src="../assets/js/jquery/jquery.min.js"></script>
+<script src="../assets/js/popper/popper.min.js"></script>
+<script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/prismjs/prism.js"></script>
+
+</body>
+</html>
