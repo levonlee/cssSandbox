@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <link rel="stylesheet" href="../assets/prismjs/prism.css">
+
   <link rel="stylesheet" href="myscss/button.css">
 
   <title>Bootstrap Buttons</title>
@@ -48,14 +50,90 @@
   <div class="row">
     <div class="col">
       <a class="btn btn-ll-red" href="#" role="button">Custom color <code>a.btn.btn-ll-red</code></a>
+
+      <pre class="language-scss"><code><!--
+.btn-ll-red {
+  color:#fff;
+  background-color: #cd1713;
+  border-color:#cd1713;
+  &:hover, &:active, &:focus {
+    color:#fff;
+    background-color: #bd1512;
+    border-color:#cd1713;
+    box-shadow:none;
+  }
+}
+      --></code></pre>
+
       <a class="btn btn-ll-transparent" href="#" role="button">Custom color <code>a.btn.btn-ll-transparent</code></a>
+
+      <pre class="language-scss"><code><!--
+.btn-ll-transparent {
+  color:#cd1713;
+  background-color: transparent;
+  border-color:transparent;
+  &:hover, &:active, &:focus {
+    color:#bd1512;
+    background-color: transparent;
+    border-color:transparent;
+    text-decoration: underline;
+    box-shadow:none;
+  }
+}
+      --></code></pre>
+
       <a class="btn btn-outline-ll-red" href="#" role="button"><code>a.btn.btn-outline-ll-red</code></a>
+
+      <pre class="language-scss"><code><!--
+.btn-outline-ll-red {
+  color:#cd1713;
+  background-color: transparent;
+  border-color:#cd1713;
+  &:hover, &:active, &:focus {
+    color:#fff;
+    background-color: #cd1713;
+    border-color:#cd1713;
+    box-shadow:none;
+  }
+}
+      --></code></pre>
+
     </div>
   </div>
   <div class="row bg-success">
     <div class="col py-3">
       <a class="btn btn-outline-ll-white" href="#" role="button"><code>a.btn.btn-outline-ll-white</code></a>
+
+      <pre class="language-scss"><code><!--
+.btn-outline-ll-white {
+  color:#fff;
+  background-color: transparent;
+  border-color:#fff;
+  &:hover, &:active, &:focus {
+    color:#000;
+    background-color: #fff;
+    border-color:#fff;
+    box-shadow:none;
+  }
+}
+      --></code></pre>
+
       <a class="btn btn-outline-ll-white-solid" href="#" role="button"><code>a.btn.btn-outline-ll-white-solid</code></a>
+
+      <pre class="language-scss"><code><!--
+.btn-outline-ll-white-solid {
+  color:#000;
+  background-color: #fff;
+  border-color:#fff;
+  &:hover, &:active, &:focus {
+    color:#fff;
+    background-color: transparent;
+    border-color:#fff;
+    box-shadow:none;
+  }
+}
+      --></code></pre>
+
     </div>
   </div>
 
@@ -163,5 +241,6 @@
 <script src="../assets/js/jquery/jquery.min.js"></script>
 <script src="../assets/js/popper/popper.min.js"></script>
 <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/prismjs/prism.js"></script>
 </body>
 </html>
