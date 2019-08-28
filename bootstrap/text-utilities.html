@@ -68,7 +68,7 @@
   <p class="text-uppercase">Uppercased text.</p>
   <p class="text-capitalize">CapiTaliZed text.</p>
 
-  <h2>Font Weight and Italics</h2>
+  <h2 class="mt-3">Font Weight and Italics</h2>
   <ul>
     <li><code>.font-weight-bold</code></li>
     <li><code>.font-weight-normal</code></li>
@@ -78,7 +78,7 @@
 
   <h2>Fluid font size</h2>
   <ul>
-    <li><a href="https://css-tricks.com/snippets/css/fluid-typography/">Reference</a></li>
+    <li><a href="https://css-tricks.com/snippets/css/fluid-typography/" target="_blank">Reference</a></li>
   </ul>
 
   <div class="row">
@@ -86,6 +86,37 @@
       <div class="ll-fluid-font-size">
         Hello
       </div>
+    </div>
+  </div>
+
+  <h2 class="mt-3">Underline</h2>
+  <ul>
+    <li>Only applies <code>span</code>, NOT block element e.g. <code>p</code> nor <code>h2</code> directly</li>
+    <li>May wrap <code>span</code> inside block elements or <code>a</code></li>
+  </ul>
+
+  <div class="row">
+    <div class="col">
+      <a href="#" class="text-dark ll-no-underline">
+      <span class="ll-underline ll-underline-thin ll-underline-pink">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi enim facere libero magni nobis officia, saepe. A delectus, dolorem error, esse et mollitia quaerat, quidem quod ratione sunt veniam.
+      </span>
+      </a>
+      <h2>
+        <span class="ll-underline ll-underline-pink">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi enim facere libero magni nobis officia, saepe. A delectus, dolorem error, esse et mollitia quaerat, quidem quod ratione sunt veniam.
+      </span>
+      </h2>
+      <p>
+        <span class="ll-underline ll-underline-thin ll-underline-pink">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi enim facere libero magni nobis officia, saepe. A delectus, dolorem error, esse et mollitia quaerat, quidem quod ratione sunt veniam.
+      </span>
+      </p>
+      <span class="ll-underline ll-underline-thin ll-underline-pink">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi enim facere libero magni nobis officia, saepe. A delectus, dolorem error, esse et mollitia quaerat, quidem quod ratione sunt veniam.
+      </span>
+
+
     </div>
   </div>
 
