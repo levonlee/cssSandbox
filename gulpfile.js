@@ -65,7 +65,7 @@ gulp.task('myscss', () => {
 
 // create sourcemap, convert scss to css, autoprefixer
 gulp.task('myscssNoMinify', () => {
-  return gulp.src(['bootstrap/myscss/li.scss'], { base: '.', since: gulp.lastRun('myscss') }).
+  return gulp.src(['bootstrap/myscss/li.scss','bootstrap/myscss/nogit-tct.scss'], { base: '.' }).
     pipe(gDebug()).
     pipe(sourcemaps.init()).
     pipe(
@@ -551,6 +551,13 @@ gulp.task('svg-sprite-mode-view', function () {
 
 gulp.task('watch', () => {
   gulp.watch(scssPath, gulp.parallel('myscss')).on('all', function (event, path) {
+    console.log('File ' + path + ' was on ' + event);
+  })
+
+})
+
+gulp.task('watchLiScss', () => {
+  gulp.watch(['bootstrap/myscss/li.scss','bootstrap/myscss/nogit-tct.scss', 'bootstrap/myscss/li/**/*.scss'], gulp.parallel('myscssNoMinify')).on('all', function (event, path) {
     console.log('File ' + path + ' was on ' + event);
   })
 
