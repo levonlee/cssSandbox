@@ -39,6 +39,9 @@ var scssPath = [
 ];
 // don't use ** at the beginning as it will contain a lot of folders in node_modules
 
+// // `gulp myscss` :: compile myscss `**/myscss/*.scss`
+// create sourcemap, convert scss to css, autoprefixer, minify css
+// Used in Watch :: won't run if scss file is not updated
 gulp.task('myscss', () => {
   return gulp.src(scssPath, { base: '.', since: gulp.lastRun('myscss') }).
     pipe(gDebug()).
@@ -53,6 +56,27 @@ gulp.task('myscss', () => {
     on('error', sass.logError).
     pipe(gPostcss([autoprefixer()])).
     pipe(minifycss()). // this causes errors { maxLineLen: config.maxLineLen }
+    pipe(rename((path) => {
+      path.extname = '.css'
+    })).
+    pipe(sourcemaps.write('.')).
+    pipe(gulp.dest('.'))
+})
+
+// create sourcemap, convert scss to css, autoprefixer
+gulp.task('myscssNoMinify', () => {
+  return gulp.src(['bootstrap/myscss/li.scss'], { base: '.', since: gulp.lastRun('myscss') }).
+    pipe(gDebug()).
+    pipe(sourcemaps.init()).
+    pipe(
+      sass({
+        errLogToConsole: config.errLogToConsole,
+        outputStyle: config.outputStyle,
+        precision: config.precision,
+      }),
+    ).
+    on('error', sass.logError).
+    pipe(gPostcss([autoprefixer()])).
     pipe(rename((path) => {
       path.extname = '.css'
     })).
