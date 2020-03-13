@@ -4,6 +4,8 @@ npm-debug.log
 dist/
 src/
 
+**/nogit-*.*
+
 # SASS #
 ##########
 **/.sass-cache
