@@ -66,5 +66,8 @@
 }
 
 .ll-underline-native {
-
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: red; /* widely supported */
+  text-decoration-thickness: 2px; /* FF only */
 }
