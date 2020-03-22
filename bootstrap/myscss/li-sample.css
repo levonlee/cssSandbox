@@ -8,7 +8,7 @@ html { font-family: sans-serif; line-height: 1.15; -webkit-text-size-adjust: 100
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section { display: block; }
 
-body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529; text-align: left; background-color: #fff; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #152614; text-align: left; background-color: #fff; }
 
 [tabindex="-1"]:focus { outline: 0 !important; }
 
@@ -450,4 +450,4 @@ pre code { font-size: inherit; color: inherit; word-break: normal; }
   .align-self-xl-baseline { -ms-flex-item-align: baseline !important; align-self: baseline !important; }
   .align-self-xl-stretch { -ms-flex-item-align: stretch !important; align-self: stretch !important; } }
 
-/*# sourceMappingURL=li.css.map */
+/*# sourceMappingURL=li-sample.css.map */
