@@ -126,12 +126,15 @@
       <h3>Use native CSS</h3>
       <script type="text/plain" class="language-scss">
 .ll-underline-native {
-
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: red; /* widely supported */
+  text-decoration-thickness: 2px; /* FF only */
 }
   </script>
-      <span class="ll-underline-native">
+      <p class="ll-underline-native">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, amet assumenda at deserunt dicta dolor dolore ducimus earum inventore ipsa, officiis perspiciatis quas quasi quidem quos sequi, ullam vel veritatis.
-      </span>
+      </p>
     </div>
   </div>
 
