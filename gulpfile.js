@@ -297,7 +297,7 @@ gulp.task('img-min', () => {
     // fine tune for lossless optimizers
     [
       gImageMin.gifsicle({ interlaced: true }),
-      gImageMin.jpegtran({ progressive: true }),
+      gImageMin.mozjpeg({ progressive: true }), // old versions use gImageMin.jpegtran({ progressive: true }),
       gImageMin.optipng({ optimizationLevel: 5 }), // less is less compression.
                                                    // Significantly improve
                                                    // time
