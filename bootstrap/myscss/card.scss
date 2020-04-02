@@ -21,3 +21,14 @@ pre.ll-prismjs-wrap[class*="language-"] {
     white-space: pre-wrap;
   }
 }
+
+.ll-center-vert {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ll-flex-0-0-100 {
+  flex: 0 0 100%!important;
+}

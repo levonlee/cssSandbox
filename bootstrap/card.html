@@ -261,19 +261,10 @@
     </div>
   </div>
 
-  <h2><code>img.card-img</code> and <code>div.card-img-overlay</code></h2>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark text-white">
-        <img class="card-img" src="http://via.placeholder.com/728x90/?text=728x90" alt="Card image">
-        <div class="card-img-overlay text-dark">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2 class="mt-5"><code>img.card-img</code> and <code>div.card-img-overlay</code></h2>
+  <ul>
+    <li><code>.card-img-overlay</code> is next to <code>.card-img</code> and it has the same size of <code>.card-img</code>. You can add <code>overflow:hidden</code> to hide overflown content</li>
+  </ul>
 
   <pre class="language-scss"><code><!--
 /* next to .card-img */
@@ -287,7 +278,56 @@
 }
   --></code></pre>
 
-  <h2>Use <code>text-*</code>, <code>bg-*</code>, <code>border-*</code> for color along with <code>.card</code></h2>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark text-white">
+        <img class="card-img" src="http://via.placeholder.com/728x90/?text=728x90" alt="Card image">
+        <div class="card-img-overlay text-dark">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago. May use <code>overflow:hidden</code></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-5 pt-5">Vertical center <code>div.card-img-overlay</code> using absolute container</h2>
+  <ul>
+    <li><code>card-img-overlay.px-0 > .ll-center-vert.px-1</code></li>
+  </ul>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark text-white text-center">
+        <img class="card-img" src="http://via.placeholder.com/728x90/?text=728x90" alt="Card image">
+        <div class="card-img-overlay px-0 text-dark">
+            <div class="ll-center-vert px-1">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text text-center">Last updated 3 mins ago. May use <code>overflow:hidden</code></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-5">Vertical center <code>div.card-img-overlay</code> using flex</h2>
+  <ul>
+    <li><code>.card-img-overlay.d-flex.flex-wrap.justify-content-center.align-items-center > card-title.ll-flex-0-0-100</code></li>
+  </ul>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark text-white text-center">
+        <img class="card-img" src="http://via.placeholder.com/728x90/?text=728x90" alt="Card image">
+        <div class="card-img-overlay text-dark d-flex flex-wrap justify-content-center align-items-center">
+            <h5 class="card-title ll-flex-0-0-100">Card title</h5>
+            <p class="card-text ll-flex-0-0-100">Last updated 3 mins ago. May use <code>overflow:hidden</code></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-5">Use <code>text-*</code>, <code>bg-*</code>, <code>border-*</code> for color along with <code>.card</code></h2>
   <ul>
     <li><code>.border</code> <code>.border-0</code></li>
     <li><code>.border-top</code> <code>.border-top-0</code></li>
