@@ -1,0 +1,25 @@
+# File Structure
+- Templates
+- CustomElements
+    - Custom element `<message-banner>`
+    - `class MessageBanner extends HTMLElement {}`
+        - `constructor()`
+        - `static get observedAttributes() {}`
+        - `connectedCallback() {}`
+        - `disconnectedCallback() {}`
+        - `adoptedCallback() {}`
+        - `attributeChangedCallback(name, oldValue, newValue) {}`
+        - `get visible() {}`
+        - `set visible(val) {}`
+    - `customElements.define("message-banner", MessageBanner);`
+- HTMLImports
+    - It is deprecated. Ignored!
+ - ShadowDOM
+    - Style defined in Shadow DOM can be overwritten in global but Shadow DOM's style cannot overwrite global's styles
+    - `shadowdom_finished.html`
+        - `static get template() {}`
+        - `connectedCallback() {}`
+            - `let shadowRoot = this.attachShadow({mode: "open"});`
+            - `let tmpl = document.querySelector("#message-banner-tmpl");`
+            - `shadowRoot.appendChild( document.importNode(tmpl.content,true) );`
+    
