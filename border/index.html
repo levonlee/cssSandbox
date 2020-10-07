@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borders at Corners</title>
+    <style>
+        .parent {
+            width:50%;
+            min-width:16rem;
+            margin:0 auto;
+            position:relative;
+        }
+        .parent:before {
+            content:'';
+            border-top: 2px solid #ff8c6c;
+            border-left: 2px solid #ff8c6c;
+            display: inline-block;
+            width: 12rem;
+            height: 3.25rem;
+            position: absolute;
+        }
+        .parent:after {
+            content: '';
+            border-bottom: 2px solid #ff8c6c;
+            border-right: 2px solid #ff8c6c;
+            display: inline-block;
+            width: 12rem;
+            height: 3.25rem;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .parent > h2 {
+            padding:1rem 1.25rem;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <h2>Title Tag</h2>
+    <div>
+        <ul>
+            <li>Hello</li>
+            <li>Hello2</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
