@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Wrap</title>
+    <style>
+        * { box-sizing: border-box;}
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            max-width: 100%;
+            border: 2px solid black;
+            padding: 16px;
+            border-radius: 20px 0 20px 0;
+        }
+        form h3 {
+            width: 100%;
+            font-family: helvetica;
+            text-align: center;
+            margin: 0 0 16px;
+        }
+        form input {
+            margin-bottom: 8px;
+            height: 30px;
+            padding: 0 8px;
+            max-width: 100%;
+        }
+        input.short {
+            flex: 1 0 240px;
+            max-width: 100%;
+        }
+        input.fill {
+            flex: 1 0 auto;
+        }
+        input.long {
+            flex: 1 0 350px;
+            max-width: 100%;
+        }
+        input[type="submit"] {
+            color: white;
+            background: brown;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h3>Give us your data!</h3>
+    <input type="text" id="fname" class="name short" placeholder="Full Name">
+    <input type="tel" id="tel" class="name fill" placeholder="Telephone">
+    <input type="email" id="email" class="long" placeholder="Email Address">
+    <input type="submit" id="submit" class="fill">
+</form>
+<a href="https://dev.to/kylefilegriffin/responsive-css-layouts-without-media-queries-5e4n">Reference</a>
+</body>
+</html>
