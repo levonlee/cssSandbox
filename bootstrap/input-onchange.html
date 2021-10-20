@@ -13,12 +13,30 @@
 <body>
 <div class="container">
   <h1>Input onChange</h1>
+  <ul>
+    <li><code>onchange</code> is only triggered by changing value through UI. Changing value using JavaScript will not trigger it.</li>
+    <li><code>onchange</code> is triggered after <code>oninput</code> (e.g. <code>onkeyup</code>, <code>onkeypress</code>) and out of focus but before <code>onblur</code>! So changing value in <code>onblur</code> will not carry the value to <code>onchange</code> by default!</li>
+    <li>
+      <p>Special about Safari</p>
+      <ul>
+        <li>
+          <code>onchange</code> will be triggered on other browsers if the new value is different from the old one
+        </li>
+        <li>
+          On Safari, <code>onchange</code> will not be triggered if the value is modified in any events using Javascript like:
+          <ul>
+            <li><code>onkeyup</code></li>
+            <li><code>onkeypress</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
   <div class="row">
     <div class="col">
       <input type="text" id="the-text" onkeyup="textOnKeyUp();" onblur="textOnBlur();" onchange="textOnChange();" >
     </div>
   </div>
-
   <div class="row">
     <div class="col-4">
       <button onclick="clearText();">CLEAR TEXT VALUE USING JAVASCRIPT</button>
@@ -28,14 +46,12 @@
       <button onclick="toggleChangeTextOnBlur();">TOGGLE CHANGE TEXT ON BLUR</button>
     </div>
   </div>
-
   <div class="row">
     <div class="col">
       <textarea name="eventlog" id="eventlog" cols="30" rows="10"></textarea>
       <button onclick="clearLog();">CLEAR LOG</button>
     </div>
   </div>
-
 </div>
 
 <script>
@@ -45,21 +61,20 @@
     document.getElementById('changeOnBlurState').textContent = (changeValueOnBlur) ? "Text is changed on blur" : "Text is not changed on blur";
   }
   function textOnKeyUp() {
-    document.getElementById('eventlog').value += "onKeyUp is triggered" + "\n";
+    document.getElementById('eventlog').value += "onKeyUp is triggered. Value is " + document.getElementById('the-text').value + "\n";
     // add comma when value length is >= 3
     if (document.getElementById('the-text').value.length >= 3) {
       document.getElementById('the-text').value += ',';
     }
   }
-
   function textOnBlur() {
-    document.getElementById('eventlog').value += "onBlur is triggered" + "\n";
+    document.getElementById('eventlog').value += "onBlur is triggered. Value is " + document.getElementById('the-text').value + "\n";
     if (changeValueOnBlur) {
       document.getElementById('the-text').value += Math.random() * 10000;
     }
   }
   function textOnChange() {
-    document.getElementById('eventlog').value += "onChange is triggered" + "\n";
+    document.getElementById('eventlog').value += "onChange is triggered. Value is " + document.getElementById('the-text').value + "\n";
   }
   function clearLog() {
     document.getElementById('eventlog').value = '';
