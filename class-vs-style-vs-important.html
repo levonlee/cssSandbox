@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.d-flex {
+			display: flex !important;
+		}
+		.d-none {
+			display: none !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="d-flex">.d-flex</div>
+	<div class="d-flex" style="display:none;">.d-flex</div>
+	<div class="d-flex" style="display:none !important;">.d-none</div>
+	<div style="display:none !important;" class="d-flex">.d-none</div>
+	<div class="d-flex d-none">.d-none</div>
+	<div class="d-none d-flex">.d-none</div>
+</body>
+</html>
