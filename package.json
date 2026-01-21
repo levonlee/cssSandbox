@@ -7,7 +7,7 @@
     "autoprefixer": "^9.7.5",
     "bootstrap": "^4.4.0",
     "font-awesome": "^4.7.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-postcss": "^8.0.0"
   },
   "devDependencies": {
