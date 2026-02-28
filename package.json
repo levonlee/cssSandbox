@@ -4,11 +4,11 @@
   "description": "cssSandbox ==========",
   "main": "index.js",
   "dependencies": {
-    "autoprefixer": "^9.7.5",
+    "autoprefixer": "^10.0.0",
     "bootstrap": "^4.4.0",
     "font-awesome": "^4.7.0",
     "gulp": "^4.0.2",
-    "gulp-postcss": "^8.0.0"
+    "gulp-postcss": "^9.0.0"
   },
   "devDependencies": {
     "concurrent-transform": "^1.0.0",
